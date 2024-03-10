@@ -3,7 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-    theme = "catppuccin";
+    theme = "Catppuccin-Frappe";
     shellIntegration.enableBashIntegration = true;
     extraConfig = ''
     '';
