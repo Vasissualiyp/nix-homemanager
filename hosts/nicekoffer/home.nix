@@ -2,6 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
+  kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   latexModule = import ../../modules/latex/latex.nix;
   tmuxModule = import ../../modules/terminals/tmux.nix;
@@ -17,6 +18,7 @@ in
 
   imports = [
     bashModule
+    kittyModule
 	nvimModule
 	tmuxModule
 	redshiftModule
@@ -75,12 +77,12 @@ in
 	userEmail = "vpustovoit@cita.utoronto.ca";
   };
 
-  home.activation.createPythonEnvs = config.lib.dag.entryAfter ["writeBoundary"] ''
-      mkdir -p $HOME/env
-      ln -sf ${pkgs.general} $HOME/env/general
-      ln -sf ${pkgs.vim} $HOME/env/vim
-      ln -sf ${pkgs.shellgpt} $HOME/env/shellgpt
-    '';
+  #home.activation.createPythonEnvs = config.lib.dag.entryAfter ["writeBoundary"] ''
+  #    mkdir -p $HOME/env
+  #    ln -sf ${pkgs.general} $HOME/env/general
+  #    ln -sf ${pkgs.vim} $HOME/env/vim
+  #    ln -sf ${pkgs.shellgpt} $HOME/env/shellgpt
+  #  '';
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
