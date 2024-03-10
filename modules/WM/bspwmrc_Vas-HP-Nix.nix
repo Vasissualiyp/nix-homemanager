@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 {
-  option.xsession.windowManager.bspwm = {
+  xsession.windowManager.bspwm = {
     enable = true;
 
     extraConfig = ''
-    pgrep -x sxhkd > /dev/null || -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
+    pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
     
     # Polkit
     #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
