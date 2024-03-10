@@ -2,6 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
+  bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   latexModule = import ../../modules/latex/latex.nix;
@@ -18,11 +19,12 @@ in
 
   imports = [
     bashModule
+    bspwmModule
     kittyModule
-	nvimModule
-	tmuxModule
-	redshiftModule
-	#latexModule
+    nvimModule
+    tmuxModule
+    redshiftModule
+    #latexModule
     #pythonshelllibModule 
   ];
 
