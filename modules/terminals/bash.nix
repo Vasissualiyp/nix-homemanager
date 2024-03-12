@@ -40,6 +40,8 @@ let
     wifissh = "$HOME/scripts/web/establish_ssh_over_wifi.sh \"$1\"";
     xopdf = "$HOME/scripts/custom_docs_editing/xopdf.sh";
     note = "$HOME/Software/Noterius/scripts/note.sh";
+    cdp="~/Software/Citerius/download_paper.sh";
+    cfp="~/Software/Citerius/fuzzy_find_paper.sh";
     bslt = "$HOME/scripts/bspwm_scripts/bspwm-layouts.sh";
   };
 
