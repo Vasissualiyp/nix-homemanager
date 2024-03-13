@@ -69,7 +69,7 @@ in
 	  }
       {
 	  plugin = vimtex;
-	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/keymaps/limelight.lua}\nEOF";
+	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/plugins/vimtex.lua}\nEOF";
 	  }
       #vim-tex-fold
       {
