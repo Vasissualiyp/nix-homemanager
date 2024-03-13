@@ -27,6 +27,14 @@ in
       vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
       ${builtins.readFile ./lua/keymaps/noterius.lua}
 	'';
+    extraPython3Packages = ps: with ps; [
+	  pynvim
+      #neovim
+      #jedi
+      #pylint
+      #black
+      # any other python packages
+    ];
     plugins = with pkgs.vimPlugins; [
       #plenary
 
