@@ -74,7 +74,7 @@
     # warpd
     warpd &
     
-    kitty &
+    #kitty &
     # Set wallpaper with feh for pywal to use
     #feh --bg-fill /path/to/your/wallpaper.jpg &
     # Generate color scheme with pywal
