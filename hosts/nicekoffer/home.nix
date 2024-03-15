@@ -2,6 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
+  zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
@@ -19,6 +20,7 @@ in
 
   imports = [
     bashModule
+    zathuraModule
     bspwmModule
     kittyModule
     nvimModule

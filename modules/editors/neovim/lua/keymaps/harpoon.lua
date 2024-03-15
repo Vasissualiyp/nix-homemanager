@@ -1,5 +1,5 @@
-vim.keymap.set('n','<leader>hx', require('harpoon.mark').add_file)
-vim.keymap.set('n', '<leader>ht', ':Telescope harpoon marks<CR>')
+vim.keymap.set('n','<Space>x', require('harpoon.mark').add_file)
+vim.keymap.set('n','<Space>t', ':Telescope harpoon marks<CR>')
 vim.keymap.set('n','<Space>k', require('harpoon.ui').nav_next)
 vim.keymap.set('n','<Space>j', require('harpoon.ui').nav_prev)
 vim.keymap.set('n','<Space>h', require('harpoon.ui').toggle_quick_menu)
