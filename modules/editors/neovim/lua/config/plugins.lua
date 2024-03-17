@@ -48,6 +48,9 @@ require('lazy').setup({
   'matze/vim-tex-fold', --folding
   "micangl/cmp-vimtex", --autocompletion for citations
 
+  --NOTERIUS--
+  "Vasissualiyp/Noterius",
+
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
