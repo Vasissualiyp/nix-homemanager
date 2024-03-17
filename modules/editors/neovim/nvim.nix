@@ -8,7 +8,7 @@ in
     enable = true;
 
     extraLuaConfig = ''
-      ${builtins.readFile ./lua/config/global_parameters.lua  }
+      ${builtins.readFile ./lua/config/global_parameters_nix.lua  }
       
       -- This is needed to setup the path, which is essential for nvim on NixOS to work
       ${builtins.readFile ./lua/config/path_setup.lua}
