@@ -48,9 +48,6 @@ require('lazy').setup({
   'matze/vim-tex-fold', --folding
   "micangl/cmp-vimtex", --autocompletion for citations
 
-  --NOTERIUS--
-  "Vasissualiyp/noterius-vim",
-
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -102,6 +99,10 @@ require('lazy').setup({
   --/home/vasilii/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips/tex.snippets:148
   'SirVer/ultisnips',
   'honza/vim-snippets',
+
+  --NOTERIUS--
+  "Vasissualiyp/noterius-vim",
+
 })
 require('telescope').load_extension('ultisnips')
 --require('telescope').load_extension('ultisnips')
