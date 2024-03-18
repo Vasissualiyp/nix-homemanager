@@ -7,13 +7,13 @@ in
   programs.neovim = {
     enable = true;
 
-	extraLuaConfig = ''
-      ${builtins.readFile ./lua/config/global_parameters.lua  }
+    extraLuaConfig = ''
+      ${builtins.readFile ./lua/config/global_parameters_nix.lua  }
       
       -- This is needed to setup the path, which is essential for nvim on NixOS to work
       ${builtins.readFile ./lua/config/path_setup.lua}
 
-	  -- Add vimwiki directory
+      -- Add vimwiki directory
       vim.cmd('source ~/.dotfiles/nvim/vimscript/vimwiki.vim')
       
       -- Load config settings
@@ -26,17 +26,18 @@ in
       ${builtins.readFile ./lua/keymaps/inkscape.lua}
       vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
       ${builtins.readFile ./lua/keymaps/noterius.lua}
-	'';
+    '';
+
     extraPython3Packages = ps: with ps; [
-	  pynvim
+      pynvim
       #neovim
       #jedi
       #pylint
       #black
       # any other python packages
     ];
+
     plugins = with pkgs.vimPlugins; [
-      #plenary
 
       nvim-web-devicons
       (nvim-treesitter.withPlugins (p: [
@@ -54,7 +55,7 @@ in
         p.tree-sitter-rust
         p.tree-sitter-vim
         p.tree-sitter-yaml
-	  ]))
+      ]))
 	  nvim-treesitter-context
 	  nvim-treesitter-textobjects
       {
