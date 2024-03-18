@@ -49,7 +49,7 @@ require('lazy').setup({
   "micangl/cmp-vimtex", --autocompletion for citations
 
   --NOTERIUS--
-  "Vasissualiyp/Noterius",
+  "Vasissualiyp/noterius-vim",
 
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
