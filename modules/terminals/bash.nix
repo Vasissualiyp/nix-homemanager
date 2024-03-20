@@ -52,29 +52,29 @@ in
     shellAliases = bashAliases;
 
     initExtra = ''
-	  # ccp alias
-      ccp() {
-        xsel -b  
-		#echo -n "$@" | xsel -b
-      }
+# ccp alias
+ccp() {
+  xsel -b  
+  #echo -n "$@" | xsel -b
+}
 
-      # remcon alias
-	  remcon() {
-        if [ $# -eq 0 ]; then
-          $HOME/scripts/web/remoteconnect.sh
-		else
-          $HOME/scripts/web/remoteconnect.sh "$1"
-		fi
-      }
+# remcon alias
+remcon() {
+  if [ $# -eq 0 ]; then
+    $HOME/scripts/web/remoteconnect.sh
+  else
+    $HOME/scripts/web/remoteconnect.sh "$1"
+  fi
+}
 
-	  # git add + commit alias
-      gitac() {
-          git add -u
-          git commit -m "$1"
-      }
+# git add + commit alias
+gitac() {
+    git add -u
+    git commit -m "$1"
+}
 
-	  # vi mode in bash
-      set -o vi
+# vi mode in bash
+set -o vi
 
     '';
 
