@@ -52,12 +52,6 @@ in
     shellAliases = bashAliases;
 
     initExtra = ''
-# ccp alias
-ccp() {
-  xsel -b  
-  #echo -n "$@" | xsel -b
-}
-
 # remcon alias
 remcon() {
   if [ $# -eq 0 ]; then
