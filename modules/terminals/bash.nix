@@ -34,8 +34,7 @@ let
     srcenv = "source ./env/bin/activate";
     devenv = "python -m venv env; source ./env/bin/activate; pip install numpy scipy matplotlib";
 
-    ccp = "xclip -selection clipboard";
-    #remcon = "if [ $# -eq 0 ]; then $HOME/scripts/web/remoteconnect.sh; else $HOME/scripts/web/remoteconnect.sh \"$1\"; fi";
+    cpp = "xclip -selection clipboard -o";
     stup = "$HOME/scripts/startup/startup.sh";
     wifissh = "$HOME/scripts/web/establish_ssh_over_wifi.sh \"$1\"";
     xopdf = "$HOME/scripts/custom_docs_editing/xopdf.sh";
@@ -53,10 +52,10 @@ in
     shellAliases = bashAliases;
 
     initExtra = ''
-
 	  # ccp alias
       ccp() {
-        echo -n "$@" | xsel -b
+        xsel -b  
+		#echo -n "$@" | xsel -b
       }
 
       # remcon alias
