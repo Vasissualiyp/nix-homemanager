@@ -15,7 +15,14 @@
 
 	settings = {
       #"monitor" = ",preferred,auto,auto";
-      "monitor" = "eDP-1,2560x1600@165,0x0,2";
+      #"monitor" = "eDP-1,2560x1600@165,0x0,2";
+	  " monitor" = [
+	  "eDP-1,2560x1600,0x1120,1"
+      "DP-1-1.9,1920x1200,2560x960,1,transform,1"
+      "HDMI-1-0,1920x1080,3760x0,1,transform,1"
+      "DP-1,1600x1200,5920x960,1,transform,1"
+      "DP-1-1.8,1920x1080,7120x1120,1"
+      ]
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
