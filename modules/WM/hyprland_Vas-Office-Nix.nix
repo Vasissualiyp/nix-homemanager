@@ -14,10 +14,10 @@
     "env" = "QT_QPA_PLATFORMTHEME,qt5ct";
     input = {
         "kb_layout" = "us";
-        "kb_variant" = ";
-        "kb_model" = ";
-        "kb_options" = ";
-        "kb_rules" = ";
+        #"kb_variant" = ";
+        #"kb_model" = ";
+        #"kb_options" = ";
+        #"kb_rules" = ";
     
         "follow_mouse" = "1";
     
