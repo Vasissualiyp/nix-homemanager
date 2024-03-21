@@ -48,11 +48,11 @@
     
         "rounding" = "10";
         
-        "blur {";
+        blur = {
             "enabled" = "true";
             "size" = "3";
             "passes" = "1";
-        "}";
+        };
     
         "drop_shadow" = "yes";
         "shadow_range" = "4";
