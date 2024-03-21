@@ -17,13 +17,24 @@
       #"monitor" = ",preferred,auto,auto";
       #"monitor" = "eDP-1,2560x1600@165,0x0,2";
 	  " monitor" = [
-	  "eDP-1,2560x1600,0x560,2"
-      "DP-5,1920x1200,1280x0,1,transform,1"
-      #"HDMI-A-1,2560x1440,3760x0,1,transform,1"
-      "HDMI-A-1,3840x2160,2480x0,2,transform,1"
-      "DP-1,1920x1200,3560x0,1,transform,1"
-      "DP-4,1920x1080,4760x420,1"
+	    "eDP-1,2560x1600,0x560,2"
+        "DP-5,1920x1200,1280x0,1,transform,1"
+        "HDMI-A-1,3840x2160@60,2480x0,2,transform,1"
+        "DP-1,1920x1200,3560x0,1,transform,1"
+        "DP-4,1920x1080,4760x420,1"
       ];
+	  "workspace" = [
+        "1, monitor:eDP-1"
+        "2, monitor:DP-5"
+        "3, monitor:DP-5"
+        "4, monitor:HDMI-A-1"
+        "5, monitor:HDMI-A-1"
+        "6, monitor:HDMI-A-1"
+        "7, monitor:DP-1"
+        "8, monitor:DP-1"
+        "9, monitor:DP-4"
+        "0, monitor:DP-4"
+	  ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
