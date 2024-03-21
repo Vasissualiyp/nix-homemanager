@@ -163,6 +163,11 @@ in
         "ALT_SHIFT_CTRL_SUPER, k, swapwindow, u"
         "ALT_SHIFT_CTRL_SUPER, j, swapwindow, d"
 
+        # Move window in given direction"
+        "SUPER_CTRL, left, movewindow, mon:l"
+        "SUPER_CTRL, right, movewindow, mon:r"
+
+		# Resizing
 		"$mainMod ALT, l, resizeactive, 30 0"
         "$mainMod ALT, h, resizeactive, -30 0"
         "$mainMod ALT, k, resizeactive, 0 -30"
