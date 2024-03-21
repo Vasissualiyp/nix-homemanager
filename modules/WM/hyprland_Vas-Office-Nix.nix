@@ -162,6 +162,11 @@ in
         "ALT_SHIFT_CTRL_SUPER, l, swapwindow, r"
         "ALT_SHIFT_CTRL_SUPER, k, swapwindow, u"
         "ALT_SHIFT_CTRL_SUPER, j, swapwindow, d"
+
+		"$mainMod ALT, l, resizeactive, 10 0"
+        "$mainMod ALT, h, resizeactive, -10 0"
+        "$mainMod ALT, k, resizeactive, 0 -10"
+        "$mainMod ALT, j, resizeactive, 0 10"
         
         # Fullscreen, tiled, etc."
         "SUPER_SHIFT, f, fullscreen,"
