@@ -41,6 +41,11 @@
 			  " "
 			];
         };
+        "clock" = {
+            # "timezone" = "America/New_York";
+            tooltip-format = <big>{ =%Y %B}</big>\n<tt><small>{calendar}</small></tt>;
+            format-alt = { =%Y-%m-%d};
+        };
       };
       secondBar = {
         layer = "top";
