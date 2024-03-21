@@ -27,7 +27,10 @@
         position = "top";
         height = 30;
         output = [
-          "!HDMI-A-1"
+          "eDP-1"
+          "DP-1"
+          "DP-4"
+          "DP-5"
         ];
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
         modules-center = [ "hyprland/window" ];
@@ -36,6 +39,20 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
+        };
+        "battery" = {
+            "states" = {
+                good = 95;
+                warning = 30;
+                critical = 15;
+            };
+            format = "{icon} {capacity}%";
+            format-charging = " {capacity}%";
+            format-plugged = " {capacity}%";
+            format-alt = "{icon} {time}";
+            # format-good = ; # An empty format will hide the module
+            # format-full = ;
+            #format-icons = [         ];
         };
       };
 	};
