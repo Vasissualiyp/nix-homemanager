@@ -16,7 +16,7 @@
         modules-center = [ "hyprland/window" ];
         modules-right = [ "mpd" "battery" "clock" "temperature" ];
 
-        "sway/workspaces" = {
+        "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
         };
@@ -33,7 +33,7 @@
         modules-center = [ "hyprland/window" ];
         modules-right = [ "mpd" "battery" "clock" "temperature" ];
 
-        "sway/workspaces" = {
+        "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
         };
