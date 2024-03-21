@@ -52,7 +52,7 @@
             format = "{icon} {percent}%";
             format-icons = ["" "" "" "" "" "" "" "" ""];
         };
-        pulseaudio = {
+        "pulseaudio" = {
             # scroll-step = 1; # %, can be a float
             format = "{icon} {volume}% {format_source}";
             format-bluetooth = " {icon} {volume}% {format_source}";
@@ -70,6 +70,10 @@
                 default = ["" "" ""];
             };
             #on-click = pavucontrol;
+        };
+        "tray" = {
+            # "icon-size" = 21;
+            spacing = 5;
         };
         "network" = {
             # interface = wlp2*; # (Optional) To force the use of this interface
