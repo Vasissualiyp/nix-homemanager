@@ -157,15 +157,15 @@ in
         "ALT_SHIFT_CTRL, k, movefocus, u"
         "ALT_SHIFT_CTRL, j, movefocus, d"
         
-        # Swap window in given direction"
+        # Swap window in given direction
         "ALT_SHIFT_CTRL_SUPER, h, swapwindow, l"
         "ALT_SHIFT_CTRL_SUPER, l, swapwindow, r"
         "ALT_SHIFT_CTRL_SUPER, k, swapwindow, u"
         "ALT_SHIFT_CTRL_SUPER, j, swapwindow, d"
 
-        # Move window in given direction"
-        "SUPER_CTRL, left, movewindow, mon:-1"
-        "SUPER_CTRL, right, movewindow, mon:+1"
+        # Move window in given direction
+        "CTRL_SUPER, left, movewindow, mon:l"
+        "CTRL_SUPER, right, movewindow, mon:r"
 
 		# Resizing
 		"$mainMod ALT, l, resizeactive, 30 0"
