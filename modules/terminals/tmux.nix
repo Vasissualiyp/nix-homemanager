@@ -53,9 +53,9 @@
       set -g mouse on
 
       # For tmux resurrect
+	  set -g @continuum-restore 'on'
 	  set -g @resurrect-strategy-vim 'session'
       set -g @resurrect-strategy-nvim 'session'
-
       set -g @resurrect-capture-pane-contents 'on'
       resurrect_dir="$HOME/.tmux/resurrect"
       set -g @resurrect-dir $resurrect_dir
