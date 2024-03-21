@@ -22,7 +22,7 @@
       "HDMI-1-0,1920x1080,3760x0,1,transform,1"
       "DP-1,1600x1200,5920x960,1,transform,1"
       "DP-1-1.8,1920x1080,7120x1120,1"
-      ]
+      ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
