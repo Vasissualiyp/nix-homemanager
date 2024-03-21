@@ -43,8 +43,9 @@
         };
         "clock" = {
             # "timezone": "America/New_York",
+			format = "󰥔 {%H:%M:%S}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-            format-alt = "{:%Y-%m-%d}";
+            format-alt = " {:%Y-%m-%d}";
         };
         "backlight" = {
             # device = acpi_video1;
