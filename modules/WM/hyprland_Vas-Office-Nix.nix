@@ -1,6 +1,11 @@
 { pkgs, lib, ... }:
 
 {
+  xdg.portal = { 
+    enable = true; 
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
+	config.common.default = "*";
+  };
   wayland.windowManager.hyprland = {
     enable = true;
 	
@@ -12,8 +17,10 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun";
-      #"env" = "XCURSOR_SIZE,24";
-      "env" = "QT_QPA_PLATFORMTHEME,qt5ct";
+	  env = [
+        "XCURSOR_SIZE,24"
+        "QT_QPA_PLATFORMTHEME,qt5ct"
+	  ];
       input = {
           "kb_layout" = "us";
           #"kb_variant" = ";
@@ -164,8 +171,8 @@
         "$mainMod, mouse_up, workspace, e-1"
         
         # Move/resize windows with mainMod + LMB/RMB and dragging"
-        "bindm = $mainMod, mouse:272, movewindow"
-        "bindm = $mainMod, mouse:273, resizewindow"
+        #"bindm = $mainMod, mouse:272, movewindow"
+        #"bindm = $mainMod, mouse:273, resizewindow"
       ];
 	};
   };
