@@ -4,104 +4,104 @@
   wayland.windowManager.hyprland = {
     enable = true;
 	
-    #"monitor" = ",preferred,auto,auto";
-    "monitor" = "eDP-1,2560x1600@165,0x0,2";
-
-    "$terminal" = "kitty";
-    "$fileManager" = "dolphin";
-    "$menu" = "rofi -show drun";
-    #"env" = "XCURSOR_SIZE,24";
-    "env" = "QT_QPA_PLATFORMTHEME,qt5ct";
-    input = {
-        "kb_layout" = "us";
-        #"kb_variant" = ";
-        #"kb_model" = ";
-        #"kb_options" = ";
-        #"kb_rules" = ";
-    
-        "follow_mouse" = "1";
-    
-        #"touchpad {
-        #    "natural_scroll = no";
-        #}";
-    
-        "sensitivity" = "0"; # -1.0 - 1.0, 0 means no modification.";
-    };
-    
-    general = {
-        # Variables
-
-        "gaps_in" = "5";
-        "gaps_out" = "20";
-        "border_size" = "2";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-    
-        "layout" = "dwindle";
-    
-        # Tearing
-        "allow_tearing" = "false";
-    };
-    
-    decoration = {
-        # Variables
-    
-        "rounding" = "10";
-        
-        blur = {
-            "enabled" = "true";
-            "size" = "3";
-            "passes" = "1";
-        };
-    
-        "drop_shadow" = "yes";
-        "shadow_range" = "4";
-        "shadow_render_power" = "3";
-        "col.shadow" = "rgba(1a1a1aee)";
-    };
-    
-    animations = {
-        "enabled" = "yes";
-    
-        # Animations
-    
-        "bezier" = "myBezier, 0.05, 0.9, 0.1, 1.05";
-		animation = [
-         "windows, 1, 7, myBezier"
-         "windowsOut, 1, 7, default, popin 80%"
-         "border, 1, 10, default"
-         "borderangle, 1, 8, default"
-         "fade, 1, 7, default"
-         "workspaces, 1, 6, default"
-		];
-    };
-    
-    dwindle = {
-        # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more";
-        "pseudotile" = "yes";
-        "preserve_split" = "yes";
-        "force_split" = "0";
-    
-    };
-    
-    master = {
-        # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more";
-        "new_is_master" = "true";
-    };
-    
-    gestures = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more";
-        "workspace_swipe" = "on";
-    };
-    
-    misc = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more";
-        "force_default_wallpaper" = "1";
-    };
-    
-    "$mainMod" = "SUPER";
 
 	settings = {
+      #"monitor" = ",preferred,auto,auto";
+      "monitor" = "eDP-1,2560x1600@165,0x0,2";
+
+      "$terminal" = "kitty";
+      "$fileManager" = "dolphin";
+      "$menu" = "rofi -show drun";
+      #"env" = "XCURSOR_SIZE,24";
+      "env" = "QT_QPA_PLATFORMTHEME,qt5ct";
+      input = {
+          "kb_layout" = "us";
+          #"kb_variant" = ";
+          #"kb_model" = ";
+          #"kb_options" = ";
+          #"kb_rules" = ";
+      
+          "follow_mouse" = "1";
+      
+          #"touchpad {
+          #    "natural_scroll = no";
+          #}";
+      
+          "sensitivity" = "0"; # -1.0 - 1.0, 0 means no modification.";
+      };
+      
+      general = {
+          # Variables
+
+          "gaps_in" = "5";
+          "gaps_out" = "20";
+          "border_size" = "2";
+          "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          "col.inactive_border" = "rgba(595959aa)";
+      
+          "layout" = "dwindle";
+      
+          # Tearing
+          "allow_tearing" = "false";
+      };
+      
+      decoration = {
+          # Variables
+      
+          "rounding" = "10";
+          
+          blur = {
+              "enabled" = "true";
+              "size" = "3";
+              "passes" = "1";
+          };
+      
+          "drop_shadow" = "yes";
+          "shadow_range" = "4";
+          "shadow_render_power" = "3";
+          "col.shadow" = "rgba(1a1a1aee)";
+      };
+      
+      animations = {
+          "enabled" = "yes";
+      
+          # Animations
+      
+          "bezier" = "myBezier, 0.05, 0.9, 0.1, 1.05";
+	  	animation = [
+           "windows, 1, 7, myBezier"
+           "windowsOut, 1, 7, default, popin 80%"
+           "border, 1, 10, default"
+           "borderangle, 1, 8, default"
+           "fade, 1, 7, default"
+           "workspaces, 1, 6, default"
+	  	];
+      };
+      
+      dwindle = {
+          # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more";
+          "pseudotile" = "yes";
+          "preserve_split" = "yes";
+          "force_split" = "0";
+      
+      };
+      
+      master = {
+          # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more";
+          "new_is_master" = "true";
+      };
+      
+      gestures = {
+          # See https://wiki.hyprland.org/Configuring/Variables/ for more";
+          "workspace_swipe" = "on";
+      };
+      
+      misc = {
+          # See https://wiki.hyprland.org/Configuring/Variables/ for more";
+          "force_default_wallpaper" = "1";
+      };
+      
+      "$mainMod" = "SUPER";
       bind = [     
         # See Binds
         "CTRL_SUPER_ALT, T, exec, $terminal"
