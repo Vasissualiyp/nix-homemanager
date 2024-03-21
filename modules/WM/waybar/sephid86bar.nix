@@ -16,8 +16,6 @@
         # Choose the order of the modules
         modules-left = ["hyprland/workspaces" "hyprland/mode" "hyprland/scratchpad" "custom/media"];
         modules-center = ["hyprland/window"];
-        # "modules-right" = ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"];
-        #modules-right = ["mpd" "idle_inhibitor" "temperature" "cpu" "memory""network" "pulseaudio" "backlight" "keyboard-state" "battery" "battery#bat2" "tray" "clock"];
         modules-right = ["network" "pulseaudio" "backlight" "keyboard-state" "battery" "tray" "clock"];
         # Modules configuration
          "hyprland/workspaces" = {
@@ -56,28 +54,28 @@
             tooltip-format = {app} = {title};
         };
         "mpd" = {
-    #        "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M =%S}/{totalTime =%M =%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-            "format" = "  {title} - {artist} {stateIcon} [{elapsedTime =%M =%S}/{totalTime =%M =%S}] {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}[{songPosition}/{queueLength}] [{volume}%]";
-            "format-disconnected" = " Disconnected";
-            "format-stopped" = " {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped";
-            "unknown-tag" = "N/A";
-            "interval" = 2;
+    #        format = {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M =%S}/{totalTime =%M =%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ;
+            format =   {title} - {artist} {stateIcon} [{elapsedTime =%M =%S}/{totalTime =%M =%S}] {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}[{songPosition}/{queueLength}] [{volume}%];
+            format-disconnected =  Disconnected;
+            format-stopped =  {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped;
+            unknown-tag = N/A;
+            interval = 2;
             "consume-icons" = {
-                "on" = " ";
+                on =  ;
             };
             "random-icons" = {
-    #            "off" = "<span color=\"#f53c3c\"></span> ";
-                "on" = " ";
+    #            off = <span color=\#f53c3c\></span> ;
+                on =  ;
             };
             "repeat-icons" = {
-                "on" = " ";
+                on =  ;
             };
             "single-icons" = {
-                "on" = "1 ";
+                on = 1 ;
             };
             "state-icons" = {
-                "paused" = "";
-                "playing" = "";
+                paused = ;
+                playing = ;
             };
             "tooltip-format" = "MPD (connected)";
             "tooltip-format-disconnected" = "MPD (disconnected)";
