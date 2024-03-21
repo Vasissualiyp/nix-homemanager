@@ -40,8 +40,8 @@ let
     xopdf = "$HOME/scripts/custom_docs_editing/xopdf.sh";
     note = "$HOME/Software/Noterius/bin/note.sh";
     cdp="~/Software/Citerius/bin/download_paper.sh";
-    cfp="~/Software/Citerius/bin/fuzzy_find_paper.sh";
-    cfe="~/Software/Citerius/bin/fuzzy_find_eqns_figs.sh";
+    cfp="~/Software/Citerius/bin/fuzzy_find_paper_wrapper.sh";
+    cfe="~/Software/Citerius/bin/fuzzy_find_eqns_figs_wrapper.sh";
     bslt = "$HOME/scripts/bspwm_scripts/bspwm-layouts.sh";
   };
 
