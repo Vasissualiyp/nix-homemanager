@@ -4,7 +4,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
 	
-    "monitor" = ",preferred,auto,auto";
+    #"monitor" = ",preferred,auto,auto";
+    "monitor" = "eDP-1,2560x1600@165,0x0,2"
 
     "$terminal" = "kitty";
     "$fileManager" = "dolphin";
