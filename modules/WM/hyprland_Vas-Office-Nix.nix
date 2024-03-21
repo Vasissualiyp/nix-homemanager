@@ -17,11 +17,12 @@
       #"monitor" = ",preferred,auto,auto";
       #"monitor" = "eDP-1,2560x1600@165,0x0,2";
 	  " monitor" = [
-	  "eDP-1,2560x1600,0x1120,1"
-      "DP-5,1920x1200,2560x960,1,transform,1"
-      "HDMI-A-1,2560x1440,3760x0,1,transform,1"
-      "DP-1,1920x1200,5920x960,1,transform,1"
-      "DP-4,1920x1080,7120x1120,1"
+	  "eDP-1,2560x1600,0x560,2"
+      "DP-5,1920x1200,1280x0,1,transform,1"
+      #"HDMI-A-1,2560x1440,3760x0,1,transform,1"
+      "HDMI-A-1,3840x2160,2480x0,2,transform,1"
+      "DP-1,1920x1200,3560x0,1,transform,1"
+      "DP-4,1920x1080,4760x420,1"
       ];
 
       "$terminal" = "kitty";
