@@ -9,6 +9,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
 	
+	plugins = [
+      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+    ];
 
 	settings = {
       #"monitor" = ",preferred,auto,auto";
@@ -174,6 +177,17 @@
         #"bindm = $mainMod, mouse:272, movewindow"
         #"bindm = $mainMod, mouse:273, resizewindow"
       ];
+
+	  "plugin:hyprshade" = {
+        [[shades]]
+        name = "vibrance"
+        default = true  # shader to use during times when there is no other shader scheduled
+        
+        [[shades]]
+        name = "blue-light-filter"
+        start_time = 19:00:00
+        end_time = 06:00:00 
+	  };
 	};
   };
 }
