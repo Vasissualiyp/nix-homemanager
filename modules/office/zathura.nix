@@ -3,71 +3,68 @@
 {
   programs.zathura = {
     enable = true;
+	set = {
+      zoom-min = 10;
+     
+      # One page per row by default;
+      pages-per-row = 1;
+     
+      #stop = at page boundries;
+      scroll-page-aware = "true";
+      smooth-scroll = "true";
+      scroll-full-overlap = 0.01;
+      scroll-step = 100;
+     
+      #zoom = settings;
+      zoom-min = 10;
+      guioptions = "";
+     
+      # zathurarc-dark;
+     
+      font = "inconsolata 15";
+      default-bg = "#000000" #00;
+      default-fg = "#F7F7F6" #01;
+     
+      statusbar-fg = "#B0B0B0" #04;
+      statusbar-bg = "#202020" #01;
+     
+      inputbar-bg = "#151515" #00 currently not used;
+      inputbar-fg = "#FFFFFF" #02;
+     
+      notification-error-bg = "#AC4142" #08;
+      notification-error-fg = "#151515" #00;
+     
+      notification-warning-bg = "#AC4142" #08;
+      notification-warning-fg = "#151515" #00;
+     
+      highlight-color = "#F4BF75" #0A;
+      highlight-active-color = "#ffffff" #0D;
+      highlight-transparency = 0.1;
+     
+      completion-highlight-fg = "#151515" #02;
+      completion-highlight-bg = "#90A959" #0C;
+     
+      completion-bg = "#303030" #02;
+      completion-fg = "#E0E0E0" #0C;
+     
+      notification-bg = "#90A959" #0B;
+      notification-fg = "#151515" #00;
+     
+      recolor = "true";
+      recolor-lightcolor = "#000000" #00;
+      recolor-darkcolor = "#E0E0E0" #06;
+      recolor-reverse-video = "true";
+      recolor-keephue = "true";
+     
+      render-loading = "false";
+      scroll-step = 50;
+	};
 
     extraConfig = ''
-    set zoom-min 10
-    
-    
-    # One page per row by default
-    set pages-per-row 1
-    
-    #stop at page boundries
-    set scroll-page-aware "true"
-    set smooth-scroll "true"
-    set scroll-full-overlap 0.01
-    set scroll-step 100
-    
-    #zoom settings
-    set zoom-min 10
-    set guioptions ""
-    
-    # zathurarc-dark
-    
-    set font "inconsolata 15"
-    set default-bg "#000000" #00
-    set default-fg "#F7F7F6" #01
-    
-    set statusbar-fg "#B0B0B0" #04
-    set statusbar-bg "#202020" #01
-    
-    set inputbar-bg "#151515" #00 currently not used
-    set inputbar-fg "#FFFFFF" #02
-    
-    set notification-error-bg "#AC4142" #08
-    set notification-error-fg "#151515" #00
-    
-    set notification-warning-bg "#AC4142" #08
-    set notification-warning-fg "#151515" #00
-    
-    set highlight-color "#F4BF75" #0A
-    set highlight-active-color "#ffffff" #0D
-    set highlight-transparency 0.1
-    
-    set completion-highlight-fg "#151515" #02
-    set completion-highlight-bg "#90A959" #0C
-    
-    set completion-bg "#303030" #02
-    set completion-fg "#E0E0E0" #0C
-    
-    set notification-bg "#90A959" #0B
-    set notification-fg "#151515" #00
-    
-    set recolor "true"
-    set recolor-lightcolor "#000000" #00
-    set recolor-darkcolor "#E0E0E0" #06
-    set recolor-reverse-video "true"
-    set recolor-keephue "true"
-    
-    
-    set render-loading "false"
-    set scroll-step 50
-    unmap f
-    map f toggle_fullscreen
-    map gr set recolor
-    map [fullscreen] f toggle_fullscreen
-    
-    
-
+    #unmap f
+    #map f toggle_fullscreen
+    #map gr set recolor
+    #map [fullscreen] f toggle_fullscreen
     '';
 
   };
