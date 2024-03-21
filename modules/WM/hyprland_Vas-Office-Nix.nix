@@ -77,7 +77,7 @@
     };
     
     dwindle = {
-        "# See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more";
+        # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more";
         "pseudotile" = "yes";
         "preserve_split" = "yes";
         "force_split" = "0";
@@ -85,17 +85,17 @@
     };
     
     master = {
-        "# See https://wiki.hyprland.org/Configuring/Master-Layout/ for more";
+        # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more";
         "new_is_master" = "true";
     };
     
     gestures = {
-        "# See https://wiki.hyprland.org/Configuring/Variables/ for more";
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more";
         "workspace_swipe" = "on";
     };
     
     misc = {
-        "# See https://wiki.hyprland.org/Configuring/Variables/ for more";
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more";
         "force_default_wallpaper" = "1";
     };
     
