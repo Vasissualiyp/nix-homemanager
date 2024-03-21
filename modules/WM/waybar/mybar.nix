@@ -15,7 +15,7 @@
         ];
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "network" "pulseaudio" "backlight" "keyboard-state" "battery" "tray" "clock" ];
+        modules-right = [ "network" "pulseaudio" "backlight" "keyboard-state" "battery" "tray" "clock" "date" ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -42,9 +42,12 @@
 			];
         };
         "clock" = {
-            # "timezone": "America/New_York",
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-            format-alt = "{:%Y-%m-%d}";
+            #format-alt = "{:%Y-%m-%d}";
+        };
+        "date" = {
+            tooltip-format = "<big>{:%Y-%m-%d}</big>\n<tt><small>{calendar}</small></tt>";
+            #format-alt = "{:%Y-%m-%d}";
         };
       };
       secondBar = {
