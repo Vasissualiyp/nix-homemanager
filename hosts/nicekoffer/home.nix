@@ -21,7 +21,7 @@ in
 
   imports = [
     bashModule
-    (import ../../modules/WM/hyprland_Vas-Office-Nix.nix { inherit pkgs; inherit inputs; })    zathuraModule
+	hyprlandModule
     bspwmModule
     kittyModule
     nvimModule

@@ -10,7 +10,7 @@
     enable = true;
 	
 	plugins = [
-      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      inputs.hyprland-plugins.packages."${pkgs.system}".hyprshade
     ];
 
 	settings = {
