@@ -1,5 +1,12 @@
 { pkgs, inputs, ... }:
 
+let 
+  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.waybar}/bin/waybar &
+	${pkgs.dunst}/bin/dunst
+  '';
+
+in
 {
   xdg.portal = { 
     enable = true; 
@@ -197,18 +204,8 @@
         #"bindm = $mainMod, mouse:273, resizewindow"
       ];
 
-	  #"plugin:hyprshade" = {
-      #  extraConfig = ''
-	  #  [[shades]]
-      #  name = "vibrance"
-      #  default = true  # shader to use during times when there is no other shader scheduled
-      #  
-      #  [[shades]]
-      #  name = "blue-light-filter"
-      #  start_time = 19:00:00
-      #  end_time = 06:00:00 
-	  #  '';
-	  #};
+	  exec-once = ''${startupScript}/bin/start'';
+
 	};
   };
 }
