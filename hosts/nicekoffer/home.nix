@@ -3,6 +3,7 @@
 let 
   bashModule = import ../../modules/terminals/bash.nix;
   hyprlandModule = (import ../../modules/WM/hyprland_Vas-Office-Nix.nix { inherit pkgs; inherit inputs; });
+  waybarModule = (import ../../modules/WM/waybar.nix { inherit pkgs; });
   zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
@@ -22,6 +23,7 @@ in
   imports = [
     bashModule
 	hyprlandModule
+	waybarModule
     bspwmModule
     kittyModule
     nvimModule
