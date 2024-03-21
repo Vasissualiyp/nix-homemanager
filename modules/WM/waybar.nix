@@ -14,7 +14,7 @@
         ];
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "mpd" "battery" "calendar" "clock" "temperature" ];
+        modules-right = [ "mpd" "battery" "temperature" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
