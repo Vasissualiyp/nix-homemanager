@@ -2,7 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
-  hyprlandModule = import ../../modules/WM/hyprland_Vas-Office-Nix.nix;
+  hyprlandModule = (import ../../modules/WM/hyprland_Vas-Office-Nix.nix {inherit inputs; });
   zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
