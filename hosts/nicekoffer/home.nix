@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;

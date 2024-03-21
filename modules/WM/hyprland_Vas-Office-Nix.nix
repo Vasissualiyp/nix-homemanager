@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   xdg.portal = { 
@@ -179,7 +179,8 @@
       ];
 
 	  "plugin:hyprshade" = {
-        [[shades]]
+        extraConfig = ''
+		[[shades]]
         name = "vibrance"
         default = true  # shader to use during times when there is no other shader scheduled
         
@@ -187,6 +188,7 @@
         name = "blue-light-filter"
         start_time = 19:00:00
         end_time = 06:00:00 
+		'';
 	  };
 	};
   };
