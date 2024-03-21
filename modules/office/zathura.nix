@@ -3,7 +3,7 @@
 {
   programs.zathura = {
     enable = true;
-	set = {
+	options = {
       zoom-min = 10;
      
       # One page per row by default;
@@ -60,10 +60,13 @@
       scroll-step = 50;
 	};
 
+	mappings = {
+      gr = "set recolor";
+	};
+
     extraConfig = ''
     #unmap f
     #map f toggle_fullscreen
-    #map gr set recolor
     #map [fullscreen] f toggle_fullscreen
     '';
 
