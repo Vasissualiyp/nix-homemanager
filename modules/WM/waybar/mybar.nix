@@ -10,7 +10,7 @@
         spacing = 4; 
         height = 20;
         output = [
-          #"eDP-1"
+          "eDP-1"
           "HDMI-A-1"
         ];
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
@@ -90,7 +90,7 @@
         position = "top";
         height = 20;
         output = [
-          "eDP-1"
+          #"eDP-1"
           "DP-1"
           "DP-4"
           "DP-5"
