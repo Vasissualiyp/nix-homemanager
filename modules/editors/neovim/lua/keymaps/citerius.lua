@@ -53,10 +53,42 @@ function _G.fuzzy_find_paper()
                 end
                 -- Extracting and cleaning the 5th column from the selected line
                 local label = fields[5]:gsub('^"', ''):gsub('"$', '')
-                print(label)
+                vim.g.selected_paper_label = label -- Set the global variable
                 actions.close(prompt_bufnr)
             end)
             return true
         end,
     }):find()
+end
+
+function _G.execute_fuzzy_find_eqns_figs()
+    if vim.g.selected_paper_label then
+        local parent_dir = os.getenv("HOME") .. '/research/references'
+        local script_path = '/home/vasilii/Software/Citerius/bin/fuzzy_find_eqns_figs.sh'
+		local command = string.format('%s %s %s', script_path, parent_dir, vim.g.selected_paper_label)
+		--local command = string.format('bash -c \'%s "%s" "%s"\'', script_path, parent_dir, vim.g.selected_paper_label)
+        
+        -- Execute the command and capture its output
+        --local output = vim.fn.system(command)
+
+        -- Check for an error in the system call
+        local output = vim.fn.system(command)
+        print("Output: " .. output)
+        if vim.v.shell_error ~= 0 then
+            print("Error executing command. Shell error code: ", vim.v.shell_error)
+        else
+            print("Command executed successfully.")
+        end
+        if vim.v.shell_error ~= 0 then
+            print("Error executing command: " .. command)
+        else
+            print("Command output: " .. output)
+        end
+
+        -- Optionally clear the global variable after use
+        vim.g.selected_paper_label = nil
+
+    else
+        print("No label has been selected.")
+    end
 end
