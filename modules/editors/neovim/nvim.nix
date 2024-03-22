@@ -34,7 +34,7 @@ in
 
       ${builtins.readFile ./lua/keymaps/inkscape.lua}
       ${builtins.readFile ./lua/keymaps/citerius.lua}
-      vim.cmd('source ~/.dotfiles/nvim/vimscript/citerius.vim')
+      --vim.cmd('source ~/.dotfiles/nvim/vimscript/citerius.vim')
     '';
 
     extraPython3Packages = ps: with ps; [

@@ -1,40 +1,15 @@
 --local references_dir = vim.fn.expand('~/research/references')
-vim.g.citerius_references_dir = '~/research/references'
---vim.g.citerius_git_url = 'git@github.com:Vasissualiyp/citeriustest.git'
+--vim.g.citerius_references_dir = '~/research/references'
+function _G.fuzzy_find_paper()
+    local Path = require('plenary.path')
+    local pickers = require('telescope.pickers')
+    local finders = require('telescope.finders')
+    local conf = require('telescope.config').values
+    local action_state = require('telescope.actions.state')
+    local actions = require('telescope.actions')
 
---require('citerius-vim.citerius_telescope').setup({
---  references_dir = vim.g.citerius_references_dir,
---})
---
----- Citerius note management keybinds
---vim.keymap.set('n', '<leader>N' , ':CiteriusToday<CR>', { noremap = true, silent = true })
---vim.keymap.set('n', '<leader>nc', ':CiteriusCleanup<CR>', { noremap = true, silent = true })
---vim.keymap.set('n', '<leader>n?', ':DisplayCiteriusQuickhelp<CR>', { noremap = true, silent = true })
---
----- Telescope integration keybinds
---local citerius_telescope = require('citerius-vim.citerius_telescope')
---vim.keymap.set('n','<leader>ng', citerius_telescope.grep_references)
---vim.keymap.set('n','<leader>nf', citerius_telescope.search_references)
---
----- Initialize citerius. MUST BE INCLUDED AFTER the definitions of global variables!
---require('citerius-vim.init').setup({
---  references_dir = '~/research/references',
---  author = 'Vasilii Pustovoit',
---  citerius_integration = 1,
---  citerius_src_dir = '~/research/references',
---})
-
-local M = {}
-
-local Path = require('plenary.path')
-local pickers = require('telescope.pickers')
-local finders = require('telescope.finders')
-local conf = require('telescope.config').values
-local action_state = require('telescope.actions.state')
-local actions = require('telescope.actions')
-
-local function M.fuzzy_find_paper()
-    local parent_dir = vim.g.citerius_references_dir
+	local home = os.getenv("HOME")
+    local parent_dir = home .. '/research/references'
     local csv_file = Path:new(parent_dir):joinpath("papers.csv"):absolute()
     local file = io.open(csv_file, "r")
     if not file then
@@ -42,7 +17,6 @@ local function M.fuzzy_find_paper()
         return
     end
 
-    -- Skipping the header and parsing the CSV
     local lines = {}
     local header_skipped = false
     for line in file:lines() do
@@ -53,14 +27,12 @@ local function M.fuzzy_find_paper()
             for field in line:gmatch('([^,]+)') do
                 table.insert(fields, field)
             end
-            -- Assuming the fifth column contains the label with double quotes
             local label = fields[5]:gsub('^"', ''):gsub('"$', '')
             table.insert(lines, label)
         end
     end
     file:close()
 
-    -- Using Telescope to pick a line
     pickers.new({}, {
         prompt_title = "Select Paper",
         finder = finders.new_table({
@@ -84,5 +56,3 @@ local function M.fuzzy_find_paper()
         end,
     }):find()
 end
-
-return M
