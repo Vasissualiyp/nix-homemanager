@@ -24,6 +24,7 @@ vim.g.citerius_references_dir = '~/research/references'
 --  citerius_src_dir = '~/research/references',
 --})
 
+local M = {}
 
 local Path = require('plenary.path')
 local pickers = require('telescope.pickers')
@@ -32,7 +33,7 @@ local conf = require('telescope.config').values
 local action_state = require('telescope.actions.state')
 local actions = require('telescope.actions')
 
-local function fuzzy_find_paper()
+local function M.fuzzy_find_paper()
     local parent_dir = vim.g.citerius_references_dir
     local csv_file = Path:new(parent_dir):joinpath("papers.csv"):absolute()
     local file = io.open(csv_file, "r")
@@ -84,3 +85,4 @@ local function fuzzy_find_paper()
     }):find()
 end
 
+return M
