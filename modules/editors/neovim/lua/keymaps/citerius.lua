@@ -1,14 +1,17 @@
 --local references_dir = vim.fn.expand('~/research/references')
 --vim.g.citerius_references_dir = '~/research/references'
-function _G.fuzzy_find_paper(callback)
+vim.g.citerius_references_dir = os.getenv("HOME") .. '/research/references'
+
+
+--Extract field id from the csv file using telescope
+function _G.fuzzy_find_paper(callback,field_id)
     local pickers = require('telescope.pickers')
     local finders = require('telescope.finders')
     local conf = require('telescope.config').values
     local action_state = require('telescope.actions.state')
     local actions = require('telescope.actions')
 
-    local home = os.getenv("HOME")
-    local parent_dir = home .. '/research/references'
+    local parent_dir = vim.g.citerius_references_dir
     local csv_file = parent_dir .. "/papers.csv"
     local file = io.open(csv_file, "r")
     if not file then
@@ -39,7 +42,7 @@ function _G.fuzzy_find_paper(callback)
                 local selection = action_state.get_selected_entry()
                 if selection and callback then
                     local fields = vim.split(selection.value, ",")
-                    local label = fields[5]:gsub('^"', ''):gsub('"$', '')
+                    local label = fields[field_id]:gsub('^"', ''):gsub('"$', '')
                     vim.schedule(function() callback(label) end)
                 end
             end)
@@ -49,7 +52,7 @@ function _G.fuzzy_find_paper(callback)
 end
 
 function _G.execute_fuzzy_find_eqns_figs(label)
-    local parent_dir = os.getenv("HOME") .. '/research/references'
+    local parent_dir = vim.g.citerius_references_dir
     local script_path = '/home/vasilii/Software/Citerius/bin/fuzzy_find_eqns_figs.sh'
 
     -- Prompt the user for additional input in Neovim's command line
@@ -69,8 +72,38 @@ function _G.execute_fuzzy_find_eqns_figs(label)
     vim.api.nvim_put(lines, '', true, true)
 end
 
+function _G.open_tex_document(label)
+    local parent_dir = vim.g.citerius_references_dir
+    local target_dir = parent_dir .. '/' .. label .. '/src'
+
+    -- Use 'io.popen' with 'ls' or 'find' to list '.tex' files in the target directory
+    -- Adjust the command according to your operating system if necessary
+    local command = 'ls ' .. target_dir .. '/*.tex'  -- This is for Unix-like systems
+    local handle = io.popen(command, 'r')
+    if not handle then
+        print('Failed to open directory: ' .. target_dir)
+        return
+    end
+
+    local tex_files = {}
+    for file in handle:lines() do
+        table.insert(tex_files, file)
+    end
+    handle:close()
+
+    -- Check if there's exactly one .tex file
+    if #tex_files == 1 then
+        -- Open the .tex file in a new tab
+        vim.cmd('tabnew ' .. tex_files[1])
+    elseif #tex_files > 1 then
+        print('More than one .tex file found in ' .. target_dir)
+    else
+        print('No .tex file found in ' .. target_dir)
+    end
+end
+
 function _G.fuzzy_find_eqns_figs()
-    _G.fuzzy_find_paper(_G.execute_fuzzy_find_eqns_figs)
+    _G.fuzzy_find_paper(_G.execute_fuzzy_find_eqns_figs,5)
 end
 
 -- Paste the label at the cursor position
@@ -78,5 +111,10 @@ function _G.paste_label(label)
     vim.api.nvim_put({label}, 'c', true, true)
 end
 function _G.fuzzy_find_paste_label()
-    _G.fuzzy_find_paper(_G.paste_label)
+    _G.fuzzy_find_paper(_G.paste_label,5)
+end
+
+-- Open source tex file
+function _G.open_paper_src()
+    _G.fuzzy_find_paper(_G.open_tex_document,5)
 end
