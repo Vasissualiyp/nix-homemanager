@@ -10,7 +10,7 @@
 	
     temperature = {
       day = 6500;
-      night = 1000;
+      night = 2500;
     };
   };
 }
