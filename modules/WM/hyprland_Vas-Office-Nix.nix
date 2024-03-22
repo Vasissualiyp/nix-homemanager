@@ -24,7 +24,8 @@ in
       #"monitor" = ",preferred,auto,auto";
       #"monitor" = "eDP-1,2560x1600@165,0x0,2";
 	  " monitor" = [
-	    "eDP-1,2560x1600@60,0x560,2"
+	    "eDP-1,2560x1600@60,-256x180,1.6666666666666666666666"
+	    #"eDP-1,2560x1600@60,0x560,2"
         "DP-5,1920x1200,1280x0,1,transform,1"
         "HDMI-A-1,3840x2160@60,2480x0@60,2,transform,1"
         "DP-1,1920x1200,3560x0,1,transform,1"
