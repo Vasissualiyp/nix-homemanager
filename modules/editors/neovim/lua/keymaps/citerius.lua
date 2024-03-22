@@ -72,13 +72,10 @@ function _G.execute_fuzzy_find_eqns_figs(label)
     vim.api.nvim_put(lines, '', true, true)
 end
 
-function _G.open_tex_document(label)
+function _G.open_tex_document(label, mode)
     local parent_dir = vim.g.citerius_references_dir
     local target_dir = parent_dir .. '/' .. label .. '/src'
-
-    -- Use 'io.popen' with 'ls' or 'find' to list '.tex' files in the target directory
-    -- Adjust the command according to your operating system if necessary
-    local command = 'ls ' .. target_dir .. '/*.tex'  -- This is for Unix-like systems
+    local command = 'ls ' .. target_dir .. '/*.tex'
     local handle = io.popen(command, 'r')
     if not handle then
         print('Failed to open directory: ' .. target_dir)
@@ -91,12 +88,24 @@ function _G.open_tex_document(label)
     end
     handle:close()
 
-    -- Check if there's exactly one .tex file
+    -- Function to open file based on mode
+    local function open_file(file)
+        if mode == "tab" then
+            vim.cmd('tabnew ' .. file)
+        elseif mode == "split" then
+            vim.cmd('split ' .. file)
+        else -- Default mode :n
+            vim.cmd('edit ' .. file)
+        end
+    end
+
+    -- Selecting and opening the file
     if #tex_files == 1 then
-        -- Open the .tex file in a new tab
-        vim.cmd('tabnew ' .. tex_files[1])
+        open_file(tex_files[1])
     elseif #tex_files > 1 then
-        print('More than one .tex file found in ' .. target_dir)
+        vim.ui.select(tex_files, {prompt = 'Select a file:'}, function(choice)
+            if choice then open_file(choice) end
+        end)
     else
         print('No .tex file found in ' .. target_dir)
     end
@@ -114,7 +123,10 @@ function _G.fuzzy_find_paste_label()
     _G.fuzzy_find_paper(_G.paste_label,5)
 end
 
--- Open source tex file
-function _G.open_paper_src()
-    _G.fuzzy_find_paper(_G.open_tex_document,5)
+-- Open source tex file. 
+-- Modes: "tab", "split", none (would do :n <src>)
+function _G.open_paper_src(mode)
+    _G.fuzzy_find_paper(function(label)
+        _G.open_tex_document(label, mode)
+    end, 5) -- Assuming field_id 5 contains the label
 end
