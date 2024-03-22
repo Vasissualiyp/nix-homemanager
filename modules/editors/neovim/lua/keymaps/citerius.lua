@@ -17,8 +17,13 @@ function _G.fuzzy_find_paper(callback)
     end
 
     local lines = {}
+    local is_header = true  -- Flag to skip the first line
     for line in file:lines() do
-        table.insert(lines, line)
+        if not is_header then
+            table.insert(lines, line)
+        else
+            is_header = false  -- After the first iteration, set this to false
+        end
     end
     file:close()
 
@@ -66,4 +71,12 @@ end
 
 function _G.fuzzy_find_eqns_figs()
     _G.fuzzy_find_paper(_G.execute_fuzzy_find_eqns_figs)
+end
+
+-- Paste the label at the cursor position
+function _G.paste_label(label)
+    vim.api.nvim_put({label}, 'c', true, true)
+end
+function _G.fuzzy_find_paste_label()
+    _G.fuzzy_find_paper(_G.paste_label)
 end
