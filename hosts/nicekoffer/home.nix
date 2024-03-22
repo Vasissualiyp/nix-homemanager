@@ -11,6 +11,7 @@ let
   latexModule = import ../../modules/latex/latex.nix;
   tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
+  gammastepModule = import ../../modules/system/gammastep.nix;
   pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; });
 in
 
@@ -28,7 +29,7 @@ in
     kittyModule
     nvimModule
     tmuxModule
-    redshiftModule
+    gammastepModule
     #latexModule
     #pythonshelllibModule 
   ];
