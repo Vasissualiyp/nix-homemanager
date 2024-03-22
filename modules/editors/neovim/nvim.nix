@@ -33,7 +33,8 @@ in
       ${builtins.readFile ./lua/plugins/treesitter.lua}
 
       ${builtins.readFile ./lua/keymaps/inkscape.lua}
-      vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
+      ${builtins.readFile ./lua/keymaps/citerius.lua}
+      vim.cmd('source ~/.dotfiles/nvim/vimscript/citerius.vim')
     '';
 
     extraPython3Packages = ps: with ps; [

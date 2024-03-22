@@ -1,0 +1,25 @@
+--local references_dir = vim.fn.expand('~/research/references')
+vim.g.citerius_references_dir = '~/research/references'
+--vim.g.citerius_git_url = 'git@github.com:Vasissualiyp/citeriustest.git'
+
+--require('citerius-vim.citerius_telescope').setup({
+--  references_dir = vim.g.citerius_references_dir,
+--})
+--
+---- Citerius note management keybinds
+--vim.keymap.set('n', '<leader>N' , ':CiteriusToday<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<leader>nc', ':CiteriusCleanup<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<leader>n?', ':DisplayCiteriusQuickhelp<CR>', { noremap = true, silent = true })
+--
+---- Telescope integration keybinds
+--local citerius_telescope = require('citerius-vim.citerius_telescope')
+--vim.keymap.set('n','<leader>ng', citerius_telescope.grep_references)
+--vim.keymap.set('n','<leader>nf', citerius_telescope.search_references)
+--
+---- Initialize citerius. MUST BE INCLUDED AFTER the definitions of global variables!
+--require('citerius-vim.init').setup({
+--  references_dir = '~/research/references',
+--  author = 'Vasilii Pustovoit',
+--  citerius_integration = 1,
+--  citerius_src_dir = '~/research/references',
+--})
