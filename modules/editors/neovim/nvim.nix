@@ -2,6 +2,15 @@
 let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+    noterius = pkgs.vimUtils.buildVimPlugin {
+      name = "noterius-vim";
+      src = pkgs.fetchFromGitHub {
+        owner = "Vasissualiyp";
+		repo = "noterius-vim";
+        rev = "d5d391607ce0371bf3add805dfcfce635e213845";
+        sha256 = "1igr28zwyhrxf1rrd1fcy6pyi9yacl0bdl4nh70jckrqgx6441hl";
+      }
+    };
 in
 {
   programs.neovim = {
@@ -108,6 +117,7 @@ in
 	  startup-nvim
 	  vim-snippets
 	  telescope-ultisnips-nvim
+	  noterius # THIS ONE IS TESTING
       {
 	  plugin = ultisnips;
 	  config = toLuaFile ./lua/keymaps/ultisnips.lua;
@@ -120,4 +130,23 @@ in
 
   };
 
+}
+{ config, pkgs, ... }:
+{
+  environment.systemPackages = [
+    (
+      pkgs.neovim.override {
+        configure = {
+          packages.myPlugins = with pkgs.vimPlugins; {
+          start = [
+            vim-go # already packaged plugin
+            easygrep # custom package
+          ];
+          opt = [];
+        };
+        # ...
+      };
+     }
+    )
+  ];
 }
