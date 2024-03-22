@@ -8,8 +8,10 @@ function _G.fuzzy_find_paper()
     local action_state = require('telescope.actions.state')
     local actions = require('telescope.actions')
 
-	local home = os.getenv("HOME")
+    -- Constructing parent_dir with $HOME environment variable
+    local home = os.getenv("HOME")
     local parent_dir = home .. '/research/references'
+
     local csv_file = Path:new(parent_dir):joinpath("papers.csv"):absolute()
     local file = io.open(csv_file, "r")
     if not file then
@@ -23,12 +25,8 @@ function _G.fuzzy_find_paper()
         if not header_skipped then
             header_skipped = true
         else
-            local fields = {}
-            for field in line:gmatch('([^,]+)') do
-                table.insert(fields, field)
-            end
-            local label = fields[5]:gsub('^"', ''):gsub('"$', '')
-            table.insert(lines, label)
+            -- Storing entire line for display and search in Telescope
+            table.insert(lines, line)
         end
     end
     file:close()
@@ -49,7 +47,13 @@ function _G.fuzzy_find_paper()
         attach_mappings = function(prompt_bufnr, map)
             actions.select_default:replace(function()
                 local selection = action_state.get_selected_entry()
-                print(selection.value)
+                local fields = {}
+                for field in selection.value:gmatch('([^,]+)') do
+                    table.insert(fields, field)
+                end
+                -- Extracting and cleaning the 5th column from the selected line
+                local label = fields[5]:gsub('^"', ''):gsub('"$', '')
+                print(label)
                 actions.close(prompt_bufnr)
             end)
             return true
