@@ -34,8 +34,6 @@ in
 
       ${builtins.readFile ./lua/keymaps/inkscape.lua}
       vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
-      vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius_test.vim')
-      ${builtins.readFile ./lua/keymaps/noterius_nix.lua}
     '';
 
     extraPython3Packages = ps: with ps; [
@@ -118,7 +116,7 @@ in
 	  vim-snippets
 	  telescope-ultisnips-nvim
 	  {
-	  noterius # THIS ONE IS TESTING
+	  plugin = noterius; # THIS ONE IS TESTING
 	  config = toLuaFile ./lua/keymaps/noterius.lua;
 	  }
       {
