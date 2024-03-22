@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.zathura = {
@@ -17,7 +17,7 @@
      
       #zoom = settings;
       zoom-min = 10;
-      guioptions = "";
+      #guioptions = "";
      
       # zathurarc-dark;
      
