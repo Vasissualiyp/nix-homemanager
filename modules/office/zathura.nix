@@ -10,7 +10,7 @@
       #stop = at page boundries;
       scroll-page-aware = "true";
       smooth-scroll = "true";
-      scroll-full-overlap = 0.01;
+      scroll-full-overlap = "0.01";
       scroll-step = 100;
      
       #zoom = settings;
@@ -37,7 +37,7 @@
      
       highlight-color = "#F4BF75"; #0A
       highlight-active-color = "#ffffff"; #0D
-      highlight-transparency = 0.1;
+      highlight-transparency = "0.1";
      
       completion-highlight-fg = "#151515"; #02
       completion-highlight-bg = "#90A959"; #0C
@@ -55,7 +55,6 @@
       recolor-keephue = "true";
      
       render-loading = "false";
-      scroll-step = 50;
 	};
 
 	mappings = {
