@@ -46,8 +46,13 @@ end
 function _G.execute_fuzzy_find_eqns_figs(label)
     local parent_dir = os.getenv("HOME") .. '/research/references'
     local script_path = '/home/vasilii/Software/Citerius/bin/fuzzy_find_eqns_figs.sh'
-    -- Use the `label` argument directly instead of `vim.g.selected_paper_label`
-    local command = string.format('%s "%s" "%s"', script_path, parent_dir, label)
+
+    -- Prompt the user for additional input in Neovim's command line
+    local input_prompt = "Enter the items you want to find (e.g., 'f5 e12' for 5th figure and 12th equation): "
+    local input_line = vim.fn.input(input_prompt)
+
+    -- Construct the command with the additional user input
+    local command = string.format('%s "%s" "%s" "%s"', script_path, parent_dir, label, input_line)
     
     local output = vim.fn.system(command)
     if vim.v.shell_error ~= 0 then
