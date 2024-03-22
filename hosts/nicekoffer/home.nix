@@ -29,6 +29,7 @@ in
     kittyModule
     nvimModule
     tmuxModule
+    zathuraModule
     gammastepModule
     #latexModule
     #pythonshelllibModule 
