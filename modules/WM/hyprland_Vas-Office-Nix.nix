@@ -224,6 +224,9 @@ in
 		  ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
 		  ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 		  ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+		  ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+		  ",XF86KbdBrightnessUp,exec, brightnessctl --device='asus::kbd_backlight' set 5%+"
+		  ",XF86KbdBrightnessDown,exec, brightnessctl --device='asus::kbd_backlight' set 5%-"
           
           # Move/resize windows with mainMod + LMB/RMB and dragging"
           #"bindm = $mainMod, mouse:272, movewindow"
