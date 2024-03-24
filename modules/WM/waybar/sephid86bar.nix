@@ -229,6 +229,7 @@
         background: inherit;
         border-top: 2px solid #c9545d;
       }
+	  /* --------------- */
       
       #workspaces button {
         padding: 0 4px;
