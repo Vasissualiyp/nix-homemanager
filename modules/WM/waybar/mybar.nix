@@ -105,46 +105,46 @@
         };
       };
 	};
-	style = ''
-      window#waybar {
-        background = transparent;
-        /*    background-color = rgba(43, 48, 59, 0.5); */
-        /*    border-bottom = 3px solid rgba(100, 114, 125, 0.5); */
-        color = #ffffff;
-        transition-property = background-color;
-        transition-duration = .5s;
-      }
+	#style = ''
+    #  window#waybar {
+    #    background = transparent;
+    #    /*    background-color = rgba(43, 48, 59, 0.5); */
+    #    /*    border-bottom = 3px solid rgba(100, 114, 125, 0.5); */
+    #    color = #ffffff;
+    #    transition-property = background-color;
+    #    transition-duration = .5s;
+    #  }
 
-      window#waybar.hidden {
-        opacity = 0.2;
-      }
-      
-      #waybar.empty #window {
-        background-color = transparent;
-      }
+    #  window#waybar.hidden {
+    #    opacity = 0.2;
+    #  }
+    #  
+    #  #waybar.empty #window {
+    #    background-color = transparent;
+    #  }
 
-      #window {
-        margin = 2;
-        padding-left = 8;
-        padding-right = 8;
-        background-color = rgba(0,0,0,0.3);
-        font-size =14px;
-        font-weight = bold;
-      }
-      
-      button {
-        /* Use box-shadow instead of border so the text isn't offset */
-        box-shadow: inset 0 -3px transparent;
-        /* Avoid rounded borders under each button name */
-        border: none;
-        border-radius: 0;
-      }
-      
-      /* https:#github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-      button:hover {
-        background: inherit;
-        border-top: 2px solid #c9545d;
-      }
-	'';
+    #  #window {
+    #    margin = 2;
+    #    padding-left = 8;
+    #    padding-right = 8;
+    #    background-color = rgba(0,0,0,0.3);
+    #    font-size =14px;
+    #    font-weight = bold;
+    #  }
+    #  
+    #  button {
+    #    /* Use box-shadow instead of border so the text isn't offset */
+    #    box-shadow: inset 0 -3px transparent;
+    #    /* Avoid rounded borders under each button name */
+    #    border: none;
+    #    border-radius: 0;
+    #  }
+    #  
+    #  /* https:#github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+    #  button:hover {
+    #    background: inherit;
+    #    border-top: 2px solid #c9545d;
+    #  }
+	#'';
   };
 }

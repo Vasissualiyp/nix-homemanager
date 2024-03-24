@@ -6,7 +6,7 @@ let
 	${pkgs.dunst}/bin/dunst
   '';
   numberOfMonitors = 1;
-  machine_name = "Vas-Office-Nix";
+  machine_name = builtins.getEnv "HOSTNAME";
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
       monitor = [
