@@ -2,7 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
-  hyprlandModule = (import ../../modules/WM/hyprland_Vas-Office-Nix.nix { inherit pkgs; inherit inputs; });
+  hyprlandModule = import ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = (import ../../modules/WM/waybar/mybar.nix { inherit pkgs; });
   zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
@@ -32,10 +32,10 @@ in
     zathuraModule
     gammastepModule
 
-    { 
-      _module.args.numberOfMonitors = 5; 
-    }
-    ./modules/WM/hyprland_Vas-Office-Nix.nix
+    #{ 
+    #  _module.args.numberOfMonitors = 5; 
+    #}
+    #../modules/WM/hyprland_Vas-Office-Nix.nix
 
     #latexModule
     #pythonshelllibModule 
