@@ -106,6 +106,12 @@
       };
 	};
 	style = ''
+      * {
+        /* `otf-font-awesome` is required to be installed for icons */
+        font-family: "Noto Sans CJK KR Regular"; 
+        font-size: 13px;
+        min-height: 0;
+      }
       window#waybar {
         background: transparent;
         /*    background-color: rgba(43, 48, 59, 0.5); */
@@ -145,6 +151,56 @@
         background: inherit;
         border-top: 2px solid #c9545d;
       }
+      #workspaces button {
+        padding: 0 4px;
+        /*    background-color: rgba(0,0,0,0.3); */
+      }
+      
+      #workspaces button:hover {
+      }
+      
+      #workspaces button.focused {
+        /*    box-shadow: inset 0 -2px #c9545d; */
+        background-color: rgba(0,0,0,0.3);
+        color:#c9545d;
+        border-top: 2px solid #c9545d;
+      }
+      
+      #workspaces button.urgent {
+        background-color: #eb4d4b;
+      }
+      
+      #mode {
+        background-color: #64727D;
+        border-bottom: 3px solid #ffffff;
+      }
+      #clock,
+      #battery,
+      #cpu,
+      #memory,
+      #disk,
+      #temperature,
+      #backlight,
+      #network,
+      #pulseaudio,
+      #wireplumber,
+      #custom-media,
+      #tray,
+      #mode,
+      #idle_inhibitor,
+      #scratchpad,
+      #mpd {
+        margin: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+        background-color: rgba(0,0,0,0.3);
+        color: #ffffff;
+      }
+      /* If workspaces is the leftmost module, omit left margin */
+      .modules-left > widget:first-child > #workspaces {
+        margin-left: 0;
+      }
+
 	'';
   };
 }
