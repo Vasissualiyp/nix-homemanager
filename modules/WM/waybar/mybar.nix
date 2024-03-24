@@ -109,7 +109,7 @@
       * {
         /* `otf-font-awesome` is required to be installed for icons */
         font-family: "Noto Sans CJK KR Regular"; 
-        font-size: 13px;
+        font-size: 20px;
         min-height: 0;
       }
       window#waybar {
@@ -130,11 +130,11 @@
       }
 
       #window {
-        margin: 2;
-        padding-left: 8;
-        padding-right: 8;
+        margin: 8;
+        padding-left: 12;
+        padding-right: 12;
         background-color: rgba(0,0,0,0.3);
-        font-size:14px;
+        font-size:20px;
         font-weight: bold;
       }
       
@@ -149,10 +149,10 @@
       /* https:#github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
       button:hover {
         background: inherit;
-        border-top: 2px solid #c9545d;
+        border-top: 4px solid #c9545d;
       }
       #workspaces button {
-        padding: 0 4px;
+        padding: 0 8px;
         /*    background-color: rgba(0,0,0,0.3); */
       }
       
@@ -199,6 +199,11 @@
       /* If workspaces is the leftmost module, omit left margin */
       .modules-left > widget:first-child > #workspaces {
         margin-left: 0;
+      }
+
+      #clock {
+        font-size:14px;
+        font-weight: bold;
       }
 
 	'';
