@@ -8,7 +8,7 @@ let
   numberOfMonitors = 1;
   monitorsConfig = if numberOfMonitors == 5 then {
     "monitor" = [
-      "eDP-1,2560x1600@60,-256x180,1.6666666666666667"
+      "eDP-1,2560x1600@60,-256x180,2"
       "DP-5,1920x1200,1280x0,1,transform,1"
       "HDMI-A-1,3840x2160@60,2480x0@60,2,transform,1"
       "DP-1,1920x1200,3560x0,1,transform,1"
@@ -27,7 +27,7 @@ let
       "0, monitor:DP-4"
     ];
   } else {
-    "monitor" = ["eDP-1,2560x1600@165,0x0,1.6666666666666667"];
+    "monitor" = ["eDP-1,2560x1600@165,0x0,2"];
     "workspace" = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
   };
 
