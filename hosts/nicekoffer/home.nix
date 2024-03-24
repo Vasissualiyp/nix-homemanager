@@ -31,6 +31,12 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
+
+    { 
+      _module.args.numberOfMonitors = 5; 
+    }
+    ./modules/WM/hyprland_Vas-Office-Nix.nix
+
     #latexModule
     #pythonshelllibModule 
   ];
