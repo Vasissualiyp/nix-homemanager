@@ -202,8 +202,25 @@
       }
 
       #clock {
-        font-size:14px;
+        font-size:20px;
         font-weight: bold;
+      }
+
+      label:focus {
+        background-color: #000000;
+      }
+      
+      #network.disconnected {
+        background-color: #f53c3c;
+      }
+      
+      #temperature.critical {
+        background-color: #eb4d4b;
+      }
+      
+      #idle_inhibitor.activated {
+        background-color: #ecf0f1;
+        color: #2d3436;
       }
 
 	'';
