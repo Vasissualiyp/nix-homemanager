@@ -27,7 +27,7 @@ let
       "0, monitor:DP-4"
     ];
   } else {
-    "monitor" = ["eDP-1,2560x1600@165,0x0,2"];
+    "monitor" = ["eDP-1,2560x1600@165,0x0,1"];
     "workspace" = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
   };
 
@@ -220,6 +220,10 @@ in
           # Scroll through existing workspaces with mainMod + scroll"
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
+		  # Audio laptop keys
+		  ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+		  ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+		  ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           
           # Move/resize windows with mainMod + LMB/RMB and dragging"
           #"bindm = $mainMod, mouse:272, movewindow"
