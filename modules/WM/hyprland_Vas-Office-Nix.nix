@@ -26,7 +26,24 @@ let
         "9, monitor:DP-4"
         "0, monitor:DP-4"
       ];
-    } else {
+    } else if numberOfMonitors == 2 then {
+      monitor = [
+        "eDP-1,2560x1600@60,640x2160,1"
+        "HDMI-A-1,1920x1080@60,0x0@60,2"
+      ];
+      workspace = [
+        "1, monitor:HDMI-A-1"
+        "2, monitor:eDP-1"
+        "3, monitor:eDP-1"
+        "4, monitor:eDP-1"
+        "5, monitor:eDP-1"
+        "6, monitor:eDP-1"
+        "7, monitor:eDP-1"
+        "8, monitor:eDP-1"
+        "9, monitor:eDP-1"
+        "0, monitor:eDP-1"
+      ];
+	} else {
       monitor = ["eDP-1,2560x1600@165,0x0,1"];
       workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
     }

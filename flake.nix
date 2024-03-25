@@ -35,6 +35,13 @@
           inherit inputs;
         };
       };
+      homeConfigurations."Vas-Office-Nix-2mon" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/Vas-Office-Nix/2mon.nix ];
+		extraSpecialArgs = {
+          inherit inputs;
+        };
+      };
       homeConfigurations."Vas-Office-Nix-5mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./hosts/Vas-Office-Nix/5mon.nix ];
