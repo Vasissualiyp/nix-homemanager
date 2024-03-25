@@ -29,7 +29,7 @@ let
     } else if numberOfMonitors == 2 then {
       monitor = [
         "eDP-1,2560x1600@60,640x2160,1"
-        "HDMI-A-1,1920x1080@60,0x0@60,2"
+        "HDMI-A-1,1920x1080@60,0x0@60,1"
       ];
       workspace = [
         "1, monitor:HDMI-A-1"
