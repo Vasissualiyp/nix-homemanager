@@ -14,7 +14,6 @@ let
   gammastepModule = import ../../modules/system/gammastep.nix;
 
   machine_name = "Vas-Office-Nix";
-  #numberOfMonitors = 1;
 in
 
 {
@@ -33,9 +32,6 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
-
-    #latexModule
-    #pythonshelllibModule 
   ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
