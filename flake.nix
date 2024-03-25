@@ -20,20 +20,33 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-	  numberOfMonitors = 1;
     in {
       homeConfigurations."nicekoffer" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./hosts/nicekoffer/home.nix ];
 		extraSpecialArgs = {
-          inherit inputs numberOfMonitors;
+          inherit inputs;
         };
       };
-      homeConfigurations."Vas-Office-Nix" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-Office-Nix/home.nix ];
+        modules = [ ./hosts/Vas-Office-Nix/1mon.nix ];
 		extraSpecialArgs = {
-          inherit inputs numberOfMonitors;
+          inherit inputs;
+        };
+      };
+      homeConfigurations."Vas-Office-Nix-5mon" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/Vas-Office-Nix/5mon.nix ];
+		extraSpecialArgs = {
+          inherit inputs;
+        };
+      };
+      homeConfigurations."Vas-HP-Nix" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/Vas-HP-Nix/home.nix ];
+		extraSpecialArgs = {
+          inherit inputs;
         };
       };
     };
