@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 let 
+  lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
-  hyprlandModule = import ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
-  waybarModule = (import ../../modules/WM/waybar/mybar.nix { inherit pkgs; });
+  hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
+  waybarModule = import ../../modules/WM/waybar/mybar.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
@@ -13,6 +14,9 @@ let
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
   pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; });
+
+  machine_name = "Vas-Office-Nix";
+  numberOfMonitors = 1;
 in
 
 {
@@ -23,7 +27,7 @@ in
 
   imports = [
     bashModule
-	hyprlandModule
+	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
 	waybarModule
     bspwmModule
     kittyModule
@@ -31,11 +35,6 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
-
-    #{ 
-    #  _module.args.numberOfMonitors = 5; 
-    #}
-    #../modules/WM/hyprland_Vas-Office-Nix.nix
 
     #latexModule
     #pythonshelllibModule 
