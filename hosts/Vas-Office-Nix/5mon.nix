@@ -4,6 +4,6 @@ let
 in 
 {
   imports = [
-    (import ./home.nix { inherit pkgs lib inputs numberOfMonitors; })
+    (import ./home.nix { inherit config pkgs inputs numberOfMonitors; })
   ];
 }
