@@ -5,6 +5,10 @@
     enable = true;
     theme = "Catppuccin-Frappe";
     shellIntegration.enableBashIntegration = true;
+	settings = {
+      foreground = "#${config.colorScheme.palette.base05}";
+      background = "#${config.colorScheme.palette.base00}";
+	};
     extraConfig = ''
     enable_audio_bell no
     cursor #d9d9d9

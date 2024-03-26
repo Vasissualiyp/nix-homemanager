@@ -35,9 +35,9 @@
       notification-warning-bg = "#AC4142"; #08
       notification-warning-fg = "#151515"; #00
      
-      highlight-color = "#F4BF75"; #0A
+      highlight-color = "#f4bf75"; #0A
       highlight-active-color = "#ffffff"; #0D
-      highlight-transparency = "0.1";
+      highlight-transparency = "0.9";
      
       completion-highlight-fg = "#151515"; #02
       completion-highlight-bg = "#90A959"; #0C
