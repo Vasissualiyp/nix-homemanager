@@ -3,6 +3,7 @@
 let 
   lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
+  qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = import ../../modules/WM/waybar/mybar.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
@@ -25,6 +26,7 @@ in
   imports = [
     bashModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
+    qutebrowserModule
 	waybarModule
     bspwmModule
     kittyModule
@@ -35,8 +37,9 @@ in
 	inputs.nix-colors.homeManagerModules.default
   ];
 
-  #colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  colorScheme = inputs.nix-colors.colorSchemes.equilibrium-dark;
+  #colorScheme = inputs.nix-colors.colorSchemes.eris;
+  colorScheme = inputs.nix-colors.colorSchemes.framer;
+  #colorScheme = inputs.nix-colors.colorSchemes.equilibrium-dark;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 

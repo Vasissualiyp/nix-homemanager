@@ -3,7 +3,6 @@
 {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Frappe";
     shellIntegration.enableBashIntegration = true;
     settings = {
       foreground              = "#${config.colorScheme.palette.base05}";
