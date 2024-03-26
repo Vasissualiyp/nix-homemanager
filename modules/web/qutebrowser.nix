@@ -4,7 +4,9 @@
   programs.qutebrowser = {
     enable = true;
 	settings = {
+	  content.pdfjs = true;
       colors = {
+	    webpage.darkmode.enabled = true;
 
 		# Prefer dark or light browser theme
         webpage.preferred_color_scheme = "${config.colorScheme.variant}";

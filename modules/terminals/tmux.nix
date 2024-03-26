@@ -39,7 +39,7 @@
         "set -g @catppuccin_window_default_color \"#${config.colorScheme.palette.base05}\"\n" +
         "set -g @catppuccin_window_default_background \"#${config.colorScheme.palette.base00}\"\n" +
 
-        "set -g @catppuccin_foreground_color \"#${config.colorScheme.palette.base05}\"\n";
+        "set -g @catppuccin_foreground_color \"#${config.colorScheme.palette.base05}\"\n" +
 
         "set -g @catppuccin_window_current_color \"#${config.colorScheme.palette.base0D}\"\n" +
         "set -g @catppuccin_window_current_background \"#${config.colorScheme.palette.base0C}\"\n" +
