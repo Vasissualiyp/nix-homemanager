@@ -35,7 +35,8 @@ in
 	inputs.nix-colors.homeManagerModules.default
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  #colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = inputs.nix-colors.colorSchemes.equilibrium-dark;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
