@@ -37,7 +37,7 @@
      
       highlight-color = "#${config.colorScheme.palette.base0A}";
       highlight-active-color = "#${config.colorScheme.palette.base0D}";
-      highlight-transparency = "1";
+      highlight-transparency = 1;
      
       completion-highlight-fg = "#${config.colorScheme.palette.base02}";
       completion-highlight-bg = "#${config.colorScheme.palette.base0C}";
