@@ -25,8 +25,8 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
-    bashModule
     colorscheme 
+    bashModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
     qutebrowserModule
 	waybarModule

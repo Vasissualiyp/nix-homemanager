@@ -51,9 +51,6 @@ in
   programs.bash = {
     enable = true;
     shellAliases = bashAliases;
-	sessionVariables = {
-      TERMINAL_BKG_COLOR="#${config.colorScheme.palette.base00}";
-	};
 
     initExtra = ''
 # remcon alias
