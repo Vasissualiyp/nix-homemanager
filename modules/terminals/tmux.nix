@@ -33,9 +33,20 @@
 		''
         +
 		# Here we interpolate Nix expressions into the string
-        "set -g @catppuccin_directory_color \"#${config.colorScheme.palette.base03}\"\n" +
-        "set -g @catppuccin_session_color \"#${config.colorScheme.palette.base03}\"\n" +
+        "set -g @catppuccin_pane_color \"#${config.colorScheme.palette.base0B}\"\n" +
+        "set -g @catppuccin_pane_background_color \"#${config.colorScheme.palette.base00}\"\n" +
+
+        "set -g @catppuccin_window_default_color \"#${config.colorScheme.palette.base05}\"\n" +
+        "set -g @catppuccin_window_default_background \"#${config.colorScheme.palette.base00}\"\n" +
+
         "set -g @catppuccin_foreground_color \"#${config.colorScheme.palette.base05}\"\n";
+
+        "set -g @catppuccin_window_current_color \"#${config.colorScheme.palette.base0D}\"\n" +
+        "set -g @catppuccin_window_current_background \"#${config.colorScheme.palette.base0C}\"\n" +
+
+        "set -g @catppuccin_directory_color \"#${config.colorScheme.palette.base0E}\"\n" +
+
+        "set -g @catppuccin_session_color \"#${config.colorScheme.palette.base03}\"\n";
 	  }
 	  {
 	    plugin = tmuxPlugins.continuum;
