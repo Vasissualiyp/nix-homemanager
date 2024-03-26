@@ -5,6 +5,7 @@
     enable = true;
 	settings = {
       colors = {
+
 		# Prefer dark or light browser theme
         webpage.preferred_color_scheme = "${config.colorScheme.variant}";
 
@@ -281,6 +282,7 @@
         
         # Background color of selected even tabs.
         tabs.selected.even.bg = "#${config.colorScheme.palette.base02}";
+
       };
     };
   };

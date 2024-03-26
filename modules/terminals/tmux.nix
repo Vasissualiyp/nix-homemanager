@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.tmux = {
@@ -27,13 +27,15 @@
         set -g @catppuccin_status_right_separator_inverse "no"
         set -g @catppuccin_session_text "#S"
         
-        set -g @catppuccin_directory_color "#502B49"
         set -g @catppuccin_directory_icon "#{thm_fg}#[fg=default]"
-        set -g @catppuccin_session_color "#37447a"
         set -g @catppuccin_session_icon "#{thm_fg}#[fg=default]"
-        set -g @catppuccin_foreground_color "#7a8497"
         set -g @catppuccin_window_default_fill "number"
-		'';
+		''
+        +
+		# Here we interpolate Nix expressions into the string
+        "set -g @catppuccin_directory_color \"#${config.colorScheme.palette.base03}\"\n" +
+        "set -g @catppuccin_session_color \"#${config.colorScheme.palette.base03}\"\n" +
+        "set -g @catppuccin_foreground_color \"#${config.colorScheme.palette.base05}\"\n";
 	  }
 	  {
 	    plugin = tmuxPlugins.continuum;
