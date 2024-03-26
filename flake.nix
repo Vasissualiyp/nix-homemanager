@@ -22,6 +22,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+	  defaultMonitorNumber = 1;
     in {
       homeConfigurations."nicekoffer" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -55,7 +56,7 @@
         inherit pkgs;
         modules = [ ./hosts/Vas-HP-Nix/home.nix ];
 		extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs defaultMonitorNumber;
         };
       };
     };
