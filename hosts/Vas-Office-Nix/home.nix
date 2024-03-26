@@ -6,6 +6,6 @@ in
 
 {
   imports = [
-    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors})
+    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors; })
   ];
 }
