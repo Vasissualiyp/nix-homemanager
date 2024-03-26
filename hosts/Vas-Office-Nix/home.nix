@@ -3,6 +3,7 @@
 let 
   lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
+  colorsModule = import ../../modules/rice/colors.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = import ../../modules/WM/waybar/mybar.nix;
@@ -25,6 +26,7 @@ in
 
   imports = [
     bashModule
+    colorsModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
     qutebrowserModule
 	waybarModule
@@ -34,11 +36,11 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
-	inputs.nix-colors.homeManagerModules.default
+	#inputs.nix-colors.homeManagerModules.default
   ];
 
   #colorScheme = inputs.nix-colors.colorSchemes.eris;
-  colorScheme = inputs.nix-colors.colorSchemes.framer;
+  #colorScheme = inputs.nix-colors.colorSchemes.framer;
   #colorScheme = inputs.nix-colors.colorSchemes.equilibrium-dark;
   #colorScheme = inputs.nix-colors.colorSchemes.black-metal;
   #colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
