@@ -26,7 +26,7 @@ let
   #colorSchemeName = "atelier-sulphurpool-light";
   #colorSchemeName = "atelier-sulphurpool";
   #colorSchemeName = "atlas";
-  #colorSchemeName = "ayu-dark";
+  colorSchemeName = "ayu-dark";
   #colorSchemeName = "ayu-light";
   #colorSchemeName = "ayu-mirage";
   #colorSchemeName = "bespin";
@@ -40,7 +40,7 @@ let
   #colorSchemeName = "black-metal-mayhem";
   #colorSchemeName = "black-metal-nile";
   #colorSchemeName = "black-metal-venom";
-  colorSchemeName = "black-metal";
+  #colorSchemeName = "black-metal";
   #colorSchemeName = "blueforest";
   #colorSchemeName = "blueish";
   #colorSchemeName = "brewer";
@@ -256,6 +256,5 @@ let
 in
 {
   imports = [ inputs.nix-colors.homeManagerModules.default ];
-  
   colorScheme = inputs.nix-colors.colorSchemes.${colorSchemeName};
- }
+}
