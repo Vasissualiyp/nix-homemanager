@@ -1,8 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
+let
 
-{
-  imports = [ inputs.nix-colors.homeManagerModules.default ];
-  
   #colorSchemeName = "3024";
   #colorSchemeName = "apathy";
   #colorSchemeName = "apprentice";
@@ -254,6 +252,10 @@
   #colorSchemeName = "xcode-dusk";
   #colorSchemeName = "zenbones";
   #colorSchemeName = "zenburn";
+  
+in
+{
+  imports = [ inputs.nix-colors.homeManagerModules.default ];
   
   colorScheme = inputs.nix-colors.colorSchemes.${colorSchemeName};
  }
