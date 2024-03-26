@@ -8,6 +8,7 @@
 	settings = {
       foreground = "#${config.colorScheme.palette.base05}";
       background = "#${config.colorScheme.palette.base00}";
+      cursor = "#${config.colorScheme.palette.base01}";
 	};
     extraConfig = ''
     enable_audio_bell no
@@ -18,8 +19,6 @@
     tab_bar_edge top
     tab_bar_stule powerline
     tab_powerline_style round
-    active_tab_background #37447A
-    background #0D0B1A
     background_opacity 0.9
     '';
   };
