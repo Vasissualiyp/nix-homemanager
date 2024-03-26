@@ -8,7 +8,7 @@ let
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
       monitor = [
-        "eDP-1,2560x1600@60,-256x180,2"
+        "eDP-1,2560x1600@60,0x200,2"
         "DP-5,1920x1200,1280x0,1,transform,1"
         "HDMI-A-1,3840x2160@60,2480x0@60,2,transform,1"
         "DP-1,1920x1200,3560x0,1,transform,1"

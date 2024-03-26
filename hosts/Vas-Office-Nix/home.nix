@@ -32,7 +32,10 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
+	inputs.nix-colors.homeManagerModules.default
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 

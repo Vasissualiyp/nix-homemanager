@@ -20,8 +20,8 @@
       # zathurarc-dark;
      
       font = "inconsolata 15";
-      default-bg = "#000000"; #00
-      default-fg = "#F7F7F6"; #01
+      default-bg = "#{config.colorScheme.colors.base01}"; #00
+      default-fg = "#{config.colorScheme.colors.base04}"; #01
      
       statusbar-fg = "#B0B0B0"; #04
       statusbar-bg = "#202020"; #01
