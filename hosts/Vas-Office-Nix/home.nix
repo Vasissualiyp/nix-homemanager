@@ -3,7 +3,7 @@
 let 
   lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
-  colorsModule = import ../../modules/rice/colors.nix;
+  colorscheme = import ../../modules/rice/color_schemes.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = import ../../modules/WM/waybar/mybar.nix;
@@ -26,7 +26,7 @@ in
 
   imports = [
     bashModule
-    colorsModule
+    colorscheme 
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
     qutebrowserModule
 	waybarModule
