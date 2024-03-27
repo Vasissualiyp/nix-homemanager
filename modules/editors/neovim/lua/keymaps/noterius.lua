@@ -1,6 +1,6 @@
 --local notes_dir = vim.fn.expand('~/research/notes')
 vim.g.noterius_notes_dir = '~/research/notes'
-vim.g.noterius_git_url = 'git@github.com:Vasissualiyp/noteriustest.git'
+vim.g.noterius_git_url = 'git@github.com:Vasissualiyp/Research_Notes.git'
 
 require('noterius-vim.noterius_telescope').setup({
   notes_dir = vim.g.noterius_notes_dir,
