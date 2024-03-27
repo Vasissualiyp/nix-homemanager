@@ -48,7 +48,7 @@ let
       workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
     }
   else {
-    monitor = ["eDP-1,2560x1400@165,0x0,2"];
+    monitor = ["eDP-1,2560x1400@165,0x0,1"];
     workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
   };
 
