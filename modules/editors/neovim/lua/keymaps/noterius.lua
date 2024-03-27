@@ -17,6 +17,8 @@ vim.keymap.set('n', '<leader>nn', ':FindNextNote<CR>', { noremap = true, silent 
 vim.keymap.set('n', '<leader>np', ':FindPreviousNote<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>no', ':OpenNoteByDate<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>n?', ':DisplayNoteriusQuickhelp<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ns', ':NoteriusGitPull<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>nP', ':NoteriusGitPush<CR>', { noremap = true, silent = true })
 
 -- Telescope integration keybinds
 local noterius_telescope = require('noterius-vim.noterius_telescope')
