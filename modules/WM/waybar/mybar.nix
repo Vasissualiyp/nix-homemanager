@@ -26,6 +26,18 @@ let
       secondary_monitors = [ ];
 	  bar_height = 12;
   };
+  workspace_icons = {
+    "1" = "一";
+    "2" = "二";
+    "3" = "三";
+    "4" = "四";
+    "5" = "五";
+    "6" = "六";
+    "7" = "七";
+    "8" = "八";
+    "9" = "九";
+    "0" = "〇";
+  };
 
 in
 
@@ -44,8 +56,11 @@ in
         modules-right = [ "network" "pulseaudio" "backlight" "keyboard-state" "battery" "tray" "clock" ];
 
         "hyprland/workspaces" = {
+		  active-only = false;
           disable-scroll = true;
           all-outputs = false;
+		  format = "{icon}";
+          "format-icons" = workspace_icons;
         };
         "battery" = {
             "states" = {
@@ -88,8 +103,8 @@ in
             format-source-muted = "";
             "format-icons" = {
                 headphone = "";
-                hands-free = "";
-                headset = "";
+                hands-free = "󰟅";
+                headset = "󰋎";
                 phone = "";
                 portable = "";
                 car = "";
@@ -121,8 +136,11 @@ in
         modules-right = [ "clock" ];
 
         "hyprland/workspaces" = {
+		  active-only = false;
           disable-scroll = true;
           all-outputs = false;
+		  format = "{icon}";
+          "format-icons" = workspace_icons;
         };
       };
 	};
@@ -174,7 +192,7 @@ in
       }
       #workspaces button {
         padding: 0 8px;
-        /*    background-color: rgba(0,0,0,0.3); */
+        background-color: rgba(0,0,0,0.3); 
       }
       
       #workspaces button:hover {
