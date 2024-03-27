@@ -7,7 +7,7 @@ let
   colorscheme = import ../../modules/rice/color_schemes.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
-  waybarModule = import ../../modules/WM/waybar/mybar.nix;
+  waybarModule = ../../modules/WM/waybar/mybar.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
@@ -28,7 +28,7 @@ in
     bashModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
     qutebrowserModule
-	waybarModule
+	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     bspwmModule
     kittyModule
     nvimModule

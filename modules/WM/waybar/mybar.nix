@@ -1,4 +1,33 @@
-{ pkgs, ... }:
+{ pkgs, machine_name, numberOfMonitors, ... }:
+let
+  waybarConfig = if machine_name == "Vas-Office-Nix" then
+    if numberOfMonitors == 5 then {
+      primary_monitor = [
+        "HDMI-A-1"
+      ];
+      secondary_monitors = [
+        "eDP-1"
+        "DP-5"
+        "DP-1"
+        "DP-4"
+      ];
+	  bar_height = 20;
+    } else if numberOfMonitors == 2 then {
+      primary_monitor = ["eDP-1" ];
+      secondary_monitors = ["HDMI-A-1" ];
+	  bar_height = 12;
+	} else {
+      primary_monitor = ["eDP-1" ];
+      secondary_monitors = [ ];
+	  bar_height = 12;
+    }
+  else {
+      primary_monitor = ["eDP-1" ];
+      secondary_monitors = [ ];
+	  bar_height = 12;
+  };
+
+in
 
 {
   programs.waybar = {
@@ -8,11 +37,8 @@
         layer = "top";
         position = "top";
         spacing = 4; 
-        height = 20;
-        output = [
-          "eDP-1"
-          "HDMI-A-1"
-        ];
+        height = waybarConfig."bar_height";
+        output = waybarConfig."primary_monitor";
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "network" "pulseaudio" "backlight" "keyboard-state" "battery" "tray" "clock" ];
@@ -89,12 +115,7 @@
         layer = "top";
         position = "top";
         height = 20;
-        output = [
-          #"eDP-1"
-          "DP-1"
-          "DP-4"
-          "DP-5"
-        ];
+        output = waybarConfig."secondary_monitors";
         modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "clock" ];
@@ -143,7 +164,7 @@
         box-shadow: inset 0 -3px transparent;
         /* Avoid rounded borders under each button name */
         border: none;
-        border-radius: 0;
+        border-radius: 5;
       }
       
       /* https:#github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
