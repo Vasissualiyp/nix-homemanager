@@ -38,13 +38,6 @@ in
 	#inputs.nix-colors.homeManagerModules.default
   ];
 
-  #colorScheme = inputs.nix-colors.colorSchemes.eris;
-  #colorScheme = inputs.nix-colors.colorSchemes.framer;
-  #colorScheme = inputs.nix-colors.colorSchemes.equilibrium-dark;
-  #colorScheme = inputs.nix-colors.colorSchemes.black-metal;
-  #colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
-  #colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
-
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   programs.git = {

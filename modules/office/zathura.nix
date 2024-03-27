@@ -9,7 +9,7 @@
      
       #stop = at page boundries;
       scroll-page-aware = "true";
-      smooth-scroll = "true";
+      #smooth-scroll = "true";
       scroll-full-overlap = "0.01";
       scroll-step = 100;
      
@@ -19,7 +19,7 @@
      
       # zathurarc-dark;
      
-      font = "inconsolata 15";
+      font = "inconsolata 20";
       default-bg = "#${config.colorScheme.palette.base00}";
       default-fg = "#${config.colorScheme.palette.base01}";
      
@@ -37,13 +37,13 @@
      
       highlight-color = "#${config.colorScheme.palette.base0A}";
       highlight-active-color = "#${config.colorScheme.palette.base0D}";
-      highlight-transparency = 1;
+      highlight-transparency = "1.0";
      
-      completion-highlight-fg = "#${config.colorScheme.palette.base02}";
+      completion-highlight-fg = "#${config.colorScheme.palette.base0A}";
       completion-highlight-bg = "#${config.colorScheme.palette.base0C}";
      
       completion-bg = "#${config.colorScheme.palette.base02}";
-      completion-fg = "#${config.colorScheme.palette.base0C}";
+      completion-fg = "#${config.colorScheme.palette.base01}";
      
       notification-bg = "#${config.colorScheme.palette.base0B}";
       notification-fg = "#${config.colorScheme.palette.base00}";

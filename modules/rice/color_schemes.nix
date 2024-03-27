@@ -26,7 +26,7 @@ let
   #colorSchemeName = "atelier-sulphurpool-light";
   #colorSchemeName = "atelier-sulphurpool";
   #colorSchemeName = "atlas";
-  colorSchemeName = "ayu-dark";
+  #colorSchemeName = "ayu-dark";       ######
   #colorSchemeName = "ayu-light";
   #colorSchemeName = "ayu-mirage";
   #colorSchemeName = "bespin";
@@ -40,7 +40,7 @@ let
   #colorSchemeName = "black-metal-mayhem";
   #colorSchemeName = "black-metal-nile";
   #colorSchemeName = "black-metal-venom";
-  #colorSchemeName = "black-metal";
+  #colorSchemeName = "black-metal";       ######
   #colorSchemeName = "blueforest";
   #colorSchemeName = "blueish";
   #colorSchemeName = "brewer";
@@ -52,7 +52,7 @@ let
   #colorSchemeName = "catppuccin-frappe";
   #colorSchemeName = "catppuccin-latte";
   #colorSchemeName = "catppuccin-macchiato";
-  #colorSchemeName = "catppuccin-mocha";
+  #colorSchemeName = "catppuccin-mocha";       ######
   #colorSchemeName = "chalk";
   #colorSchemeName = "circus";
   #colorSchemeName = "classic-dark";
@@ -83,11 +83,11 @@ let
   #colorSchemeName = "eighties";
   #colorSchemeName = "embers";
   #colorSchemeName = "emil";
-  #colorSchemeName = "equilibrium-dark";
+  #colorSchemeName = "equilibrium-dark";       ######
   #colorSchemeName = "equilibrium-gray-dark";
   #colorSchemeName = "equilibrium-gray-light";
   #colorSchemeName = "equilibrium-light";
-  #colorSchemeName = "eris";
+  #colorSchemeName = "eris";       ######
   #colorSchemeName = "espresso";
   #colorSchemeName = "eva-dim";
   #colorSchemeName = "eva";
@@ -95,7 +95,7 @@ let
   #colorSchemeName = "everforest-dark-hard";
   #colorSchemeName = "everforest";
   #colorSchemeName = "flat";
-  #colorSchemeName = "framer";
+  colorSchemeName = "framer";       ######
   #colorSchemeName = "fruit-soda";
   #colorSchemeName = "gigavolt";
   #colorSchemeName = "github";
@@ -223,7 +223,7 @@ let
   #colorSchemeName = "tokyo-city-terminal-light";
   #colorSchemeName = "tokyodark-terminal";
   #colorSchemeName = "tokyodark";
-  #colorSchemeName = "tokyo-night-dark";
+  #colorSchemeName = "tokyo-night-dark";       ######
   #colorSchemeName = "tokyo-night-light";
   #colorSchemeName = "tokyo-night-storm";
   #colorSchemeName = "tokyo-night-terminal-dark";
