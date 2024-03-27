@@ -1,6 +1,7 @@
 { config, ... }:
 
 let
+
   bashAliases = {
     ls = "ls --color=auto";
     grep = "grep --colour=auto";
@@ -43,6 +44,8 @@ let
     cfp="~/Software/Citerius/bin/fuzzy_find_paper_wrapper.sh";
     cfe="~/Software/Citerius/bin/fuzzy_find_eqns_figs_wrapper.sh";
     bslt = "$HOME/scripts/bspwm_scripts/bspwm-layouts.sh";
+
+	gizmo_setup = " git clone https://github.com/Vasissualiyp/GIZMO-setup.git ./; ./scripts/gizmo_setup.sh";
   };
 
 in
