@@ -45,7 +45,7 @@ let
     cfe="~/Software/Citerius/bin/fuzzy_find_eqns_figs_wrapper.sh";
     bslt = "$HOME/scripts/bspwm_scripts/bspwm-layouts.sh";
 
-	gizmo_setup = " git clone https://github.com/Vasissualiyp/GIZMO-setup.git ./; ./scripts/gizmo_setup.sh";
+	gizmo_setup = " git clone git@github.com:Vasissualiyp/GIZMO-setup.git ./; ./scripts/gizmo_setup.sh";
   };
 
 in
