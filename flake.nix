@@ -28,7 +28,7 @@
         inherit pkgs;
         modules = [ ./hosts/nicekoffer/home.nix ];
 		extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs defaultMonitorNumber;
         };
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
