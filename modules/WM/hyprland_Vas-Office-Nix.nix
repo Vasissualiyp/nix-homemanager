@@ -174,7 +174,7 @@ in
           "SUPER, W, exec, qutebrowser"
           "SUPER_SHIFT, W, exec, qutebrowser -C ~/.config/qutebrowser/config-light.py --qt-flag disable-accelerated-2d-canvas --temp-basedir"
           "SUPER_SHIFT_CTRL, W, exec, firefox"
-          "$mainMod, M, exit, "
+          "$mainMod_SHIFT, M, exit, "
           "$mainMod, E, exec, $fileManager"
           "$mainMod, S, exec, $menu"
           "$mainMod, P, pseudo, # dwindle"
@@ -196,19 +196,19 @@ in
           "CTRL_SUPER, left, movewindow, mon:l"
           "CTRL_SUPER, right, movewindow, mon:r"
   
-  		# Resizing
-  		"$mainMod ALT, l, resizeactive, 30 0"
+  		  # Resizing
+  		  "$mainMod ALT, l, resizeactive, 30 0"
           "$mainMod ALT, h, resizeactive, -30 0"
           "$mainMod ALT, k, resizeactive, 0 -30"
           "$mainMod ALT, j, resizeactive, 0 30"
-  		"$mainMod SHIFT_ALT, l, resizeactive, 80 0"
+  		  "$mainMod SHIFT_ALT, l, resizeactive, 80 0"
           "$mainMod SHIFT_ALT, h, resizeactive, -80 0"
           "$mainMod SHIFT_ALT, k, resizeactive, 0 -80"
           "$mainMod SHIFT_ALT, j, resizeactive, 0 80"
           
           # Fullscreen, tiled, etc."
           "SUPER_SHIFT, f, fullscreen,"
-          "SUPER, t, togglefloating, active"
+          "SUPER, f, togglefloating, active"
           
           # Switch workspaces with mainMod + [0-9]"
           "$mainMod, 1, workspace, 1"
