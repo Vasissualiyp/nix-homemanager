@@ -3,6 +3,7 @@
 let 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
+	nm-applet --indicator &
 	${pkgs.dunst}/bin/dunst
   '';
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
@@ -241,12 +242,16 @@ in
           # Scroll through existing workspaces with mainMod + scroll"
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
+
 		  # Audio laptop keys
 		  ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
 		  ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 		  ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 		  ",XF86KbdBrightnessUp,exec, brightnessctl --device='asus::kbd_backlight' set 5%+"
 		  ",XF86KbdBrightnessDown,exec, brightnessctl --device='asus::kbd_backlight' set 5%-"
+
+		  # Screenshot
+		  "$mainMod_Shift, exec, grim -l 0 -g "$slurp)" - | wl-copy"
           
           # Move/resize windows with mainMod + LMB/RMB and dragging"
           #"bindm = $mainMod, mouse:272, movewindow"
