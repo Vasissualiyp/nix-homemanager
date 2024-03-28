@@ -2,6 +2,11 @@
 --vim.g.citerius_references_dir = '~/research/references'
 vim.g.citerius_references_dir = os.getenv("HOME") .. '/research/references'
 
+vim.keymap.set('n', '<leader>ce', ':lua fuzzy_find_eqns_figs()<CR>')
+vim.keymap.set('n', '<leader>co', ':lua open_paper_src()<CR>')
+vim.keymap.set('n', '<leader>cos', function() open_paper_src("split") end)
+vim.keymap.set('n', '<leader>cot', function() open_paper_src("tab") end)
+
 
 --Extract field id from the csv file using telescope
 function _G.fuzzy_find_paper(callback,field_id)
