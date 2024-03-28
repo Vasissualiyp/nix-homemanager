@@ -251,7 +251,7 @@ in
 		  ",XF86KbdBrightnessDown,exec, brightnessctl --device='asus::kbd_backlight' set 5%-"
 
 		  # Screenshot
-		  "$mainMod_Shift, exec, grim -l 0 -g "$slurp)" - | wl-copy"
+		  "$mainMod_Shift, S, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
           
           # Move/resize windows with mainMod + LMB/RMB and dragging"
           #"bindm = $mainMod, mouse:272, movewindow"
