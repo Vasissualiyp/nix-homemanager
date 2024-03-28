@@ -74,7 +74,7 @@ in
   	settings = lib.mkMerge [ {
         "$terminal" = "kitty";
         "$fileManager" = "dolphin";
-        "$menu" = "rofi -show drun";
+        "$menu" = "rofi -show drun -show-icons";
   	  env = [
           "XCURSOR_SIZE,24"
           "QT_QPA_PLATFORMTHEME,qt5ct"
