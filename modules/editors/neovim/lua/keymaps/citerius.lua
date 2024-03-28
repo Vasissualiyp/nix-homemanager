@@ -56,6 +56,49 @@ function _G.fuzzy_find_paper(callback,field_id)
     }):find()
 end
 
+function getCommandOutput(command)
+    local handle = io.popen(command, "r") -- "r" means read mode
+    local output = handle:read("*a") -- Read the entire output as a string
+    handle:close()
+    return output
+end
+
+function fetchArxiv(arg)
+    -- Replace 'arg' with the actual argument you want to pass
+    local command = "pybibget " .. arg
+    -- Execute the command
+	
+    local output = getCommandOutput(command)
+
+	return output
+end
+
+function _G.download_paper(label)
+    local parent_dir = vim.g.citerius_references_dir
+    local script_path = '/home/vasilii/Software/Citerius/bin/download_paper.sh'
+
+    -- Prompt the user for additional input in Neovim's command line
+    local input_prompt = "Please, provide the arxiv number: "
+    local arxiv_number = vim.fn.input(input_prompt)
+
+	local bibtex_out = fetchArxiv(arxiv_number)
+
+    local input_prompt = "Download source? [y/N]: "
+    local source_download= vim.fn.input(input_prompt)
+
+    -- Construct the command with the additional user input
+    local command = string.format('%s "%s" "%s" "%s" "%s"', script_path, parent_dir, bibtex_out, source_download, label, arxiv_number)
+    
+    local output = vim.fn.system(command)
+    if vim.v.shell_error ~= 0 then
+        print("Error executing command: " .. command)
+        return
+    end
+
+    local lines = vim.split(output, "\n", true)
+    vim.api.nvim_put(lines, '', true, true)
+end
+
 function _G.execute_fuzzy_find_eqns_figs(label)
     local parent_dir = vim.g.citerius_references_dir
     local script_path = '/home/vasilii/Software/Citerius/bin/fuzzy_find_eqns_figs.sh'

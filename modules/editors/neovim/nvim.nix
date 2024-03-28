@@ -39,6 +39,8 @@ in
 
     extraPython3Packages = ps: with ps; [
       pynvim
+	  #pybibget
+	  #arxiv
       #neovim
       #jedi
       #pylint
