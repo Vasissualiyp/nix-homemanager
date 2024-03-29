@@ -56,8 +56,8 @@ let
   else if machine_name == "Vas-Desktop-Nix" then 
   {
       monitor = [
-        "DP-1,1920x1080@60,0x180,1"
-        "DP-2,2560x1440@144,1920x0,1"
+        "DP-2,1920x1080@60,0x180,1"
+        "DP-1,2560x1440@144,1920x0,1"
         "HDMI-A-2,1920x1080@60,4480x180,1"
       ];
       workspace = [
