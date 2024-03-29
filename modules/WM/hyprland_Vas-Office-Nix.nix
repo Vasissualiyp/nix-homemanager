@@ -61,16 +61,16 @@ let
         "HDMI-A-1,1920x1080@60,4480x180,1"
       ];
       workspace = [
-        "1, monitor:eDP-2"
-        "2, monitor:eDP-2"
-        "3, monitor:eDP-2"
-        "4, monitor:eDP-3"
-        "5, monitor:eDP-3"
-        "6, monitor:eDP-3"
+        "1, monitor:DP-2"
+        "2, monitor:DP-2"
+        "3, monitor:DP-2"
+        "4, monitor:DP-3"
+        "5, monitor:DP-3"
+        "6, monitor:DP-3"
         "7, monitor:HDMI-A-1"
         "8, monitor:HDMI-A-1"
         "9, monitor:HDMI-A-1"
-        "0, monitor:eDP-3"
+        "0, monitor:DP-3"
       ];
   }
   else if machine_name == "nicekoffer" then

@@ -38,7 +38,14 @@ let
       primary_monitor = ["DP-3" ];
       secondary_monitors = [ "DP-2" "HDMI-A-1" ];
 	  bar_height = 12;
+  }
+  else 
+  {
+      primary_monitor = ["HDMI-A-1" ];
+      secondary_monitors = [ ];
+	  bar_height = 12;
   };
+
   workspace_icons = {
     "1" = "一";
     "2" = "二";
