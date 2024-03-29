@@ -31,6 +31,13 @@
           inherit inputs defaultMonitorNumber;
         };
       };
+      homeConfigurations."Vas-Desktop-Nix" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/Vas-Desktop-Nix/home.nix ];
+		extraSpecialArgs = {
+          inherit inputs;
+        };
+      };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./hosts/Vas-Office-Nix/1mon.nix ];
