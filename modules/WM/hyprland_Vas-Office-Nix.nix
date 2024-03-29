@@ -48,11 +48,41 @@ let
       monitor = ["eDP-1,2560x1600@165,0x0,1"];
       workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
     }
-  else {
+  else if machine_name == "Vas-HP-Nix" then 
+  {
     monitor = ["eDP-1,2560x1400@165,0x0,1"];
     workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
+  }
+  else if machine_name == "Vas-Desktop-Nix" then 
+  {
+      monitor = [
+        "DP-2,1920x1080@60,0x180,1"
+        "DP-3,2560x1440@144,1920x0,1"
+        "HDMI-A-1,1920x1080@60,4480x180,1"
+      ];
+      workspace = [
+        "1, monitor:eDP-2"
+        "2, monitor:eDP-2"
+        "3, monitor:eDP-2"
+        "4, monitor:eDP-3"
+        "5, monitor:eDP-3"
+        "6, monitor:eDP-3"
+        "7, monitor:HDMI-A-1"
+        "8, monitor:HDMI-A-1"
+        "9, monitor:HDMI-A-1"
+        "0, monitor:eDP-3"
+      ];
+  }
+  else if machine_name == "nicekoffer" then
+  {
+      monitor = ["HDMI-A-1,3840x2160,0x0,2" ];
+      workspace = map (ws: "${toString ws}, monitor:HDMI-A-1") (lib.range 1 10);
+  }
+  else 
+  {
+      monitor = ["HDMI-A-1,1920x1080,0x0,1" ];
+      workspace = map (ws: "${toString ws}, monitor:HDMI-A-1") (lib.range 1 10);
   };
-
 in
 {
   options.myMonitorModule = {

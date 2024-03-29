@@ -21,9 +21,22 @@ let
       secondary_monitors = [ ];
 	  bar_height = 12;
     }
-  else {
+  else if machine_name == "Vas-HP-Nix" then
+  {
       primary_monitor = ["eDP-1" ];
       secondary_monitors = [ ];
+	  bar_height = 12;
+  }
+  else if machine_name == "nicekoffer" then
+  {
+      primary_monitor = ["HDMI-A-1" ];
+      secondary_monitors = [ ];
+	  bar_height = 24;
+  }
+  else if machine_name == "Vas-Desktop-Nix" then
+  {
+      primary_monitor = ["DP-3" ];
+      secondary_monitors = [ "DP-2" "HDMI-A-1" ];
 	  bar_height = 12;
   };
   workspace_icons = {
