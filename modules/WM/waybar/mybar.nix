@@ -35,8 +35,8 @@ let
   }
   else if machine_name == "Vas-Desktop-Nix" then
   {
-      primary_monitor = ["DP-3" ];
-      secondary_monitors = [ "DP-2" "HDMI-A-1" ];
+      primary_monitor = ["DP-1" ];
+      secondary_monitors = [ "DP-2" "HDMI-A-2" ];
 	  bar_height = 12;
   }
   else 
