@@ -3,15 +3,16 @@
 {
   programs.qutebrowser = {
     enable = true;
+
+    keyBindings = {
+	  normal = {
+	    ",p" = "spawn --userscript qute-pass";
+	    #",P" = "spawn --userscript qute-pass --password-only";
+	  };
+    };
+
 	settings = {
 	  content.pdfjs = true;
-
-      keyMappings = {
-		normal = {
-		  ",p" = "spawn --userscript qute-pass";
-		  ",P" = "spawn --userscript qute-pass --password-only";
-		};
-      };
 
       colors = {
 	    webpage.darkmode.enabled = true;
