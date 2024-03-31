@@ -7,7 +7,7 @@
     keyBindings = {
 	  normal = {
 	    ",p" = "spawn --userscript qute-pass";
-	    #",P" = "spawn --userscript qute-pass --password-only";
+	    ",P" = "spawn --userscript qute-pass --password-only";
 	  };
     };
 
