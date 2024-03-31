@@ -4,6 +4,7 @@ let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
 	nm-applet --indicator &
+	wl-paste --watch cliphist store &
 	${pkgs.dunst}/bin/dunst
   '';
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
@@ -99,6 +100,7 @@ in
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
   	config.common.default = "*";
     };
+	services.cliphist.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
   	
@@ -282,6 +284,7 @@ in
 
 		  # Screenshot
 		  "$mainMod_Shift, S, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
+		  "CTRL_SUPER_ALT, S, exec, /home/vasilii/scripts/custom_docs_editing/wayland_noterius_screenshot.sh"
           
           # Move/resize windows with mainMod + LMB/RMB and dragging"
           #"bindm = $mainMod, mouse:272, movewindow"
