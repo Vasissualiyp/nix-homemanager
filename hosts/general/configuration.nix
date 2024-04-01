@@ -1,7 +1,7 @@
-
-{ config, pkgs, inputs, machine_name, numberOfMonitors, ... }:
+{ config, pkgs, inputs, machine_name, numberOfMonitors, home-manager, ... }:
 
 let 
+  #lib = config.home-manager.users.vasilii.lib;
   lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
@@ -15,6 +15,7 @@ let
   tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
+  rofiModule = import ../../modules/menus/rofi.nix;
 in
 
 {
@@ -35,6 +36,7 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
+    rofiModule 
 	#inputs.nix-colors.homeManagerModules.default
   ];
 

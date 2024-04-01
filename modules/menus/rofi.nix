@@ -1,99 +1,52 @@
-{
-  config,
-  inputs,
-  outputs,
-  pkgs,
-  spaghetti,
-  ...
-}: {
-  home-manager.users.${spaghetti.user} = {
-    #
-    programs.wofi = {
-      enable = true;
-      settings = {
-        width = 500;
-        height = 300;
-        always_parse_args = true;
-        show_all = false;
-        print_command = true;
-        insensitive = true;
+{ config, pkgs, lib, home-manager, ... }:
+
+let
+  #hmConfig = import "${home-manager}/nixos" { inherit pkgs lib; };
+  inherit (config.lib.formats.rasi) mkLiteral;
+in {
+  #home-manager.users.vasilii = ({ config, ... }: { ... });
+  #imports =
+  #  [
+  #    (import "${home-manager}/nixos")
+  #  ];
+  programs.rofi = {
+    enable = true;
+    theme = {
+      "*" = {
+        "background-color" = mkLiteral "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base00}, 1.0)";
+        "foreground-color" = mkLiteral "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base05}, 1.0)";
+        "border-color" = mkLiteral "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base03}, 1.0)";
+        "separator-color" = mkLiteral "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base02}, 1.0)";
+        "width" = mkLiteral "50%";
+        "border" = mkLiteral "2";
       };
-    };
-    #
-    home.file.".config/hypr/per-app/wofi.conf" = {
-      text = ''
-        bind = $mainMod, R, exec, wofi --show run
-      '';
-    };
-    #
-    home.file.".config/wofi/style.css" = {
-      text = ''
-        window {
-          margin: 5px;
-          background-color: #${config.colorScheme.palette.base00};
-          opacity: 1.0;
-          font-size: 15px;
-          font-family: JetBrainsMonoNL NF;
-          border-radius: 10px;
-          border: 5px solid #${config.colorScheme.palette.base03};
-        }
-
-        #outer-box {
-          margin: 5px;
-          border: 5px;
-          border-radius: 10px;
-        }
-
-        #input {
-          margin: 5px;
-          background-color: #${config.colorScheme.palette.base01};
-          color: #${config.colorScheme.palette.base05};
-          font-size: 15px;
-          border: 5px;
-          border-radius: 10px;
-        }
-
-        #inner-box {
-          background-color: #${config.colorScheme.palette.base00};
-          border: 5px;
-          border-radius: 10px;
-        }
-
-        #scroll {
-          font-size: 15px;
-          color: #${config.colorScheme.palette.base0F};
-          margin: 10px;
-          border-radius: 5px;
-        }
-
-        #scroll label {
-          margin: 0px 0px;
-        }
-
-        #entry {
-          margin: 5px;
-          background-color: #${config.colorScheme.palette.base01};
-          border-radius: 10px;
-          border: 5px;
-        }
-        #entry:selected {
-          background-color: #${config.colorScheme.palette.base02};
-          border: 5px solid #${config.colorScheme.palette.base03};
-          border-radius: 10px;
-          border: 5px;
-        }
-
-        #img {
-          margin: 5px;
-          border-radius: 5px;
-        }
-
-        #text {
-          margin: 2px;
-          border: none;
-          color: #${config.colorScheme.palette.base05};
-        }
-      '';
+      "#window" = {
+        background-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base00}, 0.95)";
+        border-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base03}, 1.0)";
+        border = 2;
+        padding = 10;
+        text-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base05}, 1.0)";
+      };
+      "#listview" = {
+        lines = 5;
+        fixed-height = 1;
+        dynamic = false;
+      };
+      "#element" = {
+        border = 1;
+        padding = 2;
+        border-radius = 5;
+      };
+      "#element selected" = {
+        background-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base02}, 1.0)";
+        text-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base07}, 1.0)";
+      };
+      "#scrollbar" = {
+        handle-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base03}, 1.0)";
+        handle-width = 2;
+        handle-border = 1;
+        handle-border-color = "rgba(${builtins.replaceStrings ["#"] [""] config.colorScheme.palette.base01}, 1.0)";
+      };
     };
   };
 }
