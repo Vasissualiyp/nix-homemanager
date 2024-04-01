@@ -1,14 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
-  #hmConfig = import "${home-manager}/nixos" { inherit pkgs lib; };
   inherit (config.lib.formats.rasi) mkLiteral;
 in {
-  #home-manager.users.vasilii = ({ config, ... }: { ... });
-  #imports =
-  #  [
-  #    (import "${home-manager}/nixos")
-  #  ];
   programs.rofi = {
     enable = true;
     theme = {
@@ -49,8 +43,8 @@ in {
       };
       "#scrollbar" = {
         handle-color = mkLiteral "#${config.colorScheme.palette.base03}";
-        #handle-width = mkLiteral "2";
-        #handle-border = mkLiteral "1";
+        handle-width = mkLiteral "2";
+        handle-border = mkLiteral "1";
         handle-border-color = mkLiteral "#${config.colorScheme.palette.base01}";
       };
     };
