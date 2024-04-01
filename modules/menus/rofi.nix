@@ -17,8 +17,8 @@ in {
         foreground-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
         border-color = mkLiteral "#${config.colorScheme.palette.base03}";
         separator-color = mkLiteral "#${config.colorScheme.palette.base02}";
-        width = mkLiteral "50%"; # Added % for percentage
-        border = mkLiteral "2px"; 
+        width = mkLiteral "30%"; # Added % for percentage
+        #border = mkLiteral "2px"; # per-element separator
       };
       "#window" = {
         background-color = mkLiteral "#${config.colorScheme.palette.base00}";
@@ -28,50 +28,31 @@ in {
         text-color = mkLiteral "#${config.colorScheme.palette.base05}";
       };
       "#listview" = {
-        lines = mkLiteral "5";
+        lines = mkLiteral "15";
         fixed-height = mkLiteral "1";
         dynamic = mkLiteral "false";
       };
+	  "#entry,prompt,case-indicator" ={
+		color = mkLiteral "#${config.colorScheme.palette.base0B}";
+	  };
       "#element" = {
-        text-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
         border = mkLiteral "1";
         padding = mkLiteral "2";
         border-radius = mkLiteral "5";
       };
       "#element-text" = {
-        text-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
+        text-color = mkLiteral "#${config.colorScheme.palette.base05}";
       };
       "#element selected" = {
-        background-color = mkLiteral "#${config.colorScheme.palette.base02}";
-        text-color = mkLiteral "#${config.colorScheme.palette.base07}";
+        background-color = mkLiteral "#${config.colorScheme.palette.base0A}";
+        text-color = mkLiteral "#${config.colorScheme.palette.base0B}";
       };
       "#scrollbar" = {
         handle-color = mkLiteral "#${config.colorScheme.palette.base03}";
-        handle-width = mkLiteral "2";
-        handle-border = mkLiteral "1";
+        #handle-width = mkLiteral "2";
+        #handle-border = mkLiteral "1";
         handle-border-color = mkLiteral "#${config.colorScheme.palette.base01}";
       };
     };
   };
 }
-#    theme = {
-#      "*" = {
-#        background-color = mkLiteral "#${config.colorScheme.palette.base00}";
-#        foreground-color = mkLiteral "rgba ( 250, 251, 252, 100 % )";
-#        border-color = mkLiteral "#FFFFFF";
-#        width = 512;
-#      };
-#    
-#      "#inputbar" = {
-#        children = map mkLiteral [ "prompt" "entry" ];
-#      };
-#    
-#      "#textbox-prompt-colon" = {
-#        expand = false;
-#        str = ":";
-#        margin = mkLiteral "0px 0.3em 0em 0em";
-#        text-color = mkLiteral "@foreground-color";
-#      };
-#    };
-#  };
-#}
