@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, machine_name, numberOfMonitors, home-manager, ... }:
+{ config, pkgs, inputs, machine_name, numberOfMonitors, ... }:
 
 let 
   #lib = config.home-manager.users.vasilii.lib;

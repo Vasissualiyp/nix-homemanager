@@ -35,7 +35,7 @@
         inherit pkgs;
         modules = [ ./hosts/Vas-Desktop-Nix/home.nix ];
 		extraSpecialArgs = {
-          inherit inputs home-manager;
+          inherit inputs;
         };
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
