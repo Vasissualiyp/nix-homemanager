@@ -14,7 +14,7 @@ in {
     theme = {
       "*" = {
         background-color = mkLiteral "#${config.colorScheme.palette.base00}";
-        foreground-color = mkLiteral "#${config.colorScheme.palette.base05}";
+        foreground-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
         border-color = mkLiteral "#${config.colorScheme.palette.base03}";
         separator-color = mkLiteral "#${config.colorScheme.palette.base02}";
         width = mkLiteral "50%"; # Added % for percentage
@@ -33,9 +33,13 @@ in {
         dynamic = mkLiteral "false";
       };
       "#element" = {
+        text-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
         border = mkLiteral "1";
         padding = mkLiteral "2";
         border-radius = mkLiteral "5";
+      };
+      "#element-text" = {
+        text-color = mkLiteral "#FFFFFF"; #"#${config.colorScheme.palette.base05}";
       };
       "#element selected" = {
         background-color = mkLiteral "#${config.colorScheme.palette.base02}";
