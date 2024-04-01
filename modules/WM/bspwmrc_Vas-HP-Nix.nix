@@ -107,7 +107,7 @@
     pkill stalonetray
     if [ "$machine_name" == "Vas-Office-EOS" ]; then
       stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
-    #elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
+    #elif [ "$machine_name" == "Vas-Desktop-Nix" ]; then
     #  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
     #elif [ "$machine_name" == "Vas-HP-EOS" ]; then
     #  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
