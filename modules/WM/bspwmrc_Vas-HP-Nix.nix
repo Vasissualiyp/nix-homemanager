@@ -4,6 +4,13 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
+	startupPrograms = [
+    #"$HOME/scripts/startup/monitor-connect.sh"
+	"$HOME/.config/polybar/shades/launch.sh"
+    "$HOME/scripts/wallpaper-maker/set_wallpaper.sh"
+	"warpd"
+	];
+
 	settings = {
       border_width = 3;
       window_gap = 10;
@@ -28,6 +35,12 @@
     elif [ "$monitor_number" -eq 2 ]; then
       bspc monitor eDP-1 -d  II III IV V VI VII VIII IX X
       bspc monitor HDMI-2 -d  I
+    elif [ "$monitor_number" -eq 5 ]; then
+      bspc monitor eDP-1    -d I II
+      bspc monitor DP-1-1.9 -d III
+      bspc monitor HDMI-1-0 -d IV V VI
+      bspc monitor DP-1     -d VII
+      bspc monitor DP-1-1.8 -d VIII
     else
       echo "There are $monitor_number monitors, the bspwm configuration only exists for 1 and 2"
     fi
@@ -56,16 +69,12 @@
     # Sxhkd
     sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
     xfce-power-manager &
-    # warpd
-    warpd &
     
     #kitty &
     # Set wallpaper with feh for pywal to use
     #feh --bg-fill /path/to/your/wallpaper.jpg &
     # Generate color scheme with pywal
     #wal -i /path/to/your/wallpaper.jpg -q -t &
-	$HOME/.config/polybar/shades/launch.sh &
-    /home/vasilii/scripts/wallpaper-maker/set_wallpaper.sh &
 
     
     # Wallpaper

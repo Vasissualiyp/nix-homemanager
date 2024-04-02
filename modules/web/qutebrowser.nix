@@ -8,6 +8,8 @@
 	  normal = {
 	    ",p" = "spawn --userscript qute-pass";
 	    ",P" = "spawn --userscript qute-pass --password-only";
+	    "J" = "tab-prev";
+	    "K" = "tab-next";
 	  };
     };
 
