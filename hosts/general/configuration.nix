@@ -6,10 +6,11 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
+  monitorDefsModule = import ../../modules/WM/monitor_definitions.nix ;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
-  zathuraModule = import ../../modules/office/zathura.nix;
   bspwmModule = ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
+  zathuraModule = import ../../modules/office/zathura.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   tmuxModule = import ../../modules/terminals/tmux.nix;
@@ -25,6 +26,7 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
+	monitorDefsModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
 	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
