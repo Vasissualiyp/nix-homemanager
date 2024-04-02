@@ -4,6 +4,17 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
+	settings = {
+      border_width = 3;
+      window_gap = 10;
+      split_ratio = 0.6;
+      borderless_monocle = true;
+      gapless_monocle = true;
+      pointer_follows_focus = true;
+      focus_follows_pointer = true;
+      pointer_action1 = "move=focus";
+	};
+
     extraConfig = ''
     pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
     
@@ -20,19 +31,6 @@
     else
       echo "There are $monitor_number monitors, the bspwm configuration only exists for 1 and 2"
     fi
-    
-    
-    bspc config border_width         3
-    bspc config window_gap           10
-    
-    bspc config split_ratio          0.6
-    bspc config borderless_monocle   true
-    bspc config gapless_monocle      true
-    bspc config pointer_follows_focus true
-    bspc config focus_follows_pointer true
-    bspc config pointer_action1 move=focus
-    
-    
     
     bspc rule -a Gimp desktop='^8' state=floating follow=on
     #bspc rule -a Chromium desktop='^2'
@@ -53,21 +51,8 @@
     bspc config normal_border_color    "#073642"
     bspc config active_border_color     "#073642"
     
-    #
-    # Autostart
-    #
-    # Set display from arandr saved script
-    #sh ~/.screenlayout/monitor.sh &
-    # Bar
-    #/usr/bin/polybar -c ~/.config/polybar/config.ini &
-    
     bspc config top_padding 30
-    #sudo mpd
-    #bash ~/.config/polybar/shades/scripts/pywal.sh ~/Pictures/Wallpapers/Wallpaper1.jpg &
-    #sh ~/.config/polybar/shades/launch.sh &
-    # Notifications
-    #/usr/bin/dunst &
-    
+
     # Sxhkd
     sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
     xfce-power-manager &
@@ -79,7 +64,9 @@
     #feh --bg-fill /path/to/your/wallpaper.jpg &
     # Generate color scheme with pywal
     #wal -i /path/to/your/wallpaper.jpg -q -t &
-    
+	$HOME/.config/polybar/shades/launch.sh &
+    /home/vasilii/scripts/wallpaper-maker/set_wallpaper.sh &
+
     
     # Wallpaper
     #nitrogen --restore &
