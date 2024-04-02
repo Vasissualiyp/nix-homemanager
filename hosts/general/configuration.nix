@@ -6,7 +6,7 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
-  monitorDefsModule = import ../../modules/WM/monitor_definitions.nix ;
+  monitorDefsModule = (import ../../modules/WM/monitor_definitions.nix { inherit lib machine_name numberOfMonitors; });
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
   bspwmModule = ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
@@ -26,7 +26,6 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
-	monitorDefsModule
 	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
 	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
@@ -40,7 +39,7 @@ in
     gammastepModule
     rofiModule 
 	#inputs.nix-colors.homeManagerModules.default
-  ];
+  ]; #++ (monitorDefsModule.monitorsConfig or []);
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
