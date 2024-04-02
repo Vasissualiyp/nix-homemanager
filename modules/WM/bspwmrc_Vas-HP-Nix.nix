@@ -41,6 +41,7 @@ let
     bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
   };
 
+in
 {
   xsession.windowManager.bspwm = {
     enable = true;
