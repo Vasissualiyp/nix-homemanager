@@ -64,7 +64,7 @@ in
       focus_follows_pointer = true;
       pointer_action1 = "move=focus";
 	};
-	monitors = bspwm_monitors;
+	monitors = monitorsConfig.bspwm_monitors;
 
     extraConfig = ''
     pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
