@@ -1,4 +1,45 @@
-{ pkgs, ... }:
+{ pkgs, machine_name, numberOfMonitors, ... }:
+
+let 
+  monitorsConfig = if machine_name == "Vas-Office-Nix" then
+    if numberOfMonitors == 5 then {
+      bspwm_monitors = {
+        eDP-1 = [ "I" "II" ];
+        "DP-1-1.9" = [ "III" ];
+        HDMI-1-0 = [ "IV" "V" "VI" ];
+        DP-1 = [ "VII" ];
+        "DP-1-1.8" = [ "VIII" ];
+      };
+    } else if numberOfMonitors == 2 then {
+      bspwm_monitors = {
+        eDP-1 = [ "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+        HDMI-2 = [ "I" ];
+      };
+	} else {
+      bspwm_monitors = {
+        eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+      };
+    }
+  else if machine_name == "Vas-HP-Nix" then 
+  {
+    bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+  }
+  else if machine_name == "Vas-Desktop-Nix" then 
+  {
+      bspwm_monitors = {
+        DP-3 = [ "I" "II" "III" ];
+        DP-0 = [ "X" "IV" "V" "VI" ];
+        HDMI-1 = [ "VII" "VIII" "IX" ];
+      };
+  }
+  else if machine_name == "nicekoffer" then
+  {
+    bspwm_monitors = { HDMI-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+  }
+  else 
+  {
+    bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+  };
 
 {
   xsession.windowManager.bspwm = {
@@ -9,6 +50,7 @@
 	"$HOME/.config/polybar/shades/launch.sh"
     "$HOME/scripts/wallpaper-maker/set_wallpaper.sh"
 	"warpd"
+	"redshift -t 6500:2500"
 	];
 
 	settings = {
@@ -21,29 +63,10 @@
       focus_follows_pointer = true;
       pointer_action1 = "move=focus";
 	};
+	monitors = bspwm_monitors;
 
     extraConfig = ''
     pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
-    
-    # Polkit
-    #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-    
-    machine_name=$(uname -n)
-    monitor_number=$(xrandr | grep " connected" | wc -l)
-    if [ "$monitor_number" -eq 1 ]; then
-      bspc monitor eDP-1 -d    I II III IV V VI VII VIII IX X
-    elif [ "$monitor_number" -eq 2 ]; then
-      bspc monitor eDP-1 -d  II III IV V VI VII VIII IX X
-      bspc monitor HDMI-2 -d  I
-    elif [ "$monitor_number" -eq 5 ]; then
-      bspc monitor eDP-1    -d I II
-      bspc monitor DP-1-1.9 -d III
-      bspc monitor HDMI-1-0 -d IV V VI
-      bspc monitor DP-1     -d VII
-      bspc monitor DP-1-1.8 -d VIII
-    else
-      echo "There are $monitor_number monitors, the bspwm configuration only exists for 1 and 2"
-    fi
     
     bspc rule -a Gimp desktop='^8' state=floating follow=on
     #bspc rule -a Chromium desktop='^2'
@@ -85,10 +108,6 @@
     # picom -b &
     # Network Applet
     #nm-applet --indicator &
-    
-    # Redshift
-    pkill redshift
-    redshift -t 6500:2500 &
     
     # Cursor
     xsetroot -cursor_name left_ptr &

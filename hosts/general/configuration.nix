@@ -9,7 +9,7 @@ let
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
-  bspwmModule = import ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
+  bspwmModule = ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   tmuxModule = import ../../modules/terminals/tmux.nix;
@@ -25,12 +25,12 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
+	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
+	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
+    (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
     bashModule
-	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
     qutebrowserModule
-	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
-    bspwmModule
     kittyModule
     nvimModule
     tmuxModule
