@@ -279,8 +279,10 @@ in
           let
             resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
             position = "${toString m.x}x${toString m.y}";
+            scale = "${toString m.scale}";
+            hypr_transform = "${toString m.hypr_transform}";
           in
-          "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
+          "${m.name},${if m.enabled then "${resolution},${position},${scale},${hypr_transform}" else "disable"}"
         )
         (config.monitors);
   
