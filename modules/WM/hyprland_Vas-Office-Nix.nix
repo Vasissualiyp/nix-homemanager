@@ -285,7 +285,6 @@ in
           "${m.name},${if m.enabled then "${resolution},${position},${scale},${hypr_transform}" else "disable"}"
         )
         (config.monitors);
-  
   	}
 	{
         #"monitor" = monitorsConfig."monitor";

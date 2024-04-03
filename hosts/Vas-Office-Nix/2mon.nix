@@ -16,7 +16,7 @@ in
 	  x = 640;
 	  y = 2160;
 	  refreshRate = 60;
-	  scale = 1
+	  scale = 1;
 	  enabled = true;
     }
     {
@@ -26,7 +26,7 @@ in
 	  x = 0;
 	  y = 0;
 	  refreshRate = 60;
-	  scale = 1
+	  scale = 1;
 	  enabled = true;
     }
   ];
