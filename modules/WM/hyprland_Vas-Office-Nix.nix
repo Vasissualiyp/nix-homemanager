@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, machine_name, numberOfMonitors, ... }:
+{ config, pkgs, lib, inputs, machine_name, numberOfMonitors, ... }:
 
 let 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''

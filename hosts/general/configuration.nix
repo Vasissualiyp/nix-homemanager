@@ -26,7 +26,7 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
-	(import hyprlandModule { inherit pkgs lib inputs machine_name numberOfMonitors; })
+	(import hyprlandModule { inherit config pkgs lib inputs machine_name numberOfMonitors; })
 	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
@@ -44,7 +44,8 @@ in
 
   monitors = [
 	{
-      name = "DP-2";
+      #name = "DP-2";
+      name = "HDMI-A-2";
 	  width = 1920;
 	  height = 1080;
 	  refreshRate = 60;
@@ -65,6 +66,7 @@ in
 	}
     {
       name = "HDMI-A-2";
+      #name = "DP-2";
 	  width = 1920;
 	  height = 1080;
 	  refreshRate = 60;
