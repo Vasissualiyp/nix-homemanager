@@ -56,11 +56,11 @@ let
   }
   else if machine_name == "Vas-Desktop-Nix" then 
   {
-      monitor = [
-        "DP-2,1920x1080@60,0x180,1"
-        "DP-1,2560x1440@144,1920x0,1"
-        "HDMI-A-2,1920x1080@60,4480x180,1"
-      ];
+      #monitor = [
+      #  "DP-2,1920x1080@60,0x180,1"
+      #  "DP-1,2560x1440@144,1920x0,1"
+      #  "HDMI-A-2,1920x1080@60,4480x180,1"
+      #];
       workspace = [
         "1, monitor:DP-2"
         "2, monitor:DP-2"
@@ -292,10 +292,20 @@ in
         ];
   
   	  exec-once = ''${startupScript}/bin/start'';
+
+      monitor = map
+        (m:
+          let
+            resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+            position = "${toString m.x}x${toString m.y}";
+          in
+          "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
+        )
+        (config.monitors);
   
   	}
 	{
-        "monitor" = monitorsConfig."monitor";
+        #"monitor" = monitorsConfig."monitor";
         "workspace" = monitorsConfig."workspace";
 	}
 	];

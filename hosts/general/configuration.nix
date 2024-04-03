@@ -6,7 +6,7 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
-  monitorDefsModule = (import ../../modules/WM/monitor_definitions.nix { inherit lib machine_name numberOfMonitors; });
+  monitorDefsModule = (import ../../modules/WM/monitor_definitions.nix { inherit config lib; });
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
   bspwmModule = ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
@@ -38,8 +38,42 @@ in
     zathuraModule
     gammastepModule
     rofiModule 
+	monitorDefsModule
 	#inputs.nix-colors.homeManagerModules.default
-  ]; #++ (monitorDefsModule.monitorsConfig or []);
+  ]; 
+
+  monitors = [
+	{
+      name = "DP-2";
+	  width = 1920;
+	  height = 1080;
+	  refreshRate = 60;
+	  x = 0;
+	  y = 180;
+	  scale = 1;
+	  enabled = true;
+	}
+    {
+      name = "DP-1";
+	  width = 2560;
+	  height = 1440;
+	  refreshRate = 144;
+	  x = 1920;
+	  y = 0;
+	  scale = 1;
+	  enabled = true;
+	}
+    {
+      name = "HDMI-A-2";
+	  width = 1920;
+	  height = 1080;
+	  refreshRate = 60;
+	  x = 4480;
+	  y = 180;
+	  scale = 1;
+	  enabled = true;
+	}
+  ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
