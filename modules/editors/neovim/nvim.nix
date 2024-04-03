@@ -7,8 +7,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "Vasissualiyp";
 		repo = "noterius-vim";
-        rev = "d5d391607ce0371bf3add805dfcfce635e213845";
-        sha256 = "1igr28zwyhrxf1rrd1fcy6pyi9yacl0bdl4nh70jckrqgx6441hl";
+        rev = "a4527fbae371e34302c8734c351734bc2b81ebd2",
+        sha256 = "08d16sz77jfwn9yv8s524hhvrm0cd19p6aac3cgkdv90sazsd3gx";
       };
     };
 in

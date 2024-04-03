@@ -28,7 +28,7 @@ vim.keymap.set('n','<leader>nf', noterius_telescope.search_notes)
 -- Initialize noterius. MUST BE INCLUDED AFTER the definitions of global variables!
 require('noterius-vim.init').setup({
   notes_dir = '~/research/notes',
-  author = 'Vasilii Pustovoit',
+  author = "Vasilii Pustovoit",
   citerius_integration = 1,
   citerius_src_dir = '~/research/references',
 })
