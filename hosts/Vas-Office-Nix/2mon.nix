@@ -17,7 +17,7 @@ in
 	  y = 2160;
 	  refreshRate = 60;
 	  scale = 1
-	  enable = true;
+	  enabled = true;
     }
     {
 	  name = "HDMI-A-1";
@@ -27,7 +27,7 @@ in
 	  y = 0;
 	  refreshRate = 60;
 	  scale = 1
-	  enable = true;
+	  enabled = true;
     }
   ];
 }

@@ -17,7 +17,7 @@ in
 	  x = 0;
 	  y = 0;
 	  scale = 1;
-	  enable = true;
+	  enabled = true;
     }
   ];
 }

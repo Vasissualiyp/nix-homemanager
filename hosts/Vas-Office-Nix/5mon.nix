@@ -17,7 +17,7 @@ in
 	  x = 0; 
 	  y = 200;
 	  scale = 2;
-	  enable = true;
+	  enabled = true;
 	}
     {
 	  name = "DP-5";
@@ -27,7 +27,7 @@ in
 	  y = 0;
 	  scale = 1;
 	  hypr_transform = ",transform,1";
-	  enable = true;
+	  enabled = true;
     }
     {
 	  name = "HDMI-A-1";
@@ -38,7 +38,7 @@ in
 	  refreshRate = 60;
 	  hypr_transform = ",transform,1";
 	  scale = 2;
-	  enable = true;
+	  enabled = true;
     }
     {
 	  name = "DP-1";
@@ -48,7 +48,7 @@ in
 	  y = 0;
 	  scale = 1;
 	  hypr_transform = ",transform,1";
-	  enable = true;
+	  enabled = true;
     }
     {
 	  name = "DP-4";
@@ -57,7 +57,7 @@ in
 	  x = 4760;
 	  y = 420;
 	  scale = 1;
-	  enable = true;
+	  enabled = true;
 	}
   ];
 }
