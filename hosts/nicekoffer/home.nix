@@ -19,7 +19,7 @@ in
 	  refreshRate = 165;
 	  x = 0;
 	  y = 0;
-	  scale = 1;
+	  scale = 2;
 	  enabled = true;
     }
   ];
