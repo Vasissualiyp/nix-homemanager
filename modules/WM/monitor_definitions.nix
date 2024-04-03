@@ -38,6 +38,10 @@ in
 		  type = types.bool;
 		  default = true;
 		};
+		hypr_transform = mkOption {
+		  type = types.str;
+		  default = "";
+		};
 	  };
     });
 	default = [ ];

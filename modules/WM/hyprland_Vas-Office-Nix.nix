@@ -9,13 +9,6 @@ let
   '';
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
-      monitor = [
-        "eDP-1,2560x1600@60,0x200,2"
-        "DP-5,1920x1200,1280x0,1,transform,1"
-        "HDMI-A-1,3840x2160@60,2480x0@60,2,transform,1"
-        "DP-1,1920x1200,3560x0,1,transform,1"
-        "DP-4,1920x1080,4760x420,1"
-      ];
       workspace = [
         "1, monitor:eDP-1"
         "2, monitor:DP-5"
@@ -29,10 +22,6 @@ let
         "0, monitor:DP-4"
       ];
     } else if numberOfMonitors == 2 then {
-      monitor = [
-        "eDP-1,2560x1600@60,640x2160,1"
-        "HDMI-A-1,1920x1080@60,0x0@60,1"
-      ];
       workspace = [
         "1, monitor:HDMI-A-1"
         "2, monitor:eDP-1"
@@ -46,21 +35,14 @@ let
         "0, monitor:eDP-1"
       ];
 	} else {
-      monitor = ["eDP-1,2560x1600@165,0x0,1"];
       workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
     }
   else if machine_name == "Vas-HP-Nix" then 
   {
-    monitor = ["eDP-1,2560x1400@165,0x0,1"];
     workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);
   }
   else if machine_name == "Vas-Desktop-Nix" then 
   {
-      #monitor = [
-      #  "DP-2,1920x1080@60,0x180,1"
-      #  "DP-1,2560x1440@144,1920x0,1"
-      #  "HDMI-A-2,1920x1080@60,4480x180,1"
-      #];
       workspace = [
         "1, monitor:DP-2"
         "2, monitor:DP-2"
@@ -76,7 +58,6 @@ let
   }
   else if machine_name == "nicekoffer" then
   {
-      monitor = ["HDMI-A-1,3840x2160,0x0,2" ];
       workspace = map (ws: "${toString ws}, monitor:HDMI-A-1") (lib.range 1 10);
   }
   else 
