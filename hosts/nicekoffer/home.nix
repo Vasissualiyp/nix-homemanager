@@ -17,7 +17,6 @@ in
 	  width = 2560; 
 	  height = 1600;
 	  refreshRate = 165;
-	  refreshRate = 60;
 	  x = 0;
 	  y = 0;
 	  scale = 1;
