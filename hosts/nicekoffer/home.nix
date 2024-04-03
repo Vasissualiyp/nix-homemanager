@@ -13,10 +13,10 @@ in
 
   monitors = [
     {
-	  name = "eDP-1";
-	  width = 2560; 
-	  height = 1600;
-	  refreshRate = 165;
+	  name = "HDMI-A-1";
+	  width = 3840; 
+	  height = 2160;
+	  refreshRate = 30;
 	  x = 0;
 	  y = 0;
 	  scale = 2;
