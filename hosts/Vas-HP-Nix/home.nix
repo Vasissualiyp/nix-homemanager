@@ -2,6 +2,7 @@
 
 let 
   machine_name = "Vas-HP-Nix";
+  lib = pkgs.lib;
 in
 
 {
