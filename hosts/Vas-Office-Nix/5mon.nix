@@ -32,7 +32,7 @@ in
     {
 	  name = "HDMI-A-1";
 	  width = 3840; 
-	  height = 2160@60;
+	  height = 2160;
 	  x = 2480;
 	  y = 0;
 	  refreshRate = 60;
