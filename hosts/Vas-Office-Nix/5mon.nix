@@ -26,7 +26,7 @@ in
 	  x = 1280;
 	  y = 0;
 	  scale = 1;
-	  hypr_transform = ",transform,1";
+	  hypr_transform = "transform,1";
 	  enabled = true;
     }
     {
@@ -36,7 +36,7 @@ in
 	  x = 2480;
 	  y = 0;
 	  refreshRate = 60;
-	  hypr_transform = ",transform,1";
+	  hypr_transform = "transform,1";
 	  scale = 2;
 	  enabled = true;
     }
@@ -47,7 +47,7 @@ in
 	  x = 3560;
 	  y = 0;
 	  scale = 1;
-	  hypr_transform = ",transform,1";
+	  hypr_transform = "transform,1";
 	  enabled = true;
     }
     {
