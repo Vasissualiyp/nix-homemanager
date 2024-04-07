@@ -81,6 +81,9 @@ in
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
   	config.common.default = "*";
     };
+	imports = [
+      ../rice/cursor_wayland.nix
+	];
 	services.cliphist.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
