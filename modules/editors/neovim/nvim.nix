@@ -89,10 +89,7 @@ in
         {
           plugin = nvim-lspconfig;
           type = "lua";
-          config = ''
-            require("config.lsp").setup_servers("${lspServers}")
-            require("config.lsp_cmp")
-          '';
+		  config = toLua "${builtins.readFile ./lua/config/lsp}\n${builtins.readFile ./lua/config/lsp_cmp}";
         }
       )
 	  {
