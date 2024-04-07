@@ -82,16 +82,16 @@ in
 	  leap-nvim
 	  copilot-vim
 	  vim-css-color
-	  (
-        let
-          lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
-        in
-        {
-          plugin = nvim-lspconfig;
-          type = "lua";
-		  config = toLua "${builtins.readFile ./lua/config/lsp}\n${builtins.readFile ./lua/config/lsp_cmp}";
-        }
-      )
+	  nvim-lspconfig
+	  #(
+          #  let
+          #    lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
+          #  in
+          #  {
+          #    plugin = nvim-lspconfig;
+	  #    config = toLua "${builtins.readFile ./lua/config/lsp.lua}\n${builtins.readFile ./lua/config/lsp_cmp.lua}";
+          #  }
+	  #)
 	  {
 	  plugin = SimpylFold;
 	  config = toLuaFile ./lua/plugins/simpylfold.lua;
