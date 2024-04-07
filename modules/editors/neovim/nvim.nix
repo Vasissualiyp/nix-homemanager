@@ -82,7 +82,20 @@ in
 	  leap-nvim
 	  copilot-vim
 	  vim-css-color
-	  nvim-lspconfig
+	  (
+        let
+          lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
+        in
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = ''
+            require("config.lsp").setup_servers("${lspServers}")
+            require("config.lsp_cmp")
+          '';
+        }
+      )
+	  lsp-signature
 	  {
 	  plugin = SimpylFold;
 	  config = toLuaFile ./lua/plugins/simpylfold.lua;
@@ -126,10 +139,6 @@ in
 	  plugin = ultisnips;
 	  config = toLuaFile ./lua/keymaps/ultisnips.lua;
 	  }
-
-	  # Mason doesn't work on NixOs
-      #mason-nvim
-      #mason-lspconfig-nvim
     ];
 
   };
