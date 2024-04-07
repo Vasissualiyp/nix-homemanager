@@ -95,7 +95,6 @@ in
           '';
         }
       )
-	  lsp-signature
 	  {
 	  plugin = SimpylFold;
 	  config = toLuaFile ./lua/plugins/simpylfold.lua;
