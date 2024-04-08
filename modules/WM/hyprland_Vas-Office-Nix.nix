@@ -81,6 +81,15 @@ in
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
   	config.common.default = "*";
     };
+
+    home.pointerCursor = {
+      gtk.enable = true;
+      # x11.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 16;
+    };
+
 	services.cliphist.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;

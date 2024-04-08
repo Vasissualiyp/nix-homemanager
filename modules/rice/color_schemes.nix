@@ -5,11 +5,11 @@ let
   #colorSchemeName = "ayu-dark";
   #colorSchemeName = "black-metal";
   #colorSchemeName = "catppuccin-mocha";
-  #colorSchemeName = "da-one-black";
+  colorSchemeName = "da-one-black";
   #colorSchemeName = "equilibrium-dark";
   #colorSchemeName = "eris";
   #colorSchemeName = "framer";
-  colorSchemeName = "tokyo-night-dark";
+  #colorSchemeName = "tokyo-night-dark";
 
   # All colorschemes
   #colorSchemeName = "3024";
