@@ -5,6 +5,7 @@ let
   lib = pkgs.lib;
   bashModule = import ../../modules/terminals/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
+  cursor = import ../../modules/rice/cursor.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
@@ -29,6 +30,7 @@ in
 	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
+    cursor 
     bashModule
     qutebrowserModule
     kittyModule
@@ -37,7 +39,6 @@ in
     zathuraModule
     gammastepModule
     rofiModule 
-	#inputs.nix-colors.homeManagerModules.default
   ]; 
 
   home.stateVersion = "23.11"; # Please read the comment before changing.

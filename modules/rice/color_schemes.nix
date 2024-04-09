@@ -258,6 +258,8 @@ let
   
 in
 {
+  programs.dconf.enable = true; # Apply gtk themes in wayland applications
+
   imports = [ inputs.nix-colors.homeManagerModules.default ];
   colorScheme = inputs.nix-colors.colorSchemes.${colorSchemeName};
 }
