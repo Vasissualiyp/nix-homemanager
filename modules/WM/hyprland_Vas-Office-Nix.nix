@@ -198,7 +198,9 @@ in
           "SUPER_SHIFT_CTRL, W, exec, firefox"
           "$mainMod_SHIFT_CTRL, M, exit, "
           "$mainMod, E, exec, $fileManager"
-          "$mainMod, S, exec, $menu"
+          #"$mainMod, S, exec, $menu"
+          "$mainMod, S, exec, ags -t launcher"
+          "$mainMod, O, exec, ags -t overview"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, J, togglesplit, # dwindle"
           
