@@ -294,7 +294,7 @@
         tabs.selected.even.fg = "#${config.colorScheme.palette.base05}";
         
         # Background color of selected even tabs.
-        tabs.selected.even.bg = "#${config.colorScheme.palette.base02}";
+        tabs.selected.even.bg = "#${config.colorScheme.palette.base00}";
 
       };
     };
