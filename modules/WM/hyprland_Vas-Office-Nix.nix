@@ -199,8 +199,8 @@ in
           "$mainMod_SHIFT_CTRL, M, exit, "
           "$mainMod, E, exec, $fileManager"
           #"$mainMod, S, exec, $menu"
-          "$mainMod, S, exec, ags -t launcher"
-          "$mainMod, O, exec, ags -t overview"
+          "$mainMod, S, exec, asztal -t launcher"
+          "$mainMod, O, exec, asztal -t overview"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, J, togglesplit, # dwindle"
           
