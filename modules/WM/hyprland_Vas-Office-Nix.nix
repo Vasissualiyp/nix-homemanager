@@ -223,6 +223,7 @@ in
           
           # Fullscreen, tiled, etc."
           "SUPER_SHIFT, f, fullscreen,"
+          "$mainMod, m, fullscreen, 1"
           "SUPER, f, togglefloating, active"
           
           # Switch workspaces with mainMod + [0-9]"
