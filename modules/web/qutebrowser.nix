@@ -252,13 +252,13 @@
         tabs.odd.fg = "#${config.colorScheme.palette.base05}";
         
         # Background color of unselected odd tabs.
-        tabs.odd.bg = "#${config.colorScheme.palette.base01}";
+        tabs.odd.bg = "#${config.colorScheme.palette.base02}";
         
         # Foreground color of unselected even tabs.
         tabs.even.fg = "#${config.colorScheme.palette.base05}";
         
         # Background color of unselected even tabs.
-        tabs.even.bg = "#${config.colorScheme.palette.base00}";
+        tabs.even.bg = "#${config.colorScheme.palette.base02}";
         
         # Background color of pinned unselected even tabs.
         tabs.pinned.even.bg = "#${config.colorScheme.palette.base0C}";
@@ -288,7 +288,7 @@
         tabs.selected.odd.fg = "#${config.colorScheme.palette.base05}";
         
         # Background color of selected odd tabs.
-        tabs.selected.odd.bg = "#${config.colorScheme.palette.base02}";
+        tabs.selected.odd.bg = "#${config.colorScheme.palette.base00}";
         
         # Foreground color of selected even tabs.
         tabs.selected.even.fg = "#${config.colorScheme.palette.base05}";
