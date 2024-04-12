@@ -6,7 +6,9 @@ let
 	asztal &
 	nm-applet --indicator &
 	wl-paste --watch cliphist store &
-	${pkgs.dunst}/bin/dunst
+	#${pkgs.dunst}/bin/dunst &
+    hyprctl dispatch exec [workspace 5 silent] "kitty sh -c 'tmux a -t Main' " &
+    hyprctl dispatch exec [workspace 2 silent] "kitty sh -c 'tmux a -t Note' "
   '';
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
