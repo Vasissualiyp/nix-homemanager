@@ -193,7 +193,7 @@ in
           "SUPER, W, exec, qutebrowser"
           "SUPER_SHIFT, W, exec, qutebrowser -C ~/.config/qutebrowser/config-light.py --qt-flag disable-accelerated-2d-canvas --temp-basedir"
           "SUPER_SHIFT_CTRL, W, exec, firefox"
-          "$mainMod_SHIFT, M, exit, "
+          "$mainMod_SHIFT_CTRL, M, exit, "
           "$mainMod, E, exec, $fileManager"
           "$mainMod, S, exec, $menu"
           "$mainMod, P, pseudo, # dwindle"
