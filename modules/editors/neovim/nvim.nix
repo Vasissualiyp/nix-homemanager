@@ -109,10 +109,10 @@ in
 	  plugin = calendar-vim;
 	  config = toLuaFile ./lua/plugins/calendar.lua;
 	  }
-      {
-	  plugin = vim-smoothie;
-	  config = toLuaFile ./lua/plugins/smoothie.lua;
-	  }
+      #{
+	  #plugin = vim-smoothie;
+	  #config = toLuaFile ./lua/plugins/smoothie.lua;
+	  #}
       {
 	  plugin = limelight-vim;
 	  config = toLua "${builtins.readFile ./lua/plugins/limelight.lua}\n${builtins.readFile ./lua/keymaps/limelight.lua}";
