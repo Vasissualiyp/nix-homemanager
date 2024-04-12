@@ -175,6 +175,10 @@ in
             # See https://wiki.hyprland.org/Configuring/Variables/ for more";
             "workspace_swipe" = "on";
         };
+
+		binds = {
+		    "movefocus_cycles_fullscreen" = "false";
+		};
         
         misc = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more";
