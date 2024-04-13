@@ -188,7 +188,7 @@ in
 
 	  	binds = {
 	  	    "movefocus_cycles_fullscreen" = "false";
-	  	    "allow_workspae_cycles" = "true";
+	  	    "allow_workspace_cycles" = "true";
 	  	};
           
           misc = {
