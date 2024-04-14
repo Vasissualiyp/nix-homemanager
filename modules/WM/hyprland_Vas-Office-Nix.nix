@@ -186,10 +186,10 @@ in
             "workspace_swipe" = "on";
         };
 
-	  	nds = {
+	  	binds = {
 	  	  "movefocus_cycles_fullscreen" = "false";
 	  	  "allow_workspace_cycles" = "true";
-	  	
+	    };	
         
         misc = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more";
