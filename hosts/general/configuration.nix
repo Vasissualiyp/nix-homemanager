@@ -19,6 +19,7 @@ let
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
   asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
+  dconfModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/dconf.nix;
 in
 
 {
@@ -42,6 +43,7 @@ in
     gammastepModule
     rofiModule 
     asztalModule 
+    dconfModule 
   ]; 
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
