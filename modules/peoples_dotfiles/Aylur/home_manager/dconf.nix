@@ -71,7 +71,6 @@ with lib.hm.gvariant; {
       switch-to-application-5 = [];
       switch-to-application-6 = [];
       switch-to-application-7 = [];
-      switch-to-application-7 = [];
       switch-to-application-8 = [];
       switch-to-application-9 = [];
       switch-to-application-10 = [];
