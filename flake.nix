@@ -16,14 +16,24 @@
 	};
 
 	nix-colors.url = "github:misterio77/nix-colors";
+    
+	# asztal's inputs
+    matugen.url = "github:InioX/matugen";
+    ags.url = "github:Aylur/ags";
+    astal.url = "github:Aylur/astal";
+    stm.url = "github:Aylur/stm";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 	  defaultMonitorNumber = 1;
     in {
+      formatter = { x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra; };
+      packages.x86_64-linux.default =
+        nixpkgs.legacyPackages.x86_64-linux.callPackage ./modules/peoples_dotfiles/Aylur/ags {inherit inputs;};
+
       homeConfigurations."nicekoffer" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./hosts/nicekoffer/home.nix ];
@@ -36,6 +46,7 @@
         modules = [ ./hosts/Vas-Desktop-Nix/home.nix ];
 		extraSpecialArgs = {
           inherit inputs;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {

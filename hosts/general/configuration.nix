@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, machine_name, numberOfMonitors, ... }:
+{ config, pkgs, inputs, machine_name, numberOfMonitors, asztal, ... }:
 
 let 
   #lib = config.home-manager.users.vasilii.lib;
@@ -17,6 +17,8 @@ let
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
+  # asztal's modules
+  asztalModule = import ../../modules/peoples_dotfiles/Aylur/ags.nix;
 in
 
 {
@@ -39,6 +41,7 @@ in
     zathuraModule
     gammastepModule
     rofiModule 
+    asztalModule 
   ]; 
 
   home.stateVersion = "23.11"; # Please read the comment before changing.

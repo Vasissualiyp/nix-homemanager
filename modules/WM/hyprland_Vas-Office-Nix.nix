@@ -202,7 +202,7 @@ in
             "CTRL_SUPER_ALT, T, exec, $terminal"
             "$mainMod, Q, killactive, "
             "SUPER, W, exec, export QMLSCENE_DEVICE=softwarecontext; qutebrowser" # Need to export, otherwise cannot set up the variable
-            "SUPER_SHIFT, W, exec, qutebrowser -C ~/.config/qutebrowser/config-light.py --qt-flag disable-accelerated-2d-canvas --temp-basedir"
+            "SUPER_SHIFT, W, exec, export QMLSCENE_DEVICE=softwarecontext; qutebrowser -C ~/.config/qutebrowser/config-light.py --qt-flag disable-accelerated-2d-canvas --temp-basedir"
             "SUPER_SHIFT_CTRL, W, exec, firefox"
             "$mainMod_SHIFT_CTRL, M, exit, "
             "$mainMod, E, exec, $fileManager"
