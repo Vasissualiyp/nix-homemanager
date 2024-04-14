@@ -18,7 +18,7 @@ let
   gammastepModule = import ../../modules/system/gammastep.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
-  asztalModule = import ../../modules/peoples_dotfiles/Aylur/ags.nix;
+  asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
 in
 
 {
