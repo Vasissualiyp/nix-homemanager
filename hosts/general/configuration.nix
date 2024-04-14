@@ -7,19 +7,20 @@ let
   colorscheme = import ../../modules/rice/color_schemes.nix;
   cursor = import ../../modules/rice/cursor.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
-  hyprlandModule = ../../modules/WM/hyprland_Vas-Office-Nix.nix ;
+  hyprlandModule = ../../modules/WM/hyprland.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
-  bspwmModule = ../../modules/WM/bspwmrc_Vas-HP-Nix.nix;
+  bspwmModule = ../../modules/WM/bspwmrc.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
-  tmuxModule = import ../../modules/terminals/tmux.nix;
+  #tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
   asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
   dconfModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/dconf.nix;
+  tmuxModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/tmux.nix;
 in
 
 {
@@ -30,7 +31,7 @@ in
 
   imports = [
 	(import hyprlandModule { inherit config pkgs lib inputs machine_name numberOfMonitors; })
-	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
+	#(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
     cursor 
