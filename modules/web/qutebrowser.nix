@@ -14,8 +14,13 @@
     };
 
 	settings = {
+	  # Make pdfs reading work inside of qutebrowser
 	  content.pdfjs = true;
 
+      # Make 'copy to clipboard' buttons work
+	  content.javascript.clipboard = "access"; 
+
+	  # Colorization with nix-colors
       colors = {
 	    webpage.darkmode.enabled = true;
 
