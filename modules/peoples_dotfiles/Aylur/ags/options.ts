@@ -45,14 +45,14 @@ const options = mkOptions(OPTIONS, {
         scheme: opt<"dark" | "light">("dark"),
         widget: { opacity: opt(94) },
         border: {
-            width: opt(1),
+            width: opt(3),
             opacity: opt(96),
         },
 
         shadows: opt(true),
         padding: opt(7),
-        spacing: opt(12),
-        radius: opt(11),
+        spacing: opt(6),
+        radius: opt(10),
     },
 
     transition: opt(200),
