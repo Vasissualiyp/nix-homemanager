@@ -94,8 +94,8 @@ const options = mkOptions(OPTIONS, {
                 icon: opt(icon(distro.logo, icons.ui.search)),
             },
             label: {
-                colored: opt(false),
-                label: opt(" Applications"),
+                colored: opt(true),
+                label: opt(" Programs"),
             },
             action: opt(() => App.toggleWindow("launcher")),
         },
@@ -112,7 +112,7 @@ const options = mkOptions(OPTIONS, {
             low: opt(30),
         },
         workspaces: {
-            workspaces: opt(7),
+            workspaces: opt(10),
         },
         taskbar: {
             iconSize: opt(0),
@@ -236,7 +236,7 @@ const options = mkOptions(OPTIONS, {
     hyprland: {
         gaps: opt(2.4),
         inactiveBorder: opt("333333ff"),
-        gapsWhenOnly: opt(false),
+        gapsWhenOnly: opt(true),
     },
 })
 
