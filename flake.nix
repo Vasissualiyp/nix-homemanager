@@ -39,6 +39,7 @@
         modules = [ ./hosts/nicekoffer/home.nix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Desktop-Nix" = home-manager.lib.homeManagerConfiguration {
@@ -54,6 +55,7 @@
         modules = [ ./hosts/Vas-Office-Nix/1mon.nix ];
 		extraSpecialArgs = {
           inherit inputs;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Office-Nix-2mon" = home-manager.lib.homeManagerConfiguration {
@@ -61,6 +63,7 @@
         modules = [ ./hosts/Vas-Office-Nix/2mon.nix ];
 		extraSpecialArgs = {
           inherit inputs;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Office-Nix-5mon" = home-manager.lib.homeManagerConfiguration {
@@ -68,6 +71,7 @@
         modules = [ ./hosts/Vas-Office-Nix/5mon.nix ];
 		extraSpecialArgs = {
           inherit inputs;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-HP-Nix" = home-manager.lib.homeManagerConfiguration {
@@ -75,6 +79,7 @@
         modules = [ ./hosts/Vas-HP-Nix/home.nix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
+          asztal = self.packages.x86_64-linux.default;
         };
       };
     };

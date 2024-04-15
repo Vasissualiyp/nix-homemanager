@@ -1,11 +1,11 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, asztal, ... }:
 let 
   lib = pkgs.lib;
   numberOfMonitors = 5;
 in 
 {
   imports = [
-    (import ./home.nix { inherit config pkgs inputs numberOfMonitors; })
+    (import ./home.nix { inherit config pkgs inputs numberOfMonitors asztal; })
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
   monitors = [
