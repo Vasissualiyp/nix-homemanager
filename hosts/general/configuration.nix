@@ -13,14 +13,14 @@ let
   zathuraModule = import ../../modules/office/zathura.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
-  #tmuxModule = import ../../modules/terminals/tmux.nix;
+  tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
   asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
   dconfModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/dconf.nix;
-  tmuxModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/tmux.nix;
+  #tmuxModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/tmux.nix;
 in
 
 {
