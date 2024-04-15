@@ -100,7 +100,7 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("launcher")),
         },
         date: {
-            format: opt("%H:%M - %A %e."),
+            format: opt("%H:%M:%S󱋱%Y-%m-%e󱋱%a"),
             action: opt(() => App.toggleWindow("datemenu")),
         },
         battery: {
@@ -117,7 +117,7 @@ const options = mkOptions(OPTIONS, {
         taskbar: {
             iconSize: opt(0),
             monochrome: opt(true),
-            exclusive: opt(false),
+            exclusive: opt(true),
         },
         messages: {
             action: opt(() => App.toggleWindow("datemenu")),
