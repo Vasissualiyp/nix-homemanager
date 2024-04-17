@@ -16,6 +16,10 @@ in
   programs.neovim = {
     enable = true;
 
+	viAlias = true;
+	vimAlias = true;
+	vimdiffAlias = true;
+
     extraLuaConfig = ''
       ${builtins.readFile ./lua/config/global_parameters_nix.lua  }
       
