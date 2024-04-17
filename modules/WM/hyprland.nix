@@ -194,7 +194,7 @@ in
         misc = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more";
             "force_default_wallpaper" = "1";
-            disable_splash_rendering = true;
+            "disable_splash_rendering" = true;
         };
         
         "$mainMod" = "SUPER";
