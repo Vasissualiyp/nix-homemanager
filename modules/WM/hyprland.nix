@@ -9,6 +9,7 @@ let
 	asztal &
 	nm-applet --indicator &
 	wl-paste --watch cliphist store &
+	fcitx5 &
 	#${pkgs.dunst}/bin/dunst &
     hyprctl dispatch exec [workspace 5 silent] "kitty sh -c 'tmux a -t Main' " &
     hyprctl dispatch exec [workspace 2 silent] "kitty sh -c 'tmux a -t Note' "
