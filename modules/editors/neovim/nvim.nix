@@ -14,10 +14,10 @@ let
     speedtyper = pkgs.vimUtils.buildVimPlugin {
       name = "noterius-vim";
       src = pkgs.fetchFromGitHub {
-        "owner": "NStefan002",
-        "repo": "speedtyper.nvim",
-        "rev": "2d158eed4c753995b0501a3a7a72464fbb213e3d",
-        "hash": "sha256-8q8DU62Jsx9MYSsuPGCuqXwn5ZfNt0iEVKQRExqELDI="
+        "owner": "NStefan002";
+        "repo": "speedtyper.nvim";
+        "rev": "2d158eed4c753995b0501a3a7a72464fbb213e3d";
+        "hash": "sha256-8q8DU62Jsx9MYSsuPGCuqXwn5ZfNt0iEVKQRExqELDI=";
       };
     };
 in
