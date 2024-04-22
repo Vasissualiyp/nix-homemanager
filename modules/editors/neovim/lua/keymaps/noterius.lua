@@ -1,5 +1,5 @@
 --local notes_dir = vim.fn.expand('~/research/notes')
-vim.g.noterius_notes_dir = '~/research/notes'
+vim.g.noterius_notes_dir = '/home/vasilii/research/notes'
 vim.g.noterius_git_url = 'git@github.com:Vasissualiyp/Research_Notes.git'
 
 require('noterius-vim.noterius_telescope').setup({
@@ -27,8 +27,8 @@ vim.keymap.set('n','<leader>nf', noterius_telescope.search_notes)
 
 -- Initialize noterius. MUST BE INCLUDED AFTER the definitions of global variables!
 require('noterius-vim.init').setup({
-  notes_dir = '~/research/notes',
+  notes_dir = vim.g.noterius_notes_dir,
   author = "Vasilii Pustovoit",
   citerius_integration = 1,
-  citerius_src_dir = '~/research/references',
+  citerius_src_dir = '/home/vasilii/research/references',
 })

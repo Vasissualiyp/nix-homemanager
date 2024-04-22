@@ -12,7 +12,7 @@ let
       };
     };
     speedtyper = pkgs.vimUtils.buildVimPlugin {
-      name = "noterius-vim";
+      name = "speedtyper";
       src = pkgs.fetchFromGitHub {
         owner = "NStefan002";
         repo = "speedtyper.nvim";
@@ -144,10 +144,10 @@ in
 	  plugin = noterius; # THIS ONE IS TESTING
 	  config = toLuaFile ./lua/keymaps/noterius.lua;
 	  }
-	  {
-	  plugin = speedtyper; # THIS ONE IS TESTING
-	  config = toLuaFile ./lua/keymaps/noterius.lua;
-	  }
+	  #{
+	  #plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work so far
+	  #config = toLuaFile ./lua/plugins/speedtyper.lua;
+	  #}
       {
 	  plugin = ultisnips;
 	  config = toLuaFile ./lua/keymaps/ultisnips.lua;
@@ -157,21 +157,3 @@ in
   };
 
 }
-#{
-#  environment.systemPackages = [
-#    (
-#      pkgs.neovim.override {
-#        configure = {
-#          packages.myPlugins = with pkgs.vimPlugins; {
-#          start = [
-#            vim-go # already packaged plugin
-#            easygrep # custom package
-#          ];
-#          opt = [];
-#        };
-#        # ...
-#      };
-#     }
-#    )
-#  ];
-#}
