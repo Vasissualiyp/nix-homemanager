@@ -1,47 +1,47 @@
 { pkgs, machine_name, numberOfMonitors, ... }:
 
-let 
-  monitorsConfig = if machine_name == "Vas-Office-Nix" then
-    if numberOfMonitors == 5 then {
-      bspwm_monitors = {
-        eDP-1 = [ "I" "II" ];
-        "DP-1-1.9" = [ "III" ];
-        HDMI-1-0 = [ "IV" "V" "VI" ];
-        DP-1 = [ "VII" ];
-        "DP-1-1.8" = [ "VIII" ];
-      };
-    } else if numberOfMonitors == 2 then {
-      bspwm_monitors = {
-        eDP-1 = [ "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
-        HDMI-2 = [ "I" ];
-      };
-	} else {
-      bspwm_monitors = {
-        eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
-      };
-    }
-  else if machine_name == "Vas-HP-Nix" then 
-  {
-    bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
-  }
-  else if machine_name == "Vas-Desktop-Nix" then 
-  {
-      bspwm_monitors = {
-        DP-3 = [ "I" "II" "III" ];
-        DP-0 = [ "X" "IV" "V" "VI" ];
-        HDMI-1 = [ "VII" "VIII" "IX" ];
-      };
-  }
-  else if machine_name == "nicekoffer" then
-  {
-    bspwm_monitors = { HDMI-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
-  }
-  else 
-  {
-    bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
-  };
-
-in
+#let 
+#  monitorsConfig = if machine_name == "Vas-Office-Nix" then
+#    bspwm_monitors = {
+#      eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+#    };
+#    #if numberOfMonitors == 5 then {
+#    #  bspwm_monitors = {
+#    #    eDP-1 = [ "I" "II" ];
+#    #    "DP-1-1.9" = [ "III" ];
+#    #    HDMI-1-0 = [ "IV" "V" "VI" ];
+#    #    DP-1 = [ "VII" ];
+#    #    "DP-1-1.8" = [ "VIII" ];
+#    #  };
+#    #} else if numberOfMonitors == 2 then {
+#    #  bspwm_monitors = {
+#    #    eDP-1 = [ "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+#    #    HDMI-2 = [ "I" ];
+#    #  };
+#	#} else {
+#    #}
+#  #else if machine_name == "Vas-HP-Nix" then 
+#  #{
+#  #  bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+#  #}
+#  #else if machine_name == "Vas-Desktop-Nix" then 
+#  #{
+#  #    bspwm_monitors = {
+#  #      DP-3 = [ "I" "II" "III" ];
+#  #      DP-0 = [ "X" "IV" "V" "VI" ];
+#  #      HDMI-1 = [ "VII" "VIII" "IX" ];
+#  #    };
+#  #}
+#  #else if machine_name == "nicekoffer" then
+#  #{
+#  #  bspwm_monitors = { HDMI-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+#  #}
+#  #else 
+#  #{
+#  #  bspwm_monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ]; };
+#  #};
+#
+#in
 {
   xsession.windowManager.bspwm = {
     enable = true;
@@ -64,7 +64,8 @@ in
       focus_follows_pointer = true;
       pointer_action1 = "move=focus";
 	};
-	monitors = monitorsConfig.bspwm_monitors;
+	monitors = { eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];};
+	#monitorsConfig.bspwm_monitors;
 
     extraConfig = ''
     pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
