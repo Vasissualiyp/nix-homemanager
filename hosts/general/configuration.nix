@@ -56,8 +56,9 @@ in
   };
 
   home.sessionVariables = {
-     EDITOR = "nvim";
-     #QMLSCENE_DEVICE = "softwarecontext"; # Needed to make qutebrowser work properly. For some reason, this doesn't set global variable properly - need to do it every time I launch qutebrowser
+    EDITOR = "nvim";
+    QT_XCB_GL_INTEGRATION = "none"; # kde-connect
+    #QMLSCENE_DEVICE = "softwarecontext"; # Needed to make qutebrowser work properly. For some reason, this doesn't set global variable properly - need to do it every time I launch qutebrowser
   };
 
   # Let Home Manager install and manage itself.
