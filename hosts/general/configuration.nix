@@ -16,6 +16,7 @@ let
   tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
+  kdeconnectModule = import ../../modules/web/kdeconnect.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
   asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
@@ -42,6 +43,7 @@ in
     tmuxModule
     zathuraModule
     gammastepModule
+    kdeconnectModule
     rofiModule 
     asztalModule 
     dconfModule 
@@ -57,7 +59,6 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    QT_XCB_GL_INTEGRATION = "none"; # kde-connect
     #QMLSCENE_DEVICE = "softwarecontext"; # Needed to make qutebrowser work properly. For some reason, this doesn't set global variable properly - need to do it every time I launch qutebrowser
   };
 
