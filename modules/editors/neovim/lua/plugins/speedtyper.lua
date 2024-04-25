@@ -1,4 +1,4 @@
-require'speedtyper.config'.setup {
+require('speedtyper').setup {
     window = {
         height = 5, -- integer >= 5 | float in range (0, 1)
         width = 0.55, -- integer | float in range (0, 1)
