@@ -156,7 +156,7 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
-                    "firefox",
+                    "brave",
                     "qutebrowser",
                     "xournalpp",
                     "kitty",
