@@ -55,6 +55,10 @@ in
     enable = true;
     shellAliases = bashAliases;
 
+	sessionVariables = {
+      TMUX_TMPDIR = "/run/user/1000"; # Need this for remote tmux to work
+	};
+
     initExtra = ''
 # remcon alias
 remcon() {
