@@ -4,6 +4,15 @@ let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
+  cliphist_rofi = pkgs.fetchurl {
+    url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi";
+	sha256 = "sha256-1y3xrxzUAQJXKBovhjRMF+JsSX/6h+dIrom0xngeqZA=";
+  };
+  cliphist_rofi_img = pkgs.fetchurl {
+    url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi-img";
+	sha256 = "sha256-QLs4qthUjQqoM+K7q5oKAC7SbtL9G2nqGP5RJdhQdTw=";
+  };
+
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     #${pkgs.waybar}/bin/waybar &
 	asztal &
@@ -287,6 +296,13 @@ in
 	  	  # Screenshot
 	  	  "$mainMod_Shift, S, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
 	  	  "CTRL_SUPER_ALT, S, exec, /home/vasilii/scripts/custom_docs_editing/wayland_noterius_screenshot.sh"
+
+		  # Cliphist
+		  "SUPER, V, exec, rofi -modi clipboard:${cliphist_rofi} -show clipboard"
+		  "SUPER_SHIFT, V, exec, rofi -modi clipboard:${cliphist_rofi_img} -show clipboard -show-icons"
+
+		  # Formulas OCR
+		  "SUPER_CTRL, F, exec, /home/vasilii/scripts/custom_docs_editing/wayland_pix2text_formula_reader.sh"
         ];
 
         bindm = [
