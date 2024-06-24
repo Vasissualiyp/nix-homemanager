@@ -2,7 +2,7 @@
 vim.opt.packpath = vim.opt.runtimepath:get()
 
 -- Setting the Python 3 host program path
---vim.g.python3_host_prog = vim.fn.expand('~/env/venv/bin/python')
+vim.g.python3_host_prog = vim.fn.expand('~/env/venv/bin/python')
 --vim.g.python3_host_prog = '/data/data/com.termux/files/usr/bin/python3'
 
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {

@@ -122,6 +122,10 @@ in
 	  plugin = calendar-vim;
 	  config = toLuaFile ./lua/plugins/calendar.lua;
 	}
+	{
+	  plugin = luasnip;
+	  config = toLuaFile ./lua/plugins/luasnip.lua;
+	}
       #{
 	  #plugin = vim-smoothie;
 	  #config = toLuaFile ./lua/plugins/smoothie.lua;
