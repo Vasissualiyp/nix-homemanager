@@ -9,3 +9,6 @@ smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Ta
 imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 ]]
+
+-- Load snippets from ~/.config/nvim/LuaSnip/
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})

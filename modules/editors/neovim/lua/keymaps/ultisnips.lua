@@ -1,4 +1,4 @@
-vim.g.UltiSnipsExpandTrigger = "<tab>"
+vim.g.UltiSnipsExpandTrigger = "<c-a>"
 vim.g.UltiSnipsJumpForwardTrigger = "<c-f>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<c-d>"
 local home = os.getenv("HOME")
