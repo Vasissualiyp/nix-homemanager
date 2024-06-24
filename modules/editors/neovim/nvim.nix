@@ -93,7 +93,7 @@ in
 	}
       #ripgrep
 	leap-nvim
-	copilot-vim
+	#copilot-vim
 	vim-css-color
 	nvim-lspconfig
 	#(
