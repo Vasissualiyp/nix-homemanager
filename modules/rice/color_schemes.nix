@@ -1,14 +1,22 @@
 { pkgs, config, inputs, ... }:
 let
 
+  # View themes at:
+  # https://tinted-theming.github.io/base16-gallery/
+
   # Favorite colorschemes
   #colorSchemeName = "ayu-dark";
   #colorSchemeName = "black-metal";
   #colorSchemeName = "catppuccin-mocha";
-  colorSchemeName = "da-one-black";
+  #colorSchemeName = "da-one-black";
+  #colorSchemeName = "default-dark";
   #colorSchemeName = "equilibrium-dark";
+  #colorSchemeName = "evenok-dark";
   #colorSchemeName = "eris";
   #colorSchemeName = "framer";
+  #colorSchemeName = "helios";
+  #colorSchemeName = "marrakesh"; # Very yellow, deserty
+  colorSchemeName = "seti";
   #colorSchemeName = "tokyo-night-dark";
 
   # All colorschemes
@@ -81,7 +89,6 @@ let
   #colorSchemeName = "darktooth";
   #colorSchemeName = "darkviolet";
   #colorSchemeName = "decaf";
-  #colorSchemeName = "default-dark";
   #colorSchemeName = "default-light";
   #colorSchemeName = "dirtysea";
   #colorSchemeName = "dracula";
@@ -96,7 +103,6 @@ let
   #colorSchemeName = "espresso";
   #colorSchemeName = "eva-dim";
   #colorSchemeName = "eva";
-  #colorSchemeName = "evenok-dark";
   #colorSchemeName = "everforest-dark-hard";
   #colorSchemeName = "everforest";
   #colorSchemeName = "flat";
@@ -128,7 +134,6 @@ let
   #colorSchemeName = "harmonic16-light";
   #colorSchemeName = "heetch-light";
   #colorSchemeName = "heetch";
-  #colorSchemeName = "helios";
   #colorSchemeName = "hopscotch";
   #colorSchemeName = "horizon-dark";
   #colorSchemeName = "horizon-light";
@@ -146,7 +151,6 @@ let
   #colorSchemeName = "kimber";
   #colorSchemeName = "lime";
   #colorSchemeName = "macintosh";
-  #colorSchemeName = "marrakesh";
   #colorSchemeName = "material-darker";
   #colorSchemeName = "material-lighter";
   #colorSchemeName = "material-palenight";
@@ -195,7 +199,6 @@ let
   #colorSchemeName = "selenized-dark";
   #colorSchemeName = "selenized-light";
   #colorSchemeName = "selenized-white";
-  #colorSchemeName = "seti";
   #colorSchemeName = "shadesmear-dark";
   #colorSchemeName = "shadesmear-light";
   #colorSchemeName = "shades-of-purple";

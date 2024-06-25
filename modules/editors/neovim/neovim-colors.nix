@@ -25,6 +25,14 @@
                 base0F = '#${config.colorScheme.palette.base0F}',    
               },
             })
+
+            -- Set the line number and sign column background colors
+            vim.api.nvim_command('highlight LineNr guifg=#${config.colorScheme.palette.base03} guibg=#${config.colorScheme.palette.base00}')
+            vim.api.nvim_command('highlight CursorLineNr guifg=#${config.colorScheme.palette.base05} guibg=#${config.colorScheme.palette.base00}')
+            vim.api.nvim_command('highlight SignColumn guibg=#${config.colorScheme.palette.base00}')
+            vim.api.nvim_command('highlight LineNrAbove guifg=#${config.colorScheme.palette.base03} guibg=#${config.colorScheme.palette.base00}')
+            vim.api.nvim_command('highlight LineNrBelow guifg=#${config.colorScheme.palette.base03} guibg=#${config.colorScheme.palette.base00}')
+          
           END
         '';
       }
