@@ -1,25 +1,26 @@
 { config, pkgs, ... }:
 let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    noterius = pkgs.vimUtils.buildVimPlugin {
-      name = "noterius-vim";
-      src = pkgs.fetchFromGitHub {
-        owner = "Vasissualiyp";
-		repo = "noterius-vim";
-        rev = "a4527fbae371e34302c8734c351734bc2b81ebd2";
-        sha256 = "08d16sz77jfwn9yv8s524hhvrm0cd19p6aac3cgkdv90sazsd3gx";
-      };
+  toLua = str: "lua << EOF\n${str}\nEOF\n";
+  toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+
+  noterius = pkgs.vimUtils.buildVimPlugin {
+    name = "noterius-vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "Vasissualiyp";
+  	repo = "noterius-vim";
+      rev = "a4527fbae371e34302c8734c351734bc2b81ebd2";
+      sha256 = "08d16sz77jfwn9yv8s524hhvrm0cd19p6aac3cgkdv90sazsd3gx";
     };
-    speedtyper = pkgs.vimUtils.buildVimPlugin {
-      name = "speedtyper";
-      src = pkgs.fetchFromGitHub {
-        owner = "NStefan002";
-        repo = "speedtyper.nvim";
-        rev = "2d158eed4c753995b0501a3a7a72464fbb213e3d";
-        hash = "sha256-8q8DU62Jsx9MYSsuPGCuqXwn5ZfNt0iEVKQRExqELDI=";
-      };
+  };
+  speedtyper = pkgs.vimUtils.buildVimPlugin {
+    name = "speedtyper";
+    src = pkgs.fetchFromGitHub {
+      owner = "NStefan002";
+      repo = "speedtyper.nvim";
+      rev = "2d158eed4c753995b0501a3a7a72464fbb213e3d";
+      hash = "sha256-8q8DU62Jsx9MYSsuPGCuqXwn5ZfNt0iEVKQRExqELDI=";
     };
+  };
 in
 {
   programs.neovim = {
@@ -63,7 +64,6 @@ in
 
     plugins = with pkgs.vimPlugins; [
 
-      nvim-web-devicons
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-bash
         p.tree-sitter-c
@@ -80,82 +80,82 @@ in
         p.tree-sitter-vim
         p.tree-sitter-yaml
       ]))
+	  #copilot-vim
+      #ripgrep
+      #vim-tex-fold
 	  nvim-treesitter-context
 	  nvim-treesitter-textobjects
+      nvim-web-devicons
+	  leap-nvim
+	  vim-tmux-navigator
+	  vim-css-color
+	  nvim-lspconfig
+	  vimspector
+	  fzf-vim
+	  startup-nvim
+	  vim-snippets
+	  telescope-ultisnips-nvim
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
 	  }
-	  vim-tmux-navigator
       {
-	  plugin = harpoon;
-	  config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
-	}
-      #ripgrep
-	leap-nvim
-	#copilot-vim
-	vim-css-color
-	nvim-lspconfig
-	#(
-        #  let
-        #    lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
-        #  in
-        #  {
-        #    plugin = nvim-lspconfig;
-	#    config = toLua "${builtins.readFile ./lua/config/lsp.lua}\n${builtins.readFile ./lua/config/lsp_cmp.lua}";
-        #  }
-	#)
-	{
-	  plugin = SimpylFold;
-	  config = toLuaFile ./lua/plugins/simpylfold.lua;
-	}
-	{
-	  plugin = vimtex;
-	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/plugins/vimtex.lua}\nEOF";
-	}
-      #vim-tex-fold
-	{
-	  plugin = vimwiki;
-	  config = toLuaFile ./lua/plugins/vimwiki.lua;
-	}
-	{
-	  plugin = calendar-vim;
-	  config = toLuaFile ./lua/plugins/calendar.lua;
-	}
-	{
-	  plugin = luasnip;
-	  config = toLuaFile ./lua/plugins/luasnip.lua;
-	}
-      #{
-	  #plugin = vim-smoothie;
-	  #config = toLuaFile ./lua/plugins/smoothie.lua;
-	  #}
-	{
-	  plugin = limelight-vim;
-	  config = toLua "${builtins.readFile ./lua/plugins/limelight.lua}\n${builtins.readFile ./lua/keymaps/limelight.lua}";
-	}
-	{
-	  plugin = lightline-vim;
-	  config = toLuaFile ./lua/plugins/lightline.lua;
-	}
-	vimspector
-	fzf-vim
-        #fzf
-	startup-nvim
-	vim-snippets
-	telescope-ultisnips-nvim
-	{
-	  plugin = noterius; # THIS ONE IS TESTING
-	  config = toLuaFile ./lua/keymaps/noterius.lua;
-	}
-	{
-	  plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work so far
-	  config = toLuaFile ./lua/plugins/speedtyper.lua;
-	}
-	{
-	  plugin = ultisnips;
-	  config = toLuaFile ./lua/keymaps/ultisnips.lua;
-	}
+	    plugin = harpoon;
+	    config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
+	  }
+	  #(
+          #  let
+          #    lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
+          #  in
+          #  {
+          #    plugin = nvim-lspconfig;
+	  #    config = toLua "${builtins.readFile ./lua/config/lsp.lua}\n${builtins.readFile ./lua/config/lsp_cmp.lua}";
+          #  }
+	  #)
+	  {
+	    plugin = SimpylFold;
+	    config = toLuaFile ./lua/plugins/simpylfold.lua;
+	  }
+	  {
+	    plugin = vimtex;
+	    config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/plugins/vimtex.lua}\nEOF";
+	  }
+	  {
+	    plugin = vimwiki;
+	    config = toLuaFile ./lua/plugins/vimwiki.lua;
+	  }
+	  {
+	    plugin = calendar-vim;
+	    config = toLuaFile ./lua/plugins/calendar.lua;
+	  }
+	  {
+	    plugin = luasnip;
+	    config = toLuaFile ./lua/plugins/luasnip.lua;
+	  }
+        #{
+	    #plugin = vim-smoothie;
+	    #config = toLuaFile ./lua/plugins/smoothie.lua;
+	    #}
+	  {
+	    plugin = limelight-vim;
+	    config = toLua "${builtins.readFile ./lua/plugins/limelight.lua}\n${builtins.readFile ./lua/keymaps/limelight.lua}";
+	  }
+	  {
+	    plugin = lightline-vim;
+	    config = toLuaFile ./lua/plugins/lightline.lua;
+	  }
+	  {
+	    plugin = noterius; # THIS ONE IS TESTING
+	    config = toLuaFile ./lua/keymaps/noterius.lua;
+	  }
+	  {
+	    plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work so far
+	    config = toLuaFile ./lua/plugins/speedtyper.lua;
+	  }
+	  {
+	    plugin = ultisnips;
+	    config = toLuaFile ./lua/keymaps/ultisnips.lua;
+	  }
     ];
 
   };
