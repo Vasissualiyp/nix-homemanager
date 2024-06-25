@@ -13,6 +13,7 @@ let
   zathuraModule = import ../../modules/office/zathura.nix;
   kittyModule = import ../../modules/terminals/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
+  nvimColorsModule = import ../../modules/editors/neovim/neovim-colors.nix;
   tmuxModule = import ../../modules/terminals/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
@@ -40,6 +41,7 @@ in
     qutebrowserModule
     kittyModule
     nvimModule
+    nvimColorsModule 
     tmuxModule
     zathuraModule
     gammastepModule

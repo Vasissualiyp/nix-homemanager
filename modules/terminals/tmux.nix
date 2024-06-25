@@ -148,12 +148,12 @@
       set -g status-position top
       set -g status-justify left
       set -g status-style 'fg=colour1'
-      set -g status-left '#[fg=colour14,bg=colour16] #S '
+      set -g status-left '#[fg=colour2,bg=colour0,bold] #S '
       set -g status-right '%Y-%m-%d %H:%M '
       set -g status-right-length 50
       set -g status-left-length 10
       
-      setw -g window-status-current-style 'fg=colour1 bg=colour14 bold'
+      setw -g window-status-current-style 'fg=colour3 bg=colour0 bold'
       setw -g window-status-current-format ' #I #W #F '
       
       setw -g window-status-style 'fg=colour1 dim'
