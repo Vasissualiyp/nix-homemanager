@@ -94,7 +94,6 @@ in
 	  fzf-vim
 	  startup-nvim
 	  vim-snippets
-	  telescope-ultisnips-nvim
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
@@ -132,10 +131,10 @@ in
 	    plugin = luasnip;
 	    config = toLuaFile ./lua/plugins/luasnip.lua;
 	  }
-        #{
-	    #plugin = vim-smoothie;
-	    #config = toLuaFile ./lua/plugins/smoothie.lua;
-	    #}
+      #{
+	  #plugin = vim-smoothie;
+	  #config = toLuaFile ./lua/plugins/smoothie.lua;
+	  #}
 	  {
 	    plugin = limelight-vim;
 	    config = toLua "${builtins.readFile ./lua/plugins/limelight.lua}\n${builtins.readFile ./lua/keymaps/limelight.lua}";
@@ -152,10 +151,12 @@ in
 	    plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work so far
 	    config = toLuaFile ./lua/plugins/speedtyper.lua;
 	  }
-	  {
-	    plugin = ultisnips;
-	    config = toLuaFile ./lua/keymaps/ultisnips.lua;
-	  }
+	  # UltiSnips is being replaced by LuaSnips
+	  #{
+	  #  plugin = ultisnips;
+	  #  config = toLuaFile ./lua/keymaps/ultisnips.lua;
+	  #}
+	  #telescope-ultisnips-nvim
     ];
 
   };
