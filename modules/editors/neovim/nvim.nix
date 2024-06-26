@@ -21,6 +21,15 @@ let
       hash = "sha256-8q8DU62Jsx9MYSsuPGCuqXwn5ZfNt0iEVKQRExqELDI=";
     };
   };
+  telescope-luasnip = pkgs.vimUtils.buildVimPlugin {
+    name = "telescope-luasnip";
+    src = pkgs.fetchFromGitHub {
+      owner = "benfowler";
+      repo = "telescope-luasnip.nvim";
+      rev = "11668478677de360dea45cf2b090d34f21b8ae07";
+      hash = "sha256-jzLzucF2rAa3nkHE5n4g2StkSUjMOMK93JCH/g09DQY=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -131,6 +140,7 @@ in
 	    plugin = luasnip;
 	    config = toLuaFile ./lua/plugins/luasnip.lua;
 	  }
+      telescope-luasnip # Packaged myself
       #{
 	  #plugin = vim-smoothie;
 	  #config = toLuaFile ./lua/plugins/smoothie.lua;
