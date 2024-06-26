@@ -43,7 +43,6 @@ in
       ${builtins.readFile ./lua/keymaps/global.lua}
       ${builtins.readFile ./lua/config/colors.lua}
       ${builtins.readFile ./lua/config/digraphs.lua}
-      ${builtins.readFile ./lua/config/tsutils.lua} # Treesitter for math detection in latex
 
       ${builtins.readFile ./lua/plugins/treesitter.lua}
 
