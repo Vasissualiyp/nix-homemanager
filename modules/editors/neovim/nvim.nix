@@ -138,7 +138,7 @@ in
 	  }
 	  {
 	    plugin = luasnip;
-	    config = toLuaFile ./lua/plugins/luasnip.lua;
+	    config = toLua "${builtins.readFile ./lua/plugins/luasnip.lua}\n${builtins.readFile ./lua/keymaps/luasnip.lua}";
 	  }
       telescope-luasnip # Packaged myself
       #{
