@@ -6,11 +6,11 @@ let
 
   cliphist_rofi = pkgs.fetchurl {
     url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi";
-	sha256 = "sha256-YyUSPD08fjkJkoemiXWUdlDeI0KI8pIX9iixaucEDE0=";
+	sha256 = "sha256-yp5EuDX9og+AhpEEZpF/XqDHk3hwfjpz0Yy51oeIRO0=";
   };
   cliphist_rofi_img = pkgs.fetchurl {
     url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi-img";
-	sha256 = "sha256-NxpPducu7O560QZulpFA/GToEDJG0lJlTJVTXp4Jx0I=";
+	sha256 = "sha256-kh3Jg9H/TS13HTNI+Rpb9qa8sqS4LVgvMNlKF9J3o4o=";
   };
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
