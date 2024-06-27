@@ -5,12 +5,12 @@ let
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
   cliphist_rofi = pkgs.fetchurl {
-    url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi";
-	sha256 = "sha256-yp5EuDX9og+AhpEEZpF/XqDHk3hwfjpz0Yy51oeIRO0=";
+    url = "https://raw.githubusercontent.com/sentriz/cliphist/master/contrib/cliphist-rofi";
+	sha256 = "1f7hdaipxy7kbx13as4mmqcnsr84jlx90xj3v0ka4sp05fmb36k3";
   };
   cliphist_rofi_img = pkgs.fetchurl {
     url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi-img";
-	sha256 = "sha256-kh3Jg9H/TS13HTNI+Rpb9qa8sqS4LVgvMNlKF9J3o4o=";
+	sha256 = "0dy4vbgn09q8n7m5lkiw9y7jxysw8b2lqfx2cqb4q2gxnj0fs7m6";
   };
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
