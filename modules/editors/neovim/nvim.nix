@@ -30,6 +30,15 @@ let
       hash = "sha256-jzLzucF2rAa3nkHE5n4g2StkSUjMOMK93JCH/g09DQY=";
     };
   };
+  cmp-luasnip-choice = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-luasnip-choice";
+    src = pkgs.fetchFromGitHub {
+        owner = "doxnit";
+        repo = "cmp-luasnip-choice";
+        rev = "97a367851bc17984b56164b5427a53919aed873a";
+        hash = "sha256-GBQpalj0mUGumrEYOSN4glGqZECiKhTSkeAnIaTSALc=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -103,6 +112,8 @@ in
 	  fzf-vim
 	  startup-nvim
 	  vim-snippets
+	  cmp_luasnip
+      cmp-luasnip-choice
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
@@ -110,6 +121,10 @@ in
       {
 	    plugin = harpoon;
 	    config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
+	  }
+      {
+	    plugin = nvim-cmp; # Drop-down menu for luasnips
+	    config = toLuaFile ./lua/plugins/cmp.lua;
 	  }
 	  #(
           #  let

@@ -13,3 +13,9 @@ imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 ]]
 
+vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>luasnip-next-choice', {})
+vim.api.nvim_set_keymap('s', '<C-j>', '<Plug>luasnip-next-choice', {})
+vim.api.nvim_set_keymap('i', '<C-k>', '<Plug>luasnip-prev-choice', {})
+vim.api.nvim_set_keymap('s', '<C-k>', '<Plug>luasnip-prev-choice', {})
+
+
