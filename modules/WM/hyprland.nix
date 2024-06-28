@@ -20,8 +20,10 @@ let
 	wl-paste --watch cliphist store &
 	fcitx5 &
 	#${pkgs.dunst}/bin/dunst &
-    hyprctl dispatch exec [workspace 5 silent] "kitty sh -c 'tmux a -t Main' " &
-    hyprctl dispatch exec [workspace 2 silent] "kitty sh -c 'tmux a -t Note' "
+    hyprctl dispatch exec [workspace 5] "kitty sh -c 'tmux a -t Main' " &
+    hyprctl dispatch exec [workspace 2] "kitty sh -c 'tmux a -t Note' " &
+    hyprctl dispatch exec [workspace 9 silent] "thunderbird" &
+    hyprctl dispatch exec [workspace 8] "qutebrowser"
   '';
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
