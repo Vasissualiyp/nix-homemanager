@@ -112,7 +112,7 @@ in
 	  fzf-vim
 	  startup-nvim
 	  vim-snippets
-	  cmp_luasnip
+	  #cmp_luasnip
       cmp-luasnip-choice
       {
 	  plugin = telescope-nvim;
