@@ -101,7 +101,6 @@ in
 	  #copilot-vim
       #ripgrep
       #vim-tex-fold
-	  nvim-treesitter-context
 	  nvim-treesitter-textobjects
       nvim-web-devicons
 	  leap-nvim
@@ -117,6 +116,10 @@ in
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
+	  }
+	  {
+	    plugin = nvim-treesitter-context; # Showing the current funciton start at the top
+	    config = toLuaFile ./lua/plugins/context.lua;
 	  }
       {
 	    plugin = harpoon;
