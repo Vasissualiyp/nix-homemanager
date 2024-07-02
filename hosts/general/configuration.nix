@@ -4,6 +4,7 @@ let
   #lib = config.home-manager.users.vasilii.lib;
   lib = pkgs.lib;
   bashModule = import ../../modules/console/bash.nix;
+  thefuckModule = import ../../modules/console/thefuck.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   cursor = import ../../modules/rice/cursor.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
@@ -38,6 +39,7 @@ in
     colorscheme 
     cursor 
     bashModule
+    thefuckModule
     qutebrowserModule
     kittyModule
     nvimModule
