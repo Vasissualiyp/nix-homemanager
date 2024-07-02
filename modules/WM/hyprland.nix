@@ -16,6 +16,8 @@ let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     #${pkgs.waybar}/bin/waybar &
 	asztal &
+	chmod +rx ${cliphist_rofi} &
+	chmod +rx ${cliphist_rofi_img} &
 	nm-applet --indicator &
 	wl-paste --watch cliphist store &
 	fcitx5 &

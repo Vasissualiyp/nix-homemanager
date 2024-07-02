@@ -3,7 +3,7 @@
 let 
   #lib = config.home-manager.users.vasilii.lib;
   lib = pkgs.lib;
-  bashModule = import ../../modules/terminals/bash.nix;
+  bashModule = import ../../modules/console/bash.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   cursor = import ../../modules/rice/cursor.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
@@ -11,10 +11,10 @@ let
   waybarModule = ../../modules/WM/waybar/mybar.nix;
   bspwmModule = ../../modules/WM/bspwmrc.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
-  kittyModule = import ../../modules/terminals/kitty.nix;
+  kittyModule = import ../../modules/console/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   nvimColorsModule = import ../../modules/editors/neovim/neovim-colors.nix;
-  tmuxModule = import ../../modules/terminals/tmux.nix;
+  tmuxModule = import ../../modules/console/tmux.nix;
   redshiftModule = import ../../modules/system/redshift.nix;
   gammastepModule = import ../../modules/system/gammastep.nix;
   kdeconnectModule = import ../../modules/web/kdeconnect.nix;
