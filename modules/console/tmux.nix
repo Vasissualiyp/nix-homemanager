@@ -6,57 +6,24 @@
 	terminal = "tmux-256color";
     plugins = with pkgs;
 	[
-	  #{
-      #  plugin = tmuxPlugins.catppuccin;
-      #  extraConfig = ''
-      #  set -g @catppuccin_flavour 'mocha'
-	  #  set -g @catppuccin_status_modules_left "session"
-      #  set -g @catppuccin_status_modules_right "directory date_time"
-      #  set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
-      #  set -g @catppuccin_window_default_text "#W"
-      #  set -g @catppuccin_status_left_separator  ""
-      #  set -g @catppuccin_status_right_separator ""
-      #  set -g @catppuccin_window_left_separator ""
-      #  set -g @catppuccin_window_right_separator ""
-      #  #set -g @catppuccin_window_middle_separator "█ "
-      #  set -g @catppuccin_window_middle_separator ""
-      #  set -g @catppuccin_window_number_position "left"
-      #  set -g @catppuccin_window_default_fill "number"
-      #  set -g @catppuccin_status_fill "icon"
-      #  set -g @catppuccin_status_connect_separator "no"
-      #  set -g @catppuccin_status_right_separator_inverse "no"
-      #  set -g @catppuccin_session_text "#S"
-      #  
-      #  #set -g @catppuccin_directory_icon "#${config.colorScheme.palette.base01}#[fg=default]"
-      #  #set -g @catppuccin_session_icon "#${config.colorScheme.palette.base01}#[fg=default]"
-      #  set -g @catppuccin_directory_icon "[fg=default]"
-      #  set -g @catppuccin_session_icon "[fg=default]"
-      #  set -g @catppuccin_window_default_fill "number"
-	  #  ''
-      #  +
-	  #  # Here we interpolate Nix expressions into the string
-      #  "set -g @catppuccin_pane_color \"#${config.colorScheme.palette.base0B}\"\n" +
-      #  "set -g @catppuccin_pane_background_color \"#${config.colorScheme.palette.base00}\"\n" +
-
-      #  "set -g @catppuccin_window_default_color \"#${config.colorScheme.palette.base05}\"\n" +
-      #  "set -g @catppuccin_window_default_background \"#${config.colorScheme.palette.base00}\"\n" +
-
-      #  "set -g @catppuccin_foreground_color \"#${config.colorScheme.palette.base05}\"\n" +
-
-      #  "set -g @catppuccin_window_current_color \"#${config.colorScheme.palette.base0D}\"\n" +
-      #  "set -g @catppuccin_window_current_background \"#${config.colorScheme.palette.base0C}\"\n" +
-
-      #  "set -g @catppuccin_directory_color \"#${config.colorScheme.palette.base0E}\"\n" +
-
-      #  "set -g @catppuccin_session_color \"#${config.colorScheme.palette.base03}\"\n";
-	  #}
 	  {
 	    plugin = tmuxPlugins.continuum;
         extraConfig = "set -g @continuum-restore 'on'";
       }
 	  tmuxPlugins.sensible
 	  tmuxPlugins.yank
-	  tmuxPlugins.resurrect
+	  {
+	    plugin = tmuxPlugins.resurrect;
+		extraConfig = ''
+	    set -g @continuum-restore 'on'
+	    set -g @resurrect-strategy-vim 'session'
+        set -g @resurrect-strategy-nvim 'session'
+        set -g @resurrect-capture-pane-contents 'on'
+        resurrect_dir="$HOME/.tmux/resurrect"
+        set -g @resurrect-dir $resurrect_dir
+        set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
+		'';
+	  }
 	  tmuxPlugins.continuum
 	  tmuxPlugins.tmux-fzf
 	  tmuxPlugins.vim-tmux-navigator
@@ -67,15 +34,6 @@
       set-option -ga terminal-overrides ",xterm-256color:Tc"
       set -g mouse on
 
-      # For tmux resurrect
-	  set -g @continuum-restore 'on'
-	  set -g @resurrect-strategy-vim 'session'
-      set -g @resurrect-strategy-nvim 'session'
-      set -g @resurrect-capture-pane-contents 'on'
-      resurrect_dir="$HOME/.tmux/resurrect"
-      set -g @resurrect-dir $resurrect_dir
-      set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
-      
       #unbind C-b
       #set -g prefix C-q
       #bind C-q send-prefix
