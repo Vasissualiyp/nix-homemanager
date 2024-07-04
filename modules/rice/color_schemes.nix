@@ -8,7 +8,7 @@ let
   #colorSchemeName = "ayu-dark";
   #colorSchemeName = "black-metal";
   #colorSchemeName = "catppuccin-mocha";
-  #colorSchemeName = "da-one-black";
+  colorSchemeName = "da-one-black";
   #colorSchemeName = "default-dark";
   #colorSchemeName = "equilibrium-dark";
   #colorSchemeName = "evenok-dark";
@@ -16,8 +16,10 @@ let
   #colorSchemeName = "framer";
   #colorSchemeName = "helios";
   #colorSchemeName = "marrakesh"; # Very yellow, deserty
-  colorSchemeName = "seti";
+  #colorSchemeName = "seti";
   #colorSchemeName = "tokyo-night-dark";
+
+  #colorSchemeName = "caroline";
 
   # All colorschemes
   #colorSchemeName = "3024";
@@ -65,7 +67,6 @@ let
   #colorSchemeName = "brogrammer";
   #colorSchemeName = "brushtrees-dark";
   #colorSchemeName = "brushtrees";
-  #colorSchemeName = "caroline";
   #colorSchemeName = "catppuccin-frappe";
   #colorSchemeName = "catppuccin-latte";
   #colorSchemeName = "catppuccin-macchiato";

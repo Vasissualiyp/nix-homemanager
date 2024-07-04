@@ -7,6 +7,7 @@ let
   thefuckModule = import ../../modules/console/thefuck.nix;
   colorscheme = import ../../modules/rice/color_schemes.nix;
   cursor = import ../../modules/rice/cursor.nix;
+  stylix = import ../../modules/rice/stylix.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland.nix ;
   waybarModule = ../../modules/WM/waybar/mybar.nix;
@@ -37,7 +38,8 @@ in
 	#(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
-    cursor 
+    #cursor 
+    stylix 
     bashModule
     thefuckModule
     qutebrowserModule
