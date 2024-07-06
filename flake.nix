@@ -4,6 +4,7 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix.url = "github:danth/stylix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +26,7 @@
     stm.url = "github:Aylur/stm";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -37,7 +38,7 @@
 
       homeConfigurations."nicekoffer" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/nicekoffer/home.nix ];
+        modules = [ ./hosts/nicekoffer/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
           asztal = self.packages.x86_64-linux.default;
@@ -45,7 +46,7 @@
       };
       homeConfigurations."Vas-Desktop-Nix" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-Desktop-Nix/home.nix ];
+        modules = [ ./hosts/Vas-Desktop-Nix/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
@@ -53,7 +54,7 @@
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-Office-Nix/1mon.nix ];
+        modules = [ ./hosts/Vas-Office-Nix/1mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
@@ -61,7 +62,7 @@
       };
       homeConfigurations."Vas-Office-Nix-2mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-Office-Nix/2mon.nix ];
+        modules = [ ./hosts/Vas-Office-Nix/2mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
@@ -69,7 +70,7 @@
       };
       homeConfigurations."Vas-Office-Nix-5mon" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-Office-Nix/5mon.nix ];
+        modules = [ ./hosts/Vas-Office-Nix/5mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
@@ -77,7 +78,7 @@
       };
       homeConfigurations."Vas-HP-Nix" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/Vas-HP-Nix/home.nix ];
+        modules = [ ./hosts/Vas-HP-Nix/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
           asztal = self.packages.x86_64-linux.default;

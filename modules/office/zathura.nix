@@ -20,37 +20,9 @@
       # zathurarc-dark;
      
       font = "inconsolata 20";
-      default-bg = "#${config.colorScheme.palette.base00}";
-      default-fg = "#${config.colorScheme.palette.base01}";
-     
-      statusbar-fg = "#${config.colorScheme.palette.base04}";
-      statusbar-bg = "#${config.colorScheme.palette.base01}";
-     
-      inputbar-bg = "#${config.colorScheme.palette.base00}";
-      inputbar-fg = "#${config.colorScheme.palette.base02}";
-     
-      notification-error-bg = "#${config.colorScheme.palette.base08}";
-      notification-error-fg = "#${config.colorScheme.palette.base00}";
-     
-      notification-warning-bg = "#${config.colorScheme.palette.base08}";
-      notification-warning-fg = "#${config.colorScheme.palette.base00}";
-     
-      highlight-color = "#${config.colorScheme.palette.base0A}";
-      highlight-active-color = "#${config.colorScheme.palette.base0D}";
+
       highlight-transparency = "1.0";
-     
-      completion-highlight-fg = "#${config.colorScheme.palette.base0A}";
-      completion-highlight-bg = "#${config.colorScheme.palette.base0C}";
-     
-      completion-bg = "#${config.colorScheme.palette.base02}";
-      completion-fg = "#${config.colorScheme.palette.base01}";
-     
-      notification-bg = "#${config.colorScheme.palette.base0B}";
-      notification-fg = "#${config.colorScheme.palette.base00}";
-     
       recolor = "true";
-      recolor-lightcolor = "#${config.colorScheme.palette.base00}";
-      recolor-darkcolor = "#${config.colorScheme.palette.base06}";
       recolor-reverse-video = "true";
       recolor-keephue = "true";
      
