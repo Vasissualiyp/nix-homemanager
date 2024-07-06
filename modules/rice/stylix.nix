@@ -10,7 +10,7 @@
     };
 	cursor.package = pkgs.bibata-cursors;
 	cursor.name = "Bibata-Modern-Classic";
-	stylix.polarity = "dark";
+	polarity = "dark";
 	#homeManagerIntegration.followSystem = true;
 	#homeManagerIntegration.autoImport = true;
   };
