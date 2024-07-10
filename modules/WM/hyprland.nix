@@ -4,20 +4,18 @@ let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
-  cliphist_rofi = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/sentriz/cliphist/master/contrib/cliphist-rofi";
-	sha256 = "1f7hdaipxy7kbx13as4mmqcnsr84jlx90xj3v0ka4sp05fmb36k3";
-  };
-  cliphist_rofi_img = pkgs.fetchurl {
-    url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi-img";
-	sha256 = "0dy4vbgn09q8n7m5lkiw9y7jxysw8b2lqfx2cqb4q2gxnj0fs7m6";
-  };
+  #cliphist_rofi = pkgs.fetchurl {
+  #  url = "https://raw.githubusercontent.com/sentriz/cliphist/master/contrib/cliphist-rofi";
+  #  sha256 = "1f7hdaipxy7kbx13as4mmqcnsr84jlx90xj3v0ka4sp05fmb36k3";
+  #};
+  #cliphist_rofi_img = pkgs.fetchurl {
+  #  url = "https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-rofi-img";
+  #  sha256 = "0dy4vbgn09q8n7m5lkiw9y7jxysw8b2lqfx2cqb4q2gxnj0fs7m6";
+  #};
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     #${pkgs.waybar}/bin/waybar &
 	asztal &
-	chmod +rx ${cliphist_rofi} &
-	chmod +rx ${cliphist_rofi_img} &
 	nm-applet --indicator &
 	wl-paste --watch cliphist store &
 	fcitx5 &
@@ -27,6 +25,9 @@ let
     hyprctl dispatch exec [workspace 9 silent] "thunderbird" &
     hyprctl dispatch exec [workspace 8] "qutebrowser"
   '';
+	# ADD THIS ABOVE
+	#chmod +rx ${cliphist_rofi} &
+	#chmod +rx ${cliphist_rofi_img} &
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
     if numberOfMonitors == 5 then {
       workspace = [
@@ -303,8 +304,8 @@ in
 	  	  "CTRL_SUPER_ALT, S, exec, /home/vasilii/scripts/custom_docs_editing/wayland_noterius_screenshot.sh"
 
 		  # Cliphist
-		  "SUPER, V, exec, rofi -modi clipboard:${cliphist_rofi} -show clipboard"
-		  "SUPER_SHIFT, V, exec, rofi -modi clipboard:${cliphist_rofi_img} -show clipboard -show-icons"
+		  #"SUPER, V, exec, rofi -modi clipboard:${cliphist_rofi} -show clipboard"
+		  #"SUPER_SHIFT, V, exec, rofi -modi clipboard:${cliphist_rofi_img} -show clipboard -show-icons"
 
 		  # Formulas OCR
 		  "SUPER_CTRL, F, exec, /home/vasilii/scripts/custom_docs_editing/wayland_pix2text_formula_reader.sh"
