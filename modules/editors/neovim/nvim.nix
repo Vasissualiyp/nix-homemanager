@@ -117,6 +117,10 @@ in
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
 	  }
+      {
+	  plugin = oil-nvim;
+	  config = toLua "${builtins.readFile ./lua/plugins/oil.lua}\n${builtins.readFile ./lua/keymaps/oil.lua}";
+	  }
 	  {
 	    plugin = nvim-treesitter-context; # Showing the current funciton start at the top
 	    config = toLuaFile ./lua/plugins/context.lua;
