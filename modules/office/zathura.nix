@@ -21,7 +21,7 @@
      
       font = "inconsolata 20";
 
-      highlight-transparency = "1.0";
+      #highlight-transparency = "1.0";
       recolor = "true";
       recolor-reverse-video = "true";
       recolor-keephue = "true";
