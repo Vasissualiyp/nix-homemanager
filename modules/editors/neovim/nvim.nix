@@ -107,7 +107,7 @@ in
 	  vim-tmux-navigator
 	  vim-css-color
 	  nvim-lspconfig
-	  vimspector
+	  vimspector # Debugger
 	  fzf-vim
 	  startup-nvim
 	  vim-snippets
@@ -121,10 +121,10 @@ in
 	  plugin = oil-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/oil.lua}\n${builtins.readFile ./lua/keymaps/oil.lua}";
 	  }
-	  {
-	    plugin = nvim-treesitter-context; # Showing the current funciton start at the top
-	    config = toLuaFile ./lua/plugins/context.lua;
-	  }
+	  #{
+	  #  plugin = nvim-treesitter-context; # Showing the current funciton start at the top
+	  #  config = toLuaFile ./lua/plugins/context.lua;
+	  #}
       {
 	    plugin = harpoon;
 	    config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
