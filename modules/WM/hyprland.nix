@@ -32,15 +32,15 @@ let
     if numberOfMonitors == 5 then {
       workspace = [
         "1, monitor:eDP-1"
-        "2, monitor:DP-5"
-        "3, monitor:DP-5"
-        "4, monitor:HDMI-A-1"
-        "5, monitor:HDMI-A-1"
-        "6, monitor:HDMI-A-1"
-        "7, monitor:DP-1"
-        "8, monitor:DP-1"
-        "9, monitor:DP-4"
-        "0, monitor:DP-4"
+        "2, monitor:DP-4"
+        "3, monitor:DP-4"
+        "4, monitor:DP-1"
+        "5, monitor:DP-1"
+        "6, monitor:DP-1"
+        "7, monitor:DP-5"
+        "8, monitor:DP-5"
+        "9, monitor:HDMI-A-1"
+        "0, monitor:HDMI-A-1"
       ];
     } else if numberOfMonitors == 2 then {
       workspace = [
