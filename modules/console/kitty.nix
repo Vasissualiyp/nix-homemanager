@@ -9,7 +9,7 @@
       tab_bar_edge = "top";
       tab_bar_stule = "powerline";
       tab_powerline_style = "round";
-      #background_opacity = 1;
+      #background_opacity = 1.0;
 	  
       #foreground              = "#${config.colorScheme.palette.base05}";
       #background              = "#${config.colorScheme.palette.base00}";

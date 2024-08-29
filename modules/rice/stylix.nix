@@ -1,5 +1,7 @@
 { pkgs, ... }:
-
+let
+  opacity_value = 0.8;
+in
 {
   stylix = {
 	enable = true;
@@ -11,6 +13,10 @@
 	cursor.package = pkgs.bibata-cursors;
 	cursor.name = "Bibata-Modern-Classic";
 	polarity = "dark";
+	opacity.applications = opacity_value;
+	opacity.desktop = opacity_value;
+	opacity.popups = opacity_value;
+	opacity.terminal = opacity_value;
 	#homeManagerIntegration.followSystem = true;
 	#homeManagerIntegration.autoImport = true;
   };
