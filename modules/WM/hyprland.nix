@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, machine_name, numberOfMonitors, ... }:
+{ config, pkgs, lib, inputs, machine_name, numberOfMonitors, splitMonitorWorkspaces, ... }:
 
 let 
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -20,9 +20,9 @@ let
 	wl-paste --watch cliphist store &
 	fcitx5 &
 	#${pkgs.dunst}/bin/dunst &
-    hyprctl dispatch exec [workspace 5] "kitty sh -c 'tmux a -t Main' " &
-    hyprctl dispatch exec [workspace 2] "kitty sh -c 'tmux a -t Note' " &
-    hyprctl dispatch exec [workspace 9 silent] "thunderbird" &
+    #hyprctl dispatch exec [workspace 5] "kitty sh -c 'tmux a -t Main' " &
+    #hyprctl dispatch exec [workspace 2] "kitty sh -c 'tmux a -t Note' " &
+    #hyprctl dispatch exec [workspace 9 silent] "thunderbird" &
     hyprctl dispatch exec [workspace 8] "qutebrowser"
   '';
 	# ADD THIS ABOVE
@@ -123,6 +123,7 @@ in
 	  package = hyprland;
 	  #xwayland.enable = true;
 	  #plugins = with plugins; [ hyprexpo ];
+	  plugins = with plugins; [ splitMonitorWorkspaces.packages.${pkgs.system}.split-monitor-workspaces ];
   	
   	  settings = lib.mkMerge [ {
         "$terminal" = "kitty";
@@ -219,6 +220,15 @@ in
 	  	  "movefocus_cycles_fullscreen" = "false";
 	  	  "allow_workspace_cycles" = "true";
 	    };	
+
+		plugin = {
+          split-monitor-workspaces = {
+            "count" = "10";
+            "keep_focused" = "0";
+            "enable_notifications" = "0";
+            "enable_persistent_workspaces" = "1";
+		  };
+		};
         
         misc = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more";
@@ -274,36 +284,36 @@ in
           "SUPER, f, togglefloating, active"
           
           # Switch workspaces with mainMod + [0-9]"
-          "$mainMod, 1, workspace, 1"
-          "$mainMod, 2, workspace, 2"
-          "$mainMod, 3, workspace, 3"
-          "$mainMod, 4, workspace, 4"
-          "$mainMod, 5, workspace, 5"
-          "$mainMod, 6, workspace, 6"
-          "$mainMod, 7, workspace, 7"
-          "$mainMod, 8, workspace, 8"
-          "$mainMod, 9, workspace, 9"
-          "$mainMod, 0, workspace, 10"
+          "$mainMod, 1, split-workspace, 1"
+          "$mainMod, 2, split-workspace, 2"
+          "$mainMod, 3, split-workspace, 3"
+          "$mainMod, 4, split-workspace, 4"
+          "$mainMod, 5, split-workspace, 5"
+          "$mainMod, 6, split-workspace, 6"
+          "$mainMod, 7, split-workspace, 7"
+          "$mainMod, 8, split-workspace, 8"
+          "$mainMod, 9, split-workspace, 9"
+          "$mainMod, 0, split-workspace, 10"
           
           # Move active window to a workspace with mainMod + SHIFT + [0-9]"
-          "$mainMod SHIFT, 1, movetoworkspace, 1"
-          "$mainMod SHIFT, 2, movetoworkspace, 2"
-          "$mainMod SHIFT, 3, movetoworkspace, 3"
-          "$mainMod SHIFT, 4, movetoworkspace, 4"
-          "$mainMod SHIFT, 5, movetoworkspace, 5"
-          "$mainMod SHIFT, 6, movetoworkspace, 6"
-          "$mainMod SHIFT, 7, movetoworkspace, 7"
-          "$mainMod SHIFT, 8, movetoworkspace, 8"
-          "$mainMod SHIFT, 9, movetoworkspace, 9"
-          "$mainMod SHIFT, 0, movetoworkspace, 10"
+          "$mainMod SHIFT, 1, split-movetoworkspace, 1"
+          "$mainMod SHIFT, 2, split-movetoworkspace, 2"
+          "$mainMod SHIFT, 3, split-movetoworkspace, 3"
+          "$mainMod SHIFT, 4, split-movetoworkspace, 4"
+          "$mainMod SHIFT, 5, split-movetoworkspace, 5"
+          "$mainMod SHIFT, 6, split-movetoworkspace, 6"
+          "$mainMod SHIFT, 7, split-movetoworkspace, 7"
+          "$mainMod SHIFT, 8, split-movetoworkspace, 8"
+          "$mainMod SHIFT, 9, split-movetoworkspace, 9"
+          "$mainMod SHIFT, 0, split-movetoworkspace, 10"
           
           # Example special workspace (scratchpad)"
           "$mainMod, R, togglespecialworkspace, magic"
           "$mainMod RHIFT, R, movetoworkspace, special:magic"
           
           # Scroll through existing workspaces with mainMod + scroll"
-          "$mainMod, mouse_down, workspace, e+1"
-          "$mainMod, mouse_up, workspace, e-1"
+          "$mainMod, mouse_down, split-workspace, e+1"
+          "$mainMod, mouse_up, split-workspace, e-1"
 
 	  	  # Audio laptop keys
 	  	  ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"

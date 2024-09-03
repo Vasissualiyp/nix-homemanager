@@ -16,6 +16,10 @@
       url = "github:hyprwm/hyprland-plugins";
 	  inputs.hyprland.follows = "hyprland";
 	};
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
+    };
 
 	nix-colors.url = "github:misterio77/nix-colors";
     
@@ -26,7 +30,7 @@
     stm.url = "github:Aylur/stm";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, split-monitor-workspaces, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -82,6 +86,7 @@
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-HP-Nix" = home-manager.lib.homeManagerConfiguration {

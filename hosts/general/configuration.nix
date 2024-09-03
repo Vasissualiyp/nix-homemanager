@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, machine_name, numberOfMonitors, asztal, ... }:
+{ config, pkgs, inputs, machine_name, numberOfMonitors, asztal, splitMonitorWorkspaces, ... }:
 
 let 
   #lib = config.home-manager.users.vasilii.lib;
@@ -34,7 +34,7 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
-	(import hyprlandModule { inherit config pkgs lib inputs machine_name numberOfMonitors; })
+	(import hyprlandModule { inherit config pkgs lib inputs machine_name numberOfMonitors splitMonitorWorkspaces; })
 	#(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
