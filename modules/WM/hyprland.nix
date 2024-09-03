@@ -29,17 +29,17 @@ let
 	#chmod +rx ${cliphist_rofi} &
 	#chmod +rx ${cliphist_rofi_img} &
   monitorsConfig = if machine_name == "Vas-Office-Nix" then
-    if numberOfMonitors == 5 then {
+    if numberOfMonitors == 6 then {
       workspace = [
         "1, monitor:eDP-1"
-        "2, monitor:DP-4"
+        "2, monitor:DP-6"
         "3, monitor:DP-4"
-        "4, monitor:DP-1"
-        "5, monitor:DP-1"
-        "6, monitor:DP-1"
-        "7, monitor:DP-5"
+        "4, monitor:DP-4"
+        "5, monitor:DP-7"
+        "6, monitor:DP-7"
+        "7, monitor:DP-7"
         "8, monitor:DP-5"
-        "9, monitor:HDMI-A-1"
+        "9, monitor:DP-5"
         "0, monitor:HDMI-A-1"
       ];
     } else if numberOfMonitors == 2 then {
@@ -54,6 +54,19 @@ let
         "8, monitor:eDP-1"
         "9, monitor:eDP-1"
         "0, monitor:eDP-1"
+      ];
+    } else if numberOfMonitors == 5 then {
+      workspace = [
+        "1, monitor:eDP-1"
+        "2, monitor:DP-4"
+        "3, monitor:DP-4"
+        "4, monitor:DP-1"
+        "5, monitor:DP-1"
+        "6, monitor:DP-1"
+        "7, monitor:DP-5"
+        "8, monitor:DP-5"
+        "9, monitor:HDMI-A-1"
+        "0, monitor:HDMI-A-1"
       ];
 	} else {
       workspace = map (ws: "${toString ws}, monitor:eDP-1") (lib.range 1 10);

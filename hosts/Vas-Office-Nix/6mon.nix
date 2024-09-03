@@ -14,7 +14,7 @@ in
 	  width = 2560;
 	  height = 1600;
 	  refreshRate = 60;
-	  x = 0; 
+	  x = 1280; # Need to displace this monitor by half of its width because of 2x scaling
 	  y = 1200;
 	  scale = 2;
 	  enabled = true;

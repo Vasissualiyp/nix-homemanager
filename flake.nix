@@ -76,6 +76,14 @@
           asztal = self.packages.x86_64-linux.default;
         };
       };
+      homeConfigurations."Vas-Office-Nix-6mon" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/Vas-Office-Nix/6mon.nix stylix.homeManagerModules.stylix ];
+		extraSpecialArgs = {
+          inherit inputs;
+          asztal = self.packages.x86_64-linux.default;
+        };
+      };
       homeConfigurations."Vas-HP-Nix" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./hosts/Vas-HP-Nix/home.nix stylix.homeManagerModules.stylix ];
