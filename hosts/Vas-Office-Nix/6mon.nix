@@ -31,8 +31,8 @@ in
     }
     {
 	  name = "DP-3";
-	  width = 2560; 
-	  height = 1600;
+	  width = 1920; 
+	  height = 1200;
 	  x = 3640;
 	  y = 0;
 	  scale = 1;
@@ -41,7 +41,7 @@ in
     {
 	  name = "DP-4";
 	  width = 1920;
-	  height = 1080;
+	  height = 1200;
 	  x = 5560;
 	  y = 0;
 	  scale = 1;
