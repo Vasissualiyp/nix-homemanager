@@ -62,6 +62,7 @@
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-Office-Nix-2mon" = home-manager.lib.homeManagerConfiguration {
@@ -70,6 +71,7 @@
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-Office-Nix-5mon" = home-manager.lib.homeManagerConfiguration {
@@ -78,6 +80,7 @@
 		extraSpecialArgs = {
           inherit inputs;
           asztal = self.packages.x86_64-linux.default;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-Office-Nix-6mon" = home-manager.lib.homeManagerConfiguration {
