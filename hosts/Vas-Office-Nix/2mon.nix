@@ -13,17 +13,19 @@ in
 	  name = "eDP-1";
 	  width = 2560; 
 	  height = 1600;
-	  x = 640;
-	  y = 2160;
+	  x = 0;
+	  y = 0;
 	  refreshRate = 60;
 	  scale = 1;
 	  enabled = true;
     }
     {
 	  name = "HDMI-A-1";
-	  width = 1920; 
-	  height = 1080;
-	  x = 0;
+	  #width = 1920; 
+	  #height = 1080;
+	  width = 3840; 
+	  height = 2160;
+	  x = 2560;
 	  y = 0;
 	  refreshRate = 60;
 	  scale = 1;

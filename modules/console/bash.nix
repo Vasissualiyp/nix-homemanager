@@ -73,6 +73,11 @@ gitac() {
     git commit -m "$1"
 }
 
+# cat -> bat
+cat() {
+    bat --paging=never "$@"
+}
+
 # vi mode in bash
 set -o vi
     '';
