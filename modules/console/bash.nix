@@ -47,6 +47,7 @@ let
 
 	gizmo_setup = " git clone git@github.com:Vasissualiyp/GIZMO-setup.git ./; ./scripts/gizmo_setup.sh";
   };
+  bat_theme = "TwoDark";
 
 in
 
@@ -75,7 +76,7 @@ gitac() {
 
 # cat -> bat
 cat() {
-    bat --paging=never "$@"
+    bat --theme="${bat_theme}" --paging=never "$@"
 }
 
 # vi mode in bash
