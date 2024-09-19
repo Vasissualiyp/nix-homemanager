@@ -10,7 +10,7 @@ let
   stylix = import ../../modules/rice/stylix.nix;
   qutebrowserModule = import ../../modules/web/qutebrowser.nix;
   hyprlandModule = ../../modules/WM/hyprland.nix ;
-  waybarModule = ../../modules/WM/waybar/mybar.nix;
+  waybarModule = ../../modules/WM/waybar/waybar_chooser.nix;
   bspwmModule = ../../modules/WM/bspwmrc.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
   kittyModule = import ../../modules/console/kitty.nix;
