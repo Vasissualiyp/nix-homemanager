@@ -22,8 +22,8 @@ let
   kdeconnectModule = import ../../modules/web/kdeconnect.nix;
   rofiModule = import ../../modules/menus/rofi.nix;
   # asztal's modules
-  asztalModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/ags.nix;
-  dconfModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/dconf.nix;
+  asztalModule = import ../../modules/peoples_dotfiles/Aylur_v2/home-manager/ags.nix;
+  dconfModule = import ../../modules/peoples_dotfiles/Aylur_v2/home-manager/dconf.nix;
   #tmuxModule = import ../../modules/peoples_dotfiles/Aylur/home_manager/tmux.nix;
 in
 
@@ -35,7 +35,7 @@ in
 
   imports = [
 	(import hyprlandModule { inherit config pkgs lib inputs machine_name numberOfMonitors splitMonitorWorkspaces; })
-	#(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
+	(import waybarModule { inherit pkgs machine_name numberOfMonitors; })
     (import bspwmModule {inherit pkgs machine_name numberOfMonitors; }) 
     colorscheme 
     #cursor 
@@ -51,8 +51,8 @@ in
     gammastepModule
     kdeconnectModule
     rofiModule 
-    asztalModule 
-    dconfModule 
+    #asztalModule 
+    #dconfModule 
   ]; 
 
   home.stateVersion = "23.11"; # Please read the comment before changing.

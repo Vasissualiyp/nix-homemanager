@@ -14,8 +14,8 @@ let
   #};
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    #${pkgs.waybar}/bin/waybar &
-	asztal &
+    ${pkgs.waybar}/bin/waybar &
+	#asztal &
 	nm-applet --indicator &
 	wl-paste --watch cliphist store &
 	fcitx5 &
