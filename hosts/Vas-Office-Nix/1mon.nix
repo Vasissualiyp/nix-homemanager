@@ -1,11 +1,11 @@
-{ config, pkgs, inputs, asztal, splitMonitorWorkspaces, ... }:
+{ config, pkgs, inputs, splitMonitorWorkspaces, ... }:
 let 
   lib = pkgs.lib;
   numberOfMonitors = 1;
 in 
 {
   imports = [
-    (import ./home.nix { inherit config pkgs inputs numberOfMonitors asztal splitMonitorWorkspaces; })
+    (import ./home.nix { inherit config pkgs inputs numberOfMonitors splitMonitorWorkspaces; })
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
   monitors = [

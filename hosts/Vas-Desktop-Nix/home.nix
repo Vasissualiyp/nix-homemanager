@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, asztal, ... }:
+{ config, pkgs, inputs,  ... }:
 
 let 
   machine_name = "Vas-Desktop-Nix";
@@ -8,7 +8,7 @@ in
 
 {
   imports = [
-    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors asztal; } )
+    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors ; } )
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
 

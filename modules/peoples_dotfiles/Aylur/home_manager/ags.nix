@@ -6,11 +6,10 @@
 }: {
   imports = [
     inputs.ags.homeManagerModules.default
-    inputs.astal.homeManagerModules.default
+    #inputs.astal.homeManagerModules.default
   ];
 
   home.packages = with pkgs; [
-    asztal
     bun
     dart-sass
     fd

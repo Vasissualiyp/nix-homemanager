@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, machine_name, numberOfMonitors, asztal, splitMonitorWorkspaces, ... }:
+{ config, pkgs, inputs, machine_name, numberOfMonitors,  splitMonitorWorkspaces, ... }:
 
 let 
   #lib = config.home-manager.users.vasilii.lib;

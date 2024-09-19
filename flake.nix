@@ -45,7 +45,6 @@
         modules = [ ./hosts/nicekoffer/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
-          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Desktop-Nix" = home-manager.lib.homeManagerConfiguration {
@@ -53,7 +52,6 @@
         modules = [ ./hosts/Vas-Desktop-Nix/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
-          asztal = self.packages.x86_64-linux.default;
         };
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
@@ -61,7 +59,6 @@
         modules = [ ./hosts/Vas-Office-Nix/1mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
-          asztal = self.packages.x86_64-linux.default;
 		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
@@ -70,7 +67,6 @@
         modules = [ ./hosts/Vas-Office-Nix/2mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
-          asztal = self.packages.x86_64-linux.default;
 		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
@@ -79,7 +75,6 @@
         modules = [ ./hosts/Vas-Office-Nix/5mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
-          asztal = self.packages.x86_64-linux.default;
 		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
@@ -88,7 +83,6 @@
         modules = [ ./hosts/Vas-Office-Nix/6mon.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
-          asztal = self.packages.x86_64-linux.default;
 		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
@@ -97,7 +91,6 @@
         modules = [ ./hosts/Vas-HP-Nix/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
-          asztal = self.packages.x86_64-linux.default;
         };
       };
     };
