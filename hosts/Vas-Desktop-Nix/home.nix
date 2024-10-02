@@ -12,36 +12,50 @@ in
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
 
+  # 1-monitor (TV) Carlton setup
   monitors = [
-	{
-      name = "DP-2";
-	  width = 1920;
-	  height = 1080;
-	  refreshRate = 60;
-	  x = 0;
-	  y = 180;
-	  scale = 1;
-	  enabled = true;
-	}
     {
       name = "DP-1";
-	  width = 2560;
-	  height = 1440;
-	  refreshRate = 144;
-	  x = 1920;
-	  y = 0;
-	  scale = 1;
-	  enabled = true;
-	}
-    {
-      name = "HDMI-A-2";
-	  width = 1920;
-	  height = 1080;
-	  refreshRate = 60;
-	  x = 4480;
-	  y = 180;
-	  scale = 1;
-	  enabled = true;
-	}
-  ];
+      width = 2560; # Or 4096
+      height = 1440; # Or 2160
+      refreshRate = 60; # Or 30
+      x = 0;
+      y = 0;
+      scale = 2;
+      enabled = true;
+    }
+
+  # 3-monitor Markham setup
+  #monitors = [
+  #  {
+  #    name = "DP-2";
+  #    width = 1920;
+  #    height = 1080;
+  #    refreshRate = 60;
+  #    x = 0;
+  #    y = 180;
+  #    scale = 1;
+  #    enabled = true;
+  #  }
+  #  {
+  #    name = "DP-1";
+  #    width = 2560;
+  #    height = 1440;
+  #    refreshRate = 144;
+  #    x = 1920;
+  #    y = 0;
+  #    scale = 1;
+  #    enabled = true;
+  #  }
+  #  {
+  #    name = "HDMI-A-2";
+  #    width = 1920;
+  #    height = 1080;
+  #    refreshRate = 60;
+  #    x = 4480;
+  #    y = 180;
+  #    scale = 1;
+  #    enabled = true;
+  #  }
+  #];
 }
