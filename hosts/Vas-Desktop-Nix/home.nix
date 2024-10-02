@@ -1,14 +1,13 @@
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs, numberOfMonitors,  splitMonitorWorkspaces, ... }:
 
 let 
   machine_name = "Vas-Desktop-Nix";
-  numberOfMonitors = 3;
   lib = pkgs.lib;
 in
 
 {
   imports = [
-    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors ; } )
+    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors splitMonitorWorkspaces; } )
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
 
@@ -24,6 +23,7 @@ in
       scale = 2;
       enabled = true;
     }
+  ];
 
   # 3-monitor Markham setup
   #monitors = [

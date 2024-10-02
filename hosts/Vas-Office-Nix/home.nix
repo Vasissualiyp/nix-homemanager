@@ -1,7 +1,8 @@
-{ config, pkgs, inputs, numberOfMonitors,  splitMonitorWorkspaces, ... }:
+{ config, pkgs, inputs, splitMonitorWorkspaces, ... }:
 
 let 
   machine_name = "Vas-Office-Nix";
+  numberOfMonitors = 1;
 in
 
 {

@@ -45,6 +45,7 @@
         modules = [ ./hosts/nicekoffer/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs defaultMonitorNumber;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-Desktop-Nix" = home-manager.lib.homeManagerConfiguration {
@@ -52,6 +53,7 @@
         modules = [ ./hosts/Vas-Desktop-Nix/home.nix stylix.homeManagerModules.stylix ];
 		extraSpecialArgs = {
           inherit inputs;
+		  splitMonitorWorkspaces = inputs.split-monitor-workspaces;
         };
       };
       homeConfigurations."Vas-Office-Nix-1mon" = home-manager.lib.homeManagerConfiguration {
