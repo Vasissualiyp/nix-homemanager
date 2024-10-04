@@ -13,6 +13,7 @@ let
   waybarModule = ../../modules/WM/waybar/waybar_chooser.nix;
   bspwmModule = ../../modules/WM/bspwmrc.nix;
   zathuraModule = import ../../modules/office/zathura.nix;
+  zoxideModule = import ../../modules/office/zoxide.nix;
   kittyModule = import ../../modules/console/kitty.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   nvimColorsModule = import ../../modules/editors/neovim/neovim-colors.nix;
@@ -48,6 +49,7 @@ in
     nvimColorsModule 
     tmuxModule
     zathuraModule
+    zoxideModule
     gammastepModule
     kdeconnectModule
     rofiModule 
