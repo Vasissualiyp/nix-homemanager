@@ -11,16 +11,46 @@ in
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
 
-  # 1-monitor (TV) Carlton setup
+  # 4-monitor Carlton setup
   monitors = [
     {
-      name = "DP-1";
-      width = 2560; # Or 4096
-      height = 1440; # Or 2160
-      refreshRate = 60; # Or 30
+      name = "DP-3";
+      width = 2560;
+      height = 1440;
+      refreshRate = 144;
       x = 0;
       y = 0;
+      scale = 1;
+      enabled = true;
+    }
+    {
+      name = "DP-2";
+      width = 4096; # Or 4096, 2560
+      height = 2160; # Or 2160, 1440
+      refreshRate = 30; # Or 30, 60
+      x = 2560;
+      y = 180;
       scale = 2;
+      enabled = true;
+    }
+    #{
+    #  name = "HDMI-A-1";
+    #  width = 1920; #4096?
+    #  height = 1080; 
+    #  refreshRate = 60;
+    #  x = 4608;
+    #  y = 180;
+    #  scale = 2;
+    #  enabled = true;
+    #}
+    {
+      name = "HDMI-A-2";
+      width = 1920;
+      height = 1080;
+      refreshRate = 30;
+      x = 2560;
+      y = 1260;
+      scale = 1;
       enabled = true;
     }
   ];
