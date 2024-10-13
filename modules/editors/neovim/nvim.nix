@@ -135,6 +135,7 @@ in
 	    plugin = harpoon;
 	    config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
 	  }
+	  cmp-nvim-lsp
       {
 	    plugin = nvim-cmp; # Drop-down menu for luasnips
 	    config = toLuaFile ./lua/plugins/cmp.lua;
@@ -189,11 +190,14 @@ in
 	    plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work fully so far
 	    config = toLuaFile ./lua/plugins/speedtyper.lua;
 	  }
-	  {
-	    plugin = coc-nvim; # Autocompletion
-	    config = toLuaFile ./lua/plugins/coc.lua;
-	  }
-	  telescope-coc-nvim
+
+
+	  # CoC Autocompletion
+	  #{
+	  #  plugin = coc-nvim; # Autocompletion
+	  #  config = toLuaFile ./lua/plugins/coc.lua;
+	  #}
+	  #telescope-coc-nvim
 
 
 
