@@ -117,10 +117,7 @@ in
 	  fzf-vim
 	  startup-nvim
 	  vim-snippets
-	  cmp_luasnip
-	  cmp-buffer
-	  cmp-path
-      cmp-luasnip-choice
+
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
@@ -137,20 +134,6 @@ in
 	    plugin = harpoon;
 	    config = toLua "${builtins.readFile ./lua/plugins/harpoon.lua}\n${builtins.readFile ./lua/keymaps/harpoon.lua}";
 	  }
-	  cmp-nvim-lsp
-      {
-	    plugin = nvim-cmp; # Drop-down menu for luasnips
-	    config = toLuaFile ./lua/plugins/cmp.lua;
-	  }
-	  #(
-          #  let
-          #    lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
-          #  in
-          #  {
-          #    plugin = nvim-lspconfig;
-	  #    config = toLua "${builtins.readFile ./lua/config/lsp.lua}\n${builtins.readFile ./lua/config/lsp_cmp.lua}";
-          #  }
-	  #)
 	  {
 	    plugin = SimpylFold;
 	    config = toLuaFile ./lua/plugins/simpylfold.lua;
@@ -194,6 +177,33 @@ in
 	  }
 
 
+
+	  # Autocompletion with cmp
+	  cmp_luasnip
+	  cmp-buffer
+	  cmp-path
+      cmp-luasnip-choice
+	  cmp-nvim-lsp
+      {
+	    plugin = nvim-cmp; # Drop-down menu for luasnips
+	    config = toLuaFile ./lua/plugins/cmp.lua;
+	  }
+	  #(
+          #  let
+          #    lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
+          #  in
+          #  {
+          #    plugin = nvim-lspconfig;
+	  #    config = toLua "${builtins.readFile ./lua/config/lsp.lua}\n${builtins.readFile ./lua/config/lsp_cmp.lua}";
+          #  }
+	  #)
+
+	  # Something for autocomplete
+	  #{
+	  #  plugin = lsp_signature-nvim; 
+	  #  config = toLuaFile ./lua/plugins/lsp_signature.lua;
+	  #}
+	  
 	  # CoC Autocompletion
 	  #{
 	  #  plugin = coc-nvim; # Autocompletion
