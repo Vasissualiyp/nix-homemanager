@@ -11,6 +11,7 @@ vim.opt.updatetime = 300
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
 vim.opt.signcolumn = "yes"
+vim.g.coc_config_home = "/home/vasilii/nix/home-manager/modules/editors/neovim/lua/plugins"
 
 local keyset = vim.keymap.set
 -- Autocomplete
