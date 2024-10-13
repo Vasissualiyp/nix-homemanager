@@ -68,6 +68,12 @@ in
       ${builtins.readFile ./lua/keymaps/citerius.lua}
       --vim.cmd('source ~/.dotfiles/nvim/vimscript/citerius.vim')
     '';
+	extraPackages = with pkgs; [
+      nil # Nix LSP
+	  pyright # Python type checker LSP
+      luajitPackages.lua-lsp # Lua LSP
+	  pylint
+	];
 
     extraPython3Packages = ps: with ps; [
       pynvim
@@ -180,9 +186,17 @@ in
 	    config = toLuaFile ./lua/keymaps/noterius.lua;
 	  }
 	  {
-	    plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work so far
+	    plugin = speedtyper; # THIS ONE IS TESTING - couldn't make it work fully so far
 	    config = toLuaFile ./lua/plugins/speedtyper.lua;
 	  }
+	  {
+	    plugin = coc-nvim; # Autocompletion
+	    config = toLuaFile ./lua/plugins/coc.lua;
+	  }
+	  telescope-coc-nvim
+
+
+
 	  # UltiSnips is being replaced by LuaSnips
 	  #{
 	  #  plugin = ultisnips;
