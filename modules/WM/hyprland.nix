@@ -23,7 +23,7 @@ let
     #hyprctl dispatch exec [workspace 5] "kitty sh -c 'tmux a -t Main' " &
     #hyprctl dispatch exec [workspace 2] "kitty sh -c 'tmux a -t Note' " &
     #hyprctl dispatch exec [workspace 9 silent] "thunderbird" &
-    hyprctl dispatch exec [workspace 8] "qutebrowser"
+    #hyprctl dispatch exec [workspace 8] "qutebrowser"
   '';
 	# ADD THIS ABOVE
 	#chmod +rx ${cliphist_rofi} &
