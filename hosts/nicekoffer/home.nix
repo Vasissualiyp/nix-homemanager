@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, numberOfMonitors,  ... }:
+{ config, pkgs, inputs, numberOfMonitors,  splitMonitorWorkspaces, ... }:
 
 let 
   machine_name = "nicekoffer";
@@ -7,7 +7,7 @@ in
 
 {
   imports = [
-    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors ; })
+    (import ../general/configuration.nix { inherit config pkgs inputs machine_name numberOfMonitors splitMonitorWorkspaces; } )
     (import ../../modules/WM/monitor_definitions.nix { inherit config lib; })
   ];
 
