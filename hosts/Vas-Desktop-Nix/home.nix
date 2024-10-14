@@ -17,7 +17,7 @@ in
       name = "DP-3";
       width = 2560;
       height = 1440;
-      refreshRate = 144;
+      refreshRate = 120;
       x = 0;
       y = 0;
       scale = 1;
