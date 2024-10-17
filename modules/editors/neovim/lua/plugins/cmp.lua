@@ -74,10 +74,6 @@ require('cmp_luasnip_choice').setup({
 -- Set up lspconfig.
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
---lspconfig.texlab.setup({ capabilities = capabilities })
-
--- WORKING LSPs (bash, python, nix, lua)
 
 -- Bash LSP
 lspconfig.bashls.setup{
