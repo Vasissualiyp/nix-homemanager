@@ -90,13 +90,13 @@ in
       nil # Nix LSP
 	  pyright # Python type checker LSP
 	  lua-language-server # Lua LSP
-	  pylint
-	  fortls # Fortran LSP
 	  bash-language-server # Bash LSP
-	  clang # Dependency of ccls
-	  llvm # Dependency of ccls
-	  cmake # Dependency of ccls
-	  ccls # C/CPP LSP
+	  pylint
+	  #fortls # Fortran LSP
+	  #clang # Dependency of ccls
+	  #llvm # Dependency of ccls
+	  #cmake # Dependency of ccls
+	  #ccls # C/CPP LSP
 	];
 
     extraPython3Packages = ps: with ps; [
