@@ -6,7 +6,7 @@
   programs.tmux = {
     enable = true;
 	terminal = "tmux-256color";
-	keyMode = "vi";
+	#keyMode = "vi";
     plugins = with pkgs.tmuxPlugins;
 	[
 	  sensible
@@ -75,7 +75,7 @@
       set -g pane-base-index 1
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
-      
+
       # Use Alt-arrow keys without prefix key to switch panes
       bind -n M-Left select-pane -L
       bind -n M-Right select-pane -R
