@@ -76,7 +76,40 @@ local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 --lspconfig.texlab.setup({ capabilities = capabilities })
-lspconfig.pyright.setup({ capabilities = capabilities })
+
+-- C/C++: ccls
+lspconfig.ccls.setup{
+  capabilities = capabilities
+}
+
+-- Fortran: fortls
+--lspconfig.fortls.setup{
+--  capabilities = capabilities
+--}
+
+-- Bash: bash-language-server
+lspconfig.bashls.setup{
+  capabilities = capabilities
+}
+
+-- Makefile: makefile-language-server
+--lspconfig.makes.setup{
+--  capabilities = capabilities
+--}
+
+-- Python: pyright (you already have it)
+lspconfig.pyright.setup{
+  capabilities = capabilities
+}
+
+-- Fortran LSP
+lspconfig.fortls.setup{
+  cmd = { "fortls", "--notify_init", "--hover_signature", "--hover_language=fortran", "--use_signature_help" },
+  filetypes = { "fortran" },
+  root_dir = lspconfig.util.root_pattern(".fortls") or vim.fn.getcwd(),
+  settings = {},  -- You can leave this empty or customize it with other settings
+  capabilities = capabilities 
+}
 --
 --cmp.setup({
 --  sources = {

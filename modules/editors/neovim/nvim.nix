@@ -91,6 +91,9 @@ in
 	  pyright # Python type checker LSP
       luajitPackages.lua-lsp # Lua LSP
 	  pylint
+	  fortls # Fortran LSP
+	  bash-language-server # Bash LSP
+	  ccls # C/CPP LSP
 	];
 
     extraPython3Packages = ps: with ps; [
