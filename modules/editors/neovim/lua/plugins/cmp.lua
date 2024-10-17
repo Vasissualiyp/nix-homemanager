@@ -77,40 +77,89 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 --lspconfig.texlab.setup({ capabilities = capabilities })
 
--- C/C++: ccls
-lspconfig.ccls.setup{
-  capabilities = capabilities
-}
+-- WORKING LSPs (bash, python, nix, lua)
 
--- Fortran: fortls
---lspconfig.fortls.setup{
---  capabilities = capabilities
---}
-
--- Bash: bash-language-server
+-- Bash LSP
 lspconfig.bashls.setup{
   capabilities = capabilities
 }
 
+-- Python LSP
+lspconfig.pyright.setup{
+  capabilities = capabilities
+}
+
+-- Nix LSP
+lspconfig.nil_ls.setup{
+  capabilities = capabilities
+}
+
+-- Lua LSP
+lspconfig.lua_ls.setup {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        }
+        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+        -- library = vim.api.nvim_get_runtime_file("", true)
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+}
+
+-- BROKEN LSPs (Fortran, C/CPP, Makefile)
+
+---- Fortran LSP
+--lspconfig.fortls.setup{
+--  cmd = { "fortls", "--notify_init", "--hover_signature", "--hover_language=fortran", "--use_signature_help" },
+--  filetypes = { "fortran" },
+--  root_dir = lspconfig.util.root_pattern(".fortls") or vim.fn.getcwd(),
+--  settings = {},  -- You can leave this empty or customize it with other settings
+--  capabilities = capabilities 
+--}
+--
+--
+---- C/C++: ccls
+--lspconfig.ccls.setup {
+--  init_options = {
+--    compilationDatabaseDirectory = "build";
+--    index = {
+--      threads = 0;
+--    };
+--    clang = {
+--      excludeArgs = { "-frounding-math"} ;
+--    };
+--  }
+--}
+--
 -- Makefile: makefile-language-server
 --lspconfig.makes.setup{
 --  capabilities = capabilities
 --}
 
--- Python: pyright (you already have it)
-lspconfig.pyright.setup{
-  capabilities = capabilities
-}
 
--- Fortran LSP
-lspconfig.fortls.setup{
-  cmd = { "fortls", "--notify_init", "--hover_signature", "--hover_language=fortran", "--use_signature_help" },
-  filetypes = { "fortran" },
-  root_dir = lspconfig.util.root_pattern(".fortls") or vim.fn.getcwd(),
-  settings = {},  -- You can leave this empty or customize it with other settings
-  capabilities = capabilities 
-}
---
 --cmp.setup({
 --  sources = {
 --    { name = 'vimtex', },

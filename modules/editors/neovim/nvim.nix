@@ -89,10 +89,13 @@ in
 	extraPackages = with pkgs; [
       nil # Nix LSP
 	  pyright # Python type checker LSP
-      luajitPackages.lua-lsp # Lua LSP
+	  lua-language-server # Lua LSP
 	  pylint
 	  fortls # Fortran LSP
 	  bash-language-server # Bash LSP
+	  clang # Dependency of ccls
+	  llvm # Dependency of ccls
+	  cmake # Dependency of ccls
 	  ccls # C/CPP LSP
 	];
 
