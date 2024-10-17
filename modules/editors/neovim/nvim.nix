@@ -31,12 +31,21 @@ let
     };
   };
   cmp-calc = pkgs.vimUtils.buildVimPlugin {
-    name = "telescope-luasnip";
+    name = "cmp-calc";
     src = pkgs.fetchFromGitHub {
         owner = "hrsh7th";
         repo = "cmp-calc";
         rev = "5947b412da67306c5b68698a02a846760059be2e";
         hash = "sha256-TI1FR0EjzPcjsFdJQ9vXVleQwyXkmqs4TvYyZ8A6cS0=";
+    };
+  };
+  cmp-vimtex = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-vimtex";
+    src = pkgs.fetchFromGitHub {
+      owner = "micangl";
+      repo = "cmp-vimtex";
+      rev = "5283bf9108ef33d41e704027b9ef22437ce7a15b";
+      hash = "sha256-pD2dPdpyn5A/uwonDdAxCX138yBeDqbXDdlG/IKjVTU=";
     };
   };
   cmp-luasnip-choice = pkgs.vimUtils.buildVimPlugin {
@@ -192,6 +201,7 @@ in
 	  cmp-buffer
 	  cmp-path
 	  cmp-calc
+	  cmp-vimtex
       cmp-luasnip-choice
 	  cmp-nvim-lsp
       {
