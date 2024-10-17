@@ -30,6 +30,15 @@ let
       hash = "sha256-jzLzucF2rAa3nkHE5n4g2StkSUjMOMK93JCH/g09DQY=";
     };
   };
+  cmp-calc = pkgs.vimUtils.buildVimPlugin {
+    name = "telescope-luasnip";
+    src = pkgs.fetchFromGitHub {
+        owner = "hrsh7th";
+        repo = "cmp-calc";
+        rev = "5947b412da67306c5b68698a02a846760059be2e";
+        hash = "sha256-TI1FR0EjzPcjsFdJQ9vXVleQwyXkmqs4TvYyZ8A6cS0=";
+    };
+  };
   cmp-luasnip-choice = pkgs.vimUtils.buildVimPlugin {
     name = "cmp-luasnip-choice";
     src = pkgs.fetchFromGitHub {
@@ -119,12 +128,12 @@ in
 	  vim-snippets
 
       {
-	  plugin = telescope-nvim;
-	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
+	    plugin = telescope-nvim;
+	    config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
 	  }
       {
-	  plugin = oil-nvim;
-	  config = toLua "${builtins.readFile ./lua/plugins/oil.lua}\n${builtins.readFile ./lua/keymaps/oil.lua}";
+	    plugin = oil-nvim;
+	    config = toLua "${builtins.readFile ./lua/plugins/oil.lua}\n${builtins.readFile ./lua/keymaps/oil.lua}";
 	  }
 	  #{
 	  #  plugin = nvim-treesitter-context; # Showing the current funciton start at the top
@@ -182,6 +191,7 @@ in
 	  cmp_luasnip
 	  cmp-buffer
 	  cmp-path
+	  cmp-calc
       cmp-luasnip-choice
 	  cmp-nvim-lsp
       {
