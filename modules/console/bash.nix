@@ -75,9 +75,9 @@ gitac() {
 }
 
 # cat -> bat
-cat() {
-    bat --theme="${bat_theme}" --paging=never "$@"
-}
+#cat() {
+#    bat --theme="${bat_theme}" --paging=never "$@"
+#}
 
 # vi mode in bash
 set -o vi
