@@ -33,10 +33,19 @@ let
   cmp-calc = pkgs.vimUtils.buildVimPlugin {
     name = "cmp-calc";
     src = pkgs.fetchFromGitHub {
-        owner = "hrsh7th";
-        repo = "cmp-calc";
-        rev = "5947b412da67306c5b68698a02a846760059be2e";
-        hash = "sha256-TI1FR0EjzPcjsFdJQ9vXVleQwyXkmqs4TvYyZ8A6cS0=";
+      owner = "hrsh7th";
+      repo = "cmp-calc";
+      rev = "5947b412da67306c5b68698a02a846760059be2e";
+      hash = "sha256-TI1FR0EjzPcjsFdJQ9vXVleQwyXkmqs4TvYyZ8A6cS0=";
+    };
+  };
+  cmp-emoji = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-emoji";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "cmp-emoji";
+      rev = "e8398e2adf512a03bb4e1728ca017ffeac670a9f";
+      hash = "sha256-Sdgetlwhhc11ufDJH6uaXtbL0EZQFZ2Qgg5yBfG1u7I=";
     };
   };
   cmp-vimtex = pkgs.vimUtils.buildVimPlugin {
@@ -206,6 +215,7 @@ in
 	  cmp_luasnip
 	  cmp-buffer
 	  cmp-path
+	  cmp-emoji
 	  cmp-calc
 	  cmp-vimtex
       cmp-luasnip-choice

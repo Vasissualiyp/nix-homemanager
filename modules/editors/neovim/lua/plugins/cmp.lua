@@ -45,6 +45,7 @@ cmp.setup({
     { name = 'path' },
 	{ name = 'luasnip' },
 	{ name = 'calc' },
+	{ name = 'emoji' },
 	{ name = 'vimtex' },
     { name = 'luasnip_choice' },
   }, {
