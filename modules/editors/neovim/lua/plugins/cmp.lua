@@ -126,6 +126,12 @@ lspconfig.lua_ls.setup {
   }
 }
 
+-- C/C++: clangd
+lspconfig.clangd.setup {
+  capabilities = capabilities,
+}
+
+
 -- BROKEN LSPs (Fortran, C/CPP, Makefile)
 
 ---- Fortran LSP
@@ -138,25 +144,6 @@ lspconfig.lua_ls.setup {
 --}
 --
 --
----- C/C++: ccls
---lspconfig.ccls.setup {
---  init_options = {
---    compilationDatabaseDirectory = "build";
---    index = {
---      threads = 0;
---    };
---    clang = {
---      excludeArgs = { "-frounding-math"} ;
---    };
---  }
---}
---
--- Makefile: makefile-language-server
---lspconfig.makes.setup{
---  capabilities = capabilities
---}
-
-
 --cmp.setup({
 --  sources = {
 --    { name = 'vimtex', },

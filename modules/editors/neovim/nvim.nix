@@ -101,6 +101,8 @@ in
 	  lua-language-server # Lua LSP
 	  bash-language-server # Bash LSP
 	  pylint
+	  clang
+	  clang-tools
 	  #fortls # Fortran LSP
 	  #clang # Dependency of ccls
 	  #llvm # Dependency of ccls
