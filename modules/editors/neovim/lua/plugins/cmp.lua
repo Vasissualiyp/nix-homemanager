@@ -43,7 +43,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'path' },
-	{ name = 'luasnip' },
+	--{ name = 'luasnip' },
 	{ name = 'calc' },
 	{ name = 'emoji' },
 	{ name = 'vimtex' },
